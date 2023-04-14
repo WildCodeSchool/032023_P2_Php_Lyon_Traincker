@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h3>NavBar</h3>
+
+    <h1>Veuillez selectionné une gare : </h1>
+
+  
+    <div class = 'container col-md-6 mx-auto' >
+        <div class = "row" >
+        {% for testest in testests %}
+            
+                <div class="d-grid gap-2 col-md-6 cd-6"  >
+            <a href="/list?id={{ testest.id }}" class="btn btn-custom button " role="button" > {{ testest.name }}</a><br>
+                
+            </div>
+           
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+        </div>
+        </div>
+
+        <h3>Footer</h3>
+    
+    
+{% endblock %}

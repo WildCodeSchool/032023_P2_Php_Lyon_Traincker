@@ -1,3 +1,33 @@
 body {
-    color: #f76c6c;
+    color: #ffffff;
+    background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(68, 255, 0);
+  background-blend-mode: multiply;
 }
+
+.container {
+    margin : 1.5rem;
+    height: 50%;   
+}
+
+h1{
+    text-align: center;
+    padding: 2rem;    
+}
+
+.button{
+    background-image: linear-gradient(to right, #826e41, #63d626);
+  
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+.button:hover {
+    background-color: #224162;
+        color: #fffefe;
+}
+

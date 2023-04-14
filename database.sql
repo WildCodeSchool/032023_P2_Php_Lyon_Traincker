@@ -1,63 +1,25 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+CREATE DATABASE test;
+CREATE TABLE testest (
+`id`  int UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`name` varchar(255) NOT NULL,
+`T1` TEXT NOT NULL,
+`T2` TEXT NOT NULL,
+`T3` TEXT NOT NULL,
+`T4` TEXT NOT NULL,
+`T5` TEXT NOT NULL
+);
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+INSERT INTO `testest` (`name`, `T1`, `T2`, `T3`, `T4`, `T5`) VALUES
+('Lyon', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Paris', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Marseille', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Nantes', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Pau', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Montpellier', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Lille', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Bordeaux', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Toulouse', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Roanne', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Annecy', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
+('Chambery', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45');
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données :  `simple-mvc`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `item`
---
-
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `item`
---
-
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
