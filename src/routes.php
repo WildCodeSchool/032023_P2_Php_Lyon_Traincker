@@ -18,4 +18,5 @@ return [
     'list' => ['TimesheetController', 'show',  ['id']],
 
 
+    'bookmarks' => ['BookmarksController', 'bookmarks',],
 ];

@@ -1,3 +1,15 @@
+:root {
+    /* fonts ------------*/
+    --logo-font: 'Monoton', cursive;
+
+    /* colors -----------*/
+
+    --primary-color: #FFE073;
+    --secondary-color: #395055;
+    --light-color: white;
+    --dark-color: #1E1E1E;
+}
+
 body {
     color: #ffffff;
     background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
@@ -31,3 +43,19 @@ h1{
         color: #fffefe;
 }
 
+
+/* navbar -------------- */
+
+nav.navbar {
+    background-color: var(--primary-color);
+}
+nav form a.logo {
+    font-family: var(--logo-font);
+}
+nav form a.logo:hover {
+    color: var(--light-color);
+}
+nav form a.fav:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
