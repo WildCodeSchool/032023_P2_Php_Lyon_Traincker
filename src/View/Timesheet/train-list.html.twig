@@ -1,0 +1,56 @@
+{% extends 'Timesheet/index.html.twig' %}
+
+{% block content %}
+    
+    <section class="timesheet-header container d-flex justify-content-center align-items-center">
+    <img src="/assets/images/woman-on-rails.jpg" class="timesheet-header-img img-fluid object-fit-cover position-absolute" alt="woman on rails">
+
+
+        <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
+        <div>
+            <h3>Quelle gare ?</h3>
+            <div class="dropdown-center">
+                <button class="btn btn-primary border border-3 rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                {{station.name}}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for stationItem in stations %}
+                    <li><a class="dropdown-item" href="/timesheet/train-list?id={{ stationItem.id }}">{{ stationItem.name }}</a></li>
+                {% else %}
+                    <li>Nothing to display</li>
+                {% endfor %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    {% block trains %}
+        <section class="timesheet-trains container d-flex .justify-content-center .justify-content-sm-center .justify-content-md-center align-items-center flex-wrap">
+                {% for transit in transits %}
+                        <article class="card p-3 m-3 border border-3 rounded-5">
+
+                            <div class="train-number m-1"># 11568</div>
+
+                            <div class="train-from m-2">
+                                <div>Arrivée</div>
+                                <div class="lead">18h02 en provenance de {{station.name}}</div>
+                            </div>
+
+                            <div class="train-to m-2">
+                                <div>Départ</div>
+                                <div class="lead">18h16 à destination de {{station.name}}</div>
+                            </div>
+
+                            <div class="option-buttons m-2 d-flex justify-content-between">
+                                <button class="btn btn-primary">Favoris</button>
+                                <button class="btn">Signaler un retard</button>
+                            </div>
+
+                        </article>
+                {% else %}
+                    <li>No train card to display</li>
+                {% endfor %}
+        </section>
+    {% endblock %}
+{% endblock %}

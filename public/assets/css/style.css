@@ -1,3 +1,93 @@
-body {
-    color: #f76c6c;
+:root {
+  /* fonts ------------*/
+  --logo-font: 'Monoton', cursive;
+
+  /* colors -----------*/
+
+  --primary-color: #FFE073;
+  --secondary-color: #395055;
+  --light-color: white;
+  --dark-color: #1E1E1E;
 }
+
+/* Timesheet -----------------------*/
+
+.timesheet-header .dropdown-center:hover>.dropdown-menu {
+  display: block;
+}
+.timesheet-header .dropdown-center>.dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.timesheet-header {
+  height: calc(100vw / 2.65);
+}
+
+.img-fluid {
+  width: 100vw;
+  opacity: 65%;
+}
+
+
+
+.timesheet-header .glass {
+  width: 80%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin: auto;
+}
+
+.timesheet-header h3 {
+  color: white;
+}
+
+.timesheet-header .dropdown-center,
+.timesheet-header .dropdown-menu {
+  width: 50vw;
+}
+
+.timesheet-header .dropdown-center .btn-primary {
+  color: var(--secondary-color);
+  font-weight: 600;
+  background-color: white;
+  width: 100%;
+  border-color: var(--primary-color);
+}
+
+.timesheet-trains {
+  background: linear-gradient(var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+article.card {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.train-number::after,
+.train-from::after,
+.train-to::after {
+  display: block;
+  content: "";
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  margin: 5px 0px;
+}
+
+.option-buttons .btn-primary {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-color: white;
+}
+
+.train-from :first-child::before,
+.train-to :first-child::before {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  margin: 5px 10px 5px 0px;
+}
+

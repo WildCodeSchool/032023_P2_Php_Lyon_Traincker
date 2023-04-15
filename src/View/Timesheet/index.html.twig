@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="timesheet-header container">
+        <h3>Quelle gare ?</h3>
+        <div class="dropdown-center">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+              Choisissez une Gare
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              {% for stationItem in stations %}
+                <li><a class="dropdown-item" href="/timesheet/train-list?id={{ stationItem.id }}">{{ stationItem.name }}</a></li>
+              {% else %}
+                <li>Nothing to display</li>
+              {% endfor %}
+            </ul>
+          </div>
+    </section>
+    {% block trains %}{% endblock %}
+{% endblock %}
+
+
