@@ -8,20 +8,6 @@ use App\Model\TransitManager;
 
 class TimesheetController extends AbstractController
 {
-    /**
-     * List stations
- */
-    // public function station(): string
-    // {
-    //     $stationManager = new StationManager();
-    //     $stations = $stationManager->selectAll('name');
-
-    //     return $this->twig->render('Timesheet/index.html.twig', ['stations' => $stations]);
-    // }
-
-    /**
-     * List trains
-     */
     public function index(): string
     {
         $trainManager = new TrainManager();
@@ -39,43 +25,32 @@ class TimesheetController extends AbstractController
         ]);
     }
 
-        public function show(int $id): string
-        {
-            $stationManager = new stationManager();
-            $station = $stationManager->selectOneById($id);
-            $stations = $stationManager->selectAll('name');
-            $stations = $stationManager->selectAll('id');
+    public function show(int $id): string
+    {
+        $stationManager = new stationManager();
+        $stationByID = $stationManager->selectOneById($id);
+        $stations = $stationManager->selectAll('name');
+        $stations = $stationManager->selectAll('id');
 
-            $trainManager = new TrainManager();
-            $trains = $trainManager->selectAll('number');
+        $trainManager = new TrainManager();
+        $trains = $trainManager->selectAll('number');
 
-            // --- transits --------------
+        // --- transits --------------
 
-            $transitManager = new TransitManager();
-            $transits = $transitManager->selectAll('trainid');
-            $transits = $transitManager->selectAll('stationid');
-            $transits = $transitManager->selectAll('transittime');
-            $transitItem = $transitManager->selectOneById($id);
-    
-            return $this->twig->render('Timesheet/train-list.html.twig', [
-                'station' => $station,
-                'stations' => $stations,
+        $transitManager = new TransitManager();
+        $transits = $transitManager->selectAll('trainid');
+        $transits = $transitManager->selectAll('stationid');
+        $transits = $transitManager->selectAll('transittime');
+        $transitByID = $transitManager->selectOneById($id);
 
-                'trains' => $trains,
+        return $this->twig->render('Timesheet/train-list.html.twig', [
+            'stationByID' => $stationByID,
+            'stations' => $stations,
 
-                'transits' => $transits,
-                'transit' => $transitItem,
-            ]);
-        }
+            'trains' => $trains,
+
+            'transits' => $transits,
+            'transitByID' => $transitByID,
+        ]);
     }
-
-        /**
-     * Show informations for a train
-     */
-    // public function show(int $id): string
-    // {
-    //     $trainManager = new TrainManager();
-    //     $train = $trainManager->selectOneById($id);
-
-    //     return $this->twig->render('Timesheet/show.html.twig', ['train' => $train]);
-    // }
+}

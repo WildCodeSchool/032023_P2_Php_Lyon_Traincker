@@ -2,48 +2,61 @@
 
 {% block content %}
     
-    <section class="timesheet-header container d-flex justify-content-center align-items-center">
-    <img src="/assets/images/woman-on-rails.jpg" class="timesheet-header-img img-fluid object-fit-cover position-absolute" alt="woman on rails">
+    <section class="timesheet-header p-0 m-0">
+        <div class="page-header-image h-100 w-100 d-flex">
+        {# <img src="/assets/images/woman-on-rails.jpg" class="timesheet-header-img img-fluid object-fit-cover position-absolute" alt="woman on rails"> #}
 
 
-        <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
-        <div>
-            <h3>Quelle gare ?</h3>
-            <div class="dropdown-center">
-                <button class="btn btn-primary border border-3 rounded-pill dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-                {{station.name}}
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for stationItem in stations %}
-                    <li><a class="dropdown-item" href="/timesheet/train-list?id={{ stationItem.id }}">{{ stationItem.name }}</a></li>
-                {% else %}
-                    <li>Nothing to display</li>
-                {% endfor %}
-                </ul>
-            </div>
+            <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
+                <div>
+                    <h3>Quelle gare ?</h3>
+                    <div class="dropdown-center">
+                        <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {{stationByID.name}} <div class="line"> </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for station in stations %}
+                            <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
+                        {% else %}
+                            <li>Nothing to display</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     {% block trains %}
-        <section class="timesheet-trains container d-flex .justify-content-center .justify-content-sm-center .justify-content-md-center align-items-center flex-wrap">
-                {% for transit in transits %}
+        <section class="timesheet-trains m-0">
+            <div class="container d-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-center flex-wrap">
+                {% for train in trains %}
                         <article class="card p-3 m-3 border border-3 rounded-5">
 
-                            <div class="train-number m-1"># 11568</div>
+                            <div class="train-number m-1"># {{ train.number }}</div>
 
                             <div class="train-from m-2">
-                                <div>Arrivée</div>
-                                <div class="lead">18h02 en provenance de {{station.name}}</div>
+                                <div class="blockquote-footer m-1">Arrivée</div>
+                                <div class="">
+                                    <span class="lead fs-3"><strong>18h02</strong></span>
+                                    <span>en provenance de</span>
+                                    <span class="lead fs-3"><strong>{{stationByID.name}}</strong></span>
+                                </div>
                             </div>
 
                             <div class="train-to m-2">
-                                <div>Départ</div>
-                                <div class="lead">18h16 à destination de {{station.name}}</div>
+                                <div class="blockquote-footer m-1">Départ</div>
+                                <div class="">
+                                    <span class="lead fs-3"><strong>18h16</strong></span>
+                                    <span>à destination de</span>
+                                    <span class="lead fs-3"><strong>{{stationByID.name}}</strong></span>
+                                </div>
                             </div>
 
                             <div class="option-buttons m-2 d-flex justify-content-between">
+                                {# To do: feature to add selected train to user.bookmarks #}
                                 <button class="btn btn-primary">Favoris</button>
+                                {# ------------------------------------------------------ #}
                                 <button class="btn">Signaler un retard</button>
                             </div>
 
@@ -51,6 +64,7 @@
                 {% else %}
                     <li>No train card to display</li>
                 {% endfor %}
+            </div>
         </section>
     {% endblock %}
 {% endblock %}
