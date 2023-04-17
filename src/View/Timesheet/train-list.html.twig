@@ -5,9 +5,6 @@
     
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
-        {# <img src="/assets/images/woman-on-rails.jpg" class="timesheet-header-img img-fluid object-fit-cover position-absolute" alt="woman on rails"> #}
-
-
             <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
@@ -19,7 +16,7 @@
                         {% for station in stations %}
                             <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
                         {% else %}
-                            <li>Nothing to display</li>
+                            <li>Aucune gare disponible</li>
                         {% endfor %}
                         </ul>
                     </div>
@@ -39,22 +36,39 @@
                             <div class="train-from m-2">
                                 <div class="blockquote-footer m-1">Arrivée</div>
                                 <div class="">
+
+                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>18h02</strong></span>
+                                    {# ----------------------------------------------------------------- #}
+
                                     <span>en provenance de</span>
+
+                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>{{stationByID.name}}</strong></span>
+                                    {# ----------------------------------------------------------------- #}
+
                                 </div>
                             </div>
 
                             <div class="train-to m-2">
                                 <div class="blockquote-footer m-1">Départ</div>
                                 <div class="">
+                                
+                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>18h16</strong></span>
+                                    {# ----------------------------------------------------------------- #}
+
                                     <span>à destination de</span>
+
+                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>{{stationByID.name}}</strong></span>
+                                    {# ----------------------------------------------------------------- #}
+
                                 </div>
                             </div>
 
                             <div class="option-buttons m-2 d-flex justify-content-between">
+
                                 {# To do: feature to add selected train to user.bookmarks #}
                                 <button class="btn btn-primary">Favoris</button>
                                 {# ------------------------------------------------------ #}
@@ -66,7 +80,7 @@
 
                         </article>
                 {% else %}
-                    <li>No train card to display</li>
+                    <li>Aucun train disponible</li>
                 {% endfor %}
             </div>
         </section>
