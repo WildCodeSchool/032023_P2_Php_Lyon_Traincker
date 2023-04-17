@@ -10,14 +10,19 @@
     --dark-color: #1E1E1E;
 }
 
-body {
-    color: #ffffff;
+
+
+.bg-image{
     background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-color: rgb(68, 255, 0);
-  background-blend-mode: multiply;
+    background-position: center;
+    background-blend-mode: multiply;
+    
+    
+  
+    
+    
 }
 
 .container {
@@ -25,22 +30,61 @@ body {
     height: 50%;   
 }
 
-h1{
-    text-align: center;
-    padding: 2rem;    
+
+.bg-Button{
+    background-color: rgba(223, 215, 215, 0.2);
+    padding-top: 3em;
+    padding-bottom: 3em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3em;
+    
+    
+    
+    
+}
+.pad{
+    padding-bottom: 4em;
+    padding-top: 1em;
+}
+.bg-color{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
+    
+}
+.circle{
+    width: 10%; 
+    height: 63%; 
+    background-color: #fff; 
+    border-radius: 50%; 
+  
 }
 
-.button{
-    background-image: linear-gradient(to right, #826e41, #63d626);
-  
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
+
+.btn-hover-image{
+    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 25px;
+    box-shadow: 10px 9px 4px 1px var(--secondary-color);
+    outline: 2px solid white;
+    font-weight: 700;
+    text-align: left;  
 }
-.button:hover {
-    background-color: #224162;
-        color: #fffefe;
+
+.btn-hover-image:hover {
+    background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color) );
+}
+
+.rightClasse {
+    float: right;
+}
+
+.divButton{
+    padding-bottom: 10px;
+    margin-bottom: -25px;    
 }
 
 

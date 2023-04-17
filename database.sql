@@ -1,25 +1,21 @@
-CREATE DATABASE test;
-CREATE TABLE testest (
-`id`  int UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-`name` varchar(255) NOT NULL,
-`T1` TEXT NOT NULL,
-`T2` TEXT NOT NULL,
-`T3` TEXT NOT NULL,
-`T4` TEXT NOT NULL,
-`T5` TEXT NOT NULL
-);
+CREATE DATABASE traincker;
+​
 
-INSERT INTO `testest` (`name`, `T1`, `T2`, `T3`, `T4`, `T5`) VALUES
-('Lyon', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Paris', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Marseille', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Nantes', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Pau', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Montpellier', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Lille', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Bordeaux', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Toulouse', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Roanne', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Annecy', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45'),
-('Chambery', 'Train n°548 en provenance de Paris et a destination de Marseille. Heure de depart: 17h00', 'Train n°547 en provenance de Dijon et a destination de Marseille. Heure de depart: 17h15', 'Train n°549 en provenance de Bordeaux et a destination de Paris. Heure de depart: 17h30', 'Train n°448 en provenance de Lille et a destination de Montpellier. Heure de depart: 17h35', 'Train n°538 en provenance de Pau et a destination de Roanne. Heure de depart: 17h45');
-
+CREATE TABLE `station` (
+  `id` int UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL);
+  
+  CREATE TABLE `train` (
+  `id` int UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `number` int NOT NULL,
+  `departure` varchar(255) NOT NULL,
+  `arrival` varchar(255) NOT NULL
+  );
+  
+  
+  
+  CREATE TABLE `transit` (
+  `id` int UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `station_id` int NOT NULL,
+  `train_id` int NOT NULL,
+  `time` time NOT NULL DEFAULT '00:00:00');
