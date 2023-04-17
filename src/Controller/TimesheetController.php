@@ -12,7 +12,6 @@ class TimesheetController extends AbstractController
         $stationManager = new stationManager();
         $stationByID = $stationManager->selectOneById($id);
         $stations = $stationManager->selectAll('name');
-        $stations = $stationManager->selectAll('id');
 
         $trainManager = new TrainManager();
         $trains = $trainManager->selectAll('number');
