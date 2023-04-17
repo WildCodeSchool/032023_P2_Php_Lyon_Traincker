@@ -9,5 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'timesheet' => ['TimesheetController', 'index',],
-    'timesheet/train-list' => ['TimesheetController', 'show', ['id']]
+    'timesheet/train-list' => ['TimesheetController', 'show', ['id']],
+
+    'bookmarks' => ['BookmarksController', 'bookmarks',],
 ];
