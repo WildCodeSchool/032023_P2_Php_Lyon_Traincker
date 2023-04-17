@@ -1,4 +1,5 @@
-{% extends 'Timesheet/index.html.twig' %}
+{% extends 'layout.html.twig' %}
+{% block title %}Résultat de votre recherche{% endblock %}
 
 {% block content %}
     
@@ -57,7 +58,10 @@
                                 {# To do: feature to add selected train to user.bookmarks #}
                                 <button class="btn btn-primary">Favoris</button>
                                 {# ------------------------------------------------------ #}
+
+                                {# To do: feature to declare train delays #}
                                 <button class="btn">Signaler un retard</button>
+                                {# ------------------------------------------------------ #}
                             </div>
 
                         </article>
