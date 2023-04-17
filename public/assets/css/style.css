@@ -162,7 +162,7 @@ article.card {
     background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color) );
 }
 
-.rightClasse {
+.rightClass {
     float: right;
 }
 
