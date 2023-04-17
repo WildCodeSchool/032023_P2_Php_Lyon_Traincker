@@ -85,6 +85,7 @@ article.card {
   width: fit-content;
   background-color: rgba(255, 255, 255, 0.5);
   position: unset;
+  color: white;
 }
 
 .train-number::after,
