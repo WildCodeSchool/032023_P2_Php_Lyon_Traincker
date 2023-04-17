@@ -10,9 +10,6 @@
     --dark-color: #1E1E1E;
 }
 
-body {
-    color: #f76c6c;
-
 /* Timesheet -----------------------*/
 
 .timesheet-header .dropdown-center:hover>.dropdown-menu {
