@@ -10,19 +10,107 @@
     --dark-color: #1E1E1E;
 }
 
-
-
 .bg-image{
     background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: multiply;
-    
-    
-  
-    
-    
+} 
+
+/* Timesheet -----------------------*/
+
+.timesheet-header .dropdown-center:hover>.dropdown-menu {
+  display: block;
+}
+
+.timesheet-header .dropdown-center>.dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.timesheet-header .dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
+.timesheet-header .dropdown-item {
+  color: var(--primary-color);
+}
+.timesheet-header .dropdown-item:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.timesheet-header .dropdown-center .line::after {
+  display: block;
+  content: "";
+  width: 50%;
+  height: 1px;
+  background-color: var(--primary-color);
+}
+
+.timesheet-header {
+  height: 300px;
+  width: 100vw;
+}
+
+.timesheet-header .page-header-image {
+  background-image: url('/assets/images/woman-on-rails.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+}
+
+.timesheet-header .glass {
+  width: clamp(500px, 80vw, 700px);
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin: auto;
+}
+
+.timesheet-header h3 {
+  color: white;
+}
+
+.timesheet-header .dropdown-center,
+.timesheet-header .dropdown-menu {
+  width: clamp(300px, 50vw, 500px);
+}
+
+.timesheet-header .dropdown-center .btn-primary {
+
+  color: var(--secondary-color);
+  font-weight: 600;
+  background-color: white;
+  width: 100%;
+}
+
+.timesheet-trains {
+  background: linear-gradient(var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+article.card {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: unset;
+  color: white;
+}
+
+.train-number::after,
+.train-from::after,
+.train-to::after {
+  display: block;
+  content: "";
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  margin: 5px 0px;
+}
+
+.option-buttons .btn-primary {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-color: white;
 }
 
 .container {
@@ -38,12 +126,9 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 3em;
-    
-    
-    
-    
+    border-radius: 3em;  
 }
+
 .pad{
     padding-bottom: 4em;
     padding-top: 1em;
@@ -60,7 +145,6 @@
     border-radius: 50%; 
   
 }
-
 
 .btn-hover-image{
     background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
@@ -86,7 +170,6 @@
     padding-bottom: 10px;
     margin-bottom: -25px;    
 }
-
 
 /* navbar -------------- */
 

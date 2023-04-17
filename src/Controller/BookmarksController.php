@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\BookmarksManager;
-
 class BookmarksController extends AbstractController
 {
         /**
