@@ -1,15 +1,17 @@
 :root {
-  /* fonts ------------*/
-  --logo-font: 'Monoton', cursive;
+    /* fonts ------------*/
+    --logo-font: 'Monoton', cursive;
 
-  /* colors -----------*/
+    /* colors -----------*/
 
-  --primary-color: #FFE073;
-  --secondary-color: #395055;
-  --light-color: white;
-  --dark-color: #1E1E1E;
-
+    --primary-color: #FFE073;
+    --secondary-color: #395055;
+    --light-color: white;
+    --dark-color: #1E1E1E;
 }
+
+body {
+    color: #f76c6c;
 
 /* Timesheet -----------------------*/
 
@@ -103,5 +105,21 @@ article.card {
   color: var(--secondary-color);
   background-color: var(--primary-color);
   border-color: white;
+}
+
+/* navbar -------------- */
+
+nav.navbar {
+    background-color: var(--primary-color);
+}
+nav form a.logo {
+    font-family: var(--logo-font);
+}
+nav form a.logo:hover {
+    color: var(--light-color);
+}
+nav form a.fav:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
