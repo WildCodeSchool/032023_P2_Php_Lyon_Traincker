@@ -25,4 +25,3 @@ class TimesheetController extends AbstractController
         ]);
     }
 }
-
