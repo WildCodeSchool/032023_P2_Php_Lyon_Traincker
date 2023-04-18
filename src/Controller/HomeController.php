@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\HomeManager;
+use App\Model\StationManager;
 
 class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $homeManager = new HomeManager();
-        $station = $homeManager->selectAll();
+        $stationManager = new StationManager();
+        $station = $stationManager->selectAll();
 
         return $this->twig->render('Home/index.html.twig', ['stations' => $station]);
     }
