@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\TrainManager;
 use App\Model\StationManager;
+use App\Model\TransitManager;
 
 class TimesheetController extends AbstractController
 {
@@ -16,11 +17,17 @@ class TimesheetController extends AbstractController
         $trainManager = new TrainManager();
         $trains = $trainManager->selectAll('number');
 
+        $transitManager = new TransitManager();
+        $cardDatas = $transitManager->selectAllByStationId($id);
+
+
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationByID' => $stationByID,
             'stations' => $stations,
 
-            'trains' => $trains
+            'trains' => $trains,
+
+            'cardDatas' => $cardDatas,
         ]);
     }
 }
