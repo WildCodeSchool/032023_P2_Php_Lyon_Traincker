@@ -114,11 +114,11 @@ article.card {
   border-color: white;
 }
 
-.container_Train_Station {
+.containerTrainStation {
     margin : 1.5rem;
     height: 50%;   
 }
-.change_Margin_Mobile{
+.changeMarginMobile{
   margin: -2.5rem;
 }
 .bg-Button{
