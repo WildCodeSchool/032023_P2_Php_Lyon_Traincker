@@ -4,7 +4,6 @@
 
   /* colors -----------*/
 
-<<<<<<< HEAD
     --primary-color: #FFE073;
     --secondary-color: #395055;
     --light-color: white;
@@ -22,12 +21,6 @@
   100% {
     transform: translateY(0px);
   }
-=======
-  --primary-color: #FFE073;
-  --secondary-color: #395055;
-  --light-color: white;
-  --dark-color: #1E1E1E;
->>>>>>> 8b6dd981ae51d6139ebbca501647f8b13cd1b1c1
 }
 
 .bg-image {
@@ -220,15 +213,9 @@
   float: right;
 }
 
-<<<<<<< HEAD
 .divButton{
     padding-bottom: 10px;
     margin-bottom: -25px;
-=======
-.divButton {
-  padding-bottom: 10px;
-  margin-bottom: -25px;
->>>>>>> 8b6dd981ae51d6139ebbca501647f8b13cd1b1c1
 }
 
 /* navbar -------------- */
