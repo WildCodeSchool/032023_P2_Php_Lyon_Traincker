@@ -69,7 +69,7 @@
 }
 
 .timesheet-header h3 {
-  color: white;
+  color: var(--light-color);
 }
 
 .timesheet-header .dropdown-center,
@@ -81,7 +81,7 @@
 
   color: var(--secondary-color);
   font-weight: 600;
-  background-color: white;
+  background-color: var(--light-color);
   width: 100%;
 }
 
@@ -93,7 +93,7 @@ article.card {
   width: fit-content;
   background-color: rgba(255, 255, 255, 0.5);
   position: unset;
-  color: white;
+  color: var(--light-color);
 }
 
 .train-number::after,
@@ -110,7 +110,17 @@ article.card {
 .option-buttons .btn-primary {
   color: var(--secondary-color);
   background-color: var(--primary-color);
-  border-color: white;
+  border-color: var(--light-color);
+}
+
+.option-buttons .delay:hover {
+  background-color: red;
+  color: var(--light-color);
+}
+
+.option-buttons .bookmark:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
 }
 
 .container {
@@ -142,18 +152,17 @@ article.card {
     width: 10%; 
     height: 63%; 
     background-color: #fff; 
-    border-radius: 50%; 
-  
+    border-radius: 50%;
 }
 
 .btn-hover-image{
     background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    color: #fff;
+    color: var(--light-color);
     border: none;
     padding: 7px 20px;
     border-radius: 25px;
     box-shadow: 10px 9px 4px 1px var(--secondary-color);
-    outline: 2px solid white;
+    outline: 2px solid var(--light-color);
     font-weight: 700;
     text-align: left;  
 }
