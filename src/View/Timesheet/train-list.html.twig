@@ -5,7 +5,8 @@
     
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
-            <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
+{# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
+            <div class="glass-d p-5 d-none d-md-flex justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
                     <div class="dropdown-center">
@@ -22,6 +23,25 @@
                     </div>
                 </div>
             </div>
+{# Mobile dropdown menu ------------------------------------------------------------------------------------------------ #}
+            <div class="glass-m p-5 d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
+                <div>
+                    <h3>Quelle gare ?</h3>
+                    <div class="dropdown-center">
+                        <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {{stationByID.name}} <div class="line"> </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for station in stations %}
+                            <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
+                        {% else %}
+                            <li>Aucune gare disponible</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+{# --------------------------------------------------------------------------------------------------------------------- #}
         </div>
     </section>
 
