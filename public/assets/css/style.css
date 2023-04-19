@@ -60,11 +60,16 @@
   background-origin: content-box;
 }
 
-.timesheet-header .glass {
+.timesheet-header .glass-d {
   width: clamp(500px, 80vw, 700px);
   height: 60%;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  margin: auto;
+}
+.timesheet-header .glass-m {
+  width: clamp(500px, 80vw, 700px);
+  height: 60%;
   margin: auto;
 }
 
@@ -78,7 +83,6 @@
 }
 
 .timesheet-header .dropdown-center .btn-primary {
-
   color: var(--secondary-color);
   font-weight: 600;
   background-color: var(--light-color);
