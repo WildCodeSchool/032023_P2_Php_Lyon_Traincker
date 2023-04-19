@@ -1,8 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block content %}
-<div class="bg-image" >
-    <div class="p-3 bg-color">  
+<div class="bg-image"  >
+    <div class="p-3 bg-color"  >  
 
     
 
@@ -12,13 +13,13 @@
             <div class ="text-center col-md-3 "><div class="circle"></div></div>
         </div>
 
-        <div class = 'bg-Button'>
-            <div class = 'container col-md-10 mx-auto' >
+        <div class = "bg-Button d-none d-md-block">
+            <div class = "container col-md-10 mx-auto containerTrainStation">
                 <div class = "row" >
         
         {% for station in stations %}
 
-                    <div class="d-grid gap-1 col-md-6 cd-6 divButton">
+                    <div class="d-grid gap-1 col-md-6 cd-6 divButton" >
                 
 
                         <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image " role="button" > {{ station.name }}</a><br>
@@ -31,9 +32,7 @@
                 </div>
             </div>
         </div>
+        {% include "Home/index_mobile.html.twig" %}
     </div>
-</div>
-       
-    
-    
+</div>    
 {% endblock %}
