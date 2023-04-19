@@ -11,7 +11,7 @@ class TransitManager extends AbstractManager
     public function selectAllByStationId(int $id)
     {
 
-            // prepared request
+        // prepared request
         $statement = $this->pdo->prepare("
 
             SELECT 
