@@ -1,8 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Résultat de votre recherche{% endblock %}
-
 {% block content %}
-    
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
 {# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
@@ -11,7 +9,7 @@
                     <h3>Quelle gare ?</h3>
                     <div class="dropdown-center">
                         <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-                        {{stationByID.name}} <div class="line"> </div>
+                        {{stationById.name}} <div class="line"> </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {% for station in stations %}
@@ -29,7 +27,7 @@
                     <h3>Quelle gare ?</h3>
                     <div class="dropdown-center">
                         <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-                        {{stationByID.name}} <div class="line"> </div>
+                        {{stationById.name}} <div class="line"> </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {% for station in stations %}
