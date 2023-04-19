@@ -18,6 +18,7 @@
     background-blend-mode: multiply;
 } 
 
+
 /* Timesheet -----------------------*/
 
 .timesheet-header .dropdown-center:hover>.dropdown-menu {
@@ -113,12 +114,13 @@ article.card {
   border-color: white;
 }
 
-.container {
+.container_Train_Station {
     margin : 1.5rem;
     height: 50%;   
 }
-
-
+.change_Margin_Mobile{
+  margin: -2.5rem;
+}
 .bg-Button{
     background-color: rgba(223, 215, 215, 0.2);
     padding-top: 3em;
