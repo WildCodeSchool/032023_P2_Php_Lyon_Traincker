@@ -40,10 +40,10 @@ class TransitManager extends AbstractManager
 
             WHERE transit.station_id=:id     
         ");
-            
+
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-    
+
         return $statement->fetchAll();
     }
 }
