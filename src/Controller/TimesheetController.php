@@ -11,7 +11,7 @@ class TimesheetController extends AbstractController
     public function show(int $id): string
     {
         $stationManager = new stationManager();
-        $stationByID = $stationManager->selectOneById($id);
+        $stationById = $stationManager->selectOneById($id);
         $stations = $stationManager->selectAll('name');
 
         $trainManager = new TrainManager();
@@ -24,7 +24,7 @@ class TimesheetController extends AbstractController
 
 
         return $this->twig->render('Timesheet/train-list.html.twig', [
-            'stationByID' => $stationByID,
+            'stationById' => $stationById,
             'stations' => $stations,
 
             'trains' => $trains,
