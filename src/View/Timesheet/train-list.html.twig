@@ -1,8 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Résultat de votre recherche{% endblock %}
-
 {% block content %}
-    
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
 {# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
@@ -46,48 +44,41 @@
     </section>
 
     {% block trains %}
-        <section class="timesheet-trains m-0">
-            <div class="container d-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-center flex-wrap">
-                {% for cardData in cardDatas %}
-                        <article class="card p-3 m-3 border border-3 rounded-5">
-
-                            <div class="train-number m-1"># {{cardData.train_number}}</div>
-
-                            
-
-                            <div class="train-to m-2">
-                                <div class="blockquote-footer m-1">Départ</div>
-                                <div class="">
-                                
-                                    {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
-                                    <span>à destination de</span>
-
-                                    {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
+        {% set downarrow = "<i class='bi bi-arrow-90deg-down'></i>" %}
+        {% set bookmarkUnset = "<i class='bi bi-bookmark'></i>" %}
+        {% set bookmarkSet = "<i class='bi bi-bookmark-check-fill'></i>" %}
+        {% set clockUnset = "<i class='bi bi-clock'></i>" %}
+        {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
+            <section class="timesheet-trains m-0">
+                <div class="container d-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-center flex-wrap">
+                    {% for cardData in cardDatas %}
+                            <article class="train-card card p-3 m-3 border border-3 rounded-5">
+                                <div class="train-number m-1"># {{cardData.train_number}}</div>
+                                <div class="train-to m-2">
+                                    <div class="m-1">{{downarrow|raw}}Départ</div>
+                                    <div>
+                                        {# To do: replace with join table variable ------------------------- #}
+                                        <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
+                                        {# ----------------------------------------------------------------- #}
+                                        <span>à destination de</span>
+                                        {# To do: replace with join table variable ------------------------- #}
+                                        <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
+                                        {# ----------------------------------------------------------------- #}
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="option-buttons m-2 d-flex justify-content-between">
-
-                                {# To do: feature to add selected train to user.bookmarks #}
-                                <button class="btn btn-primary">Favoris</button>
-                                {# ------------------------------------------------------ #}
-
-                                {# To do: feature to declare train delays #}
-                                <button class="btn">Signaler un retard</button>
-                                {# ------------------------------------------------------ #}
-                            </div>
-
-                        </article>
-                {% else %}
-                    <li>Aucun train disponible</li>
-                {% endfor %}
-            </div>
-        </section>
+                                <div class="option-buttons m-2 d-flex justify-content-between">
+                                    {# To do: feature to add selected train to user.bookmarks #}
+                                    <button class="bookmark btn btn-primary">{{bookmarkUnset|raw}}</button>
+                                    {# ------------------------------------------------------ #}
+                                    {# To do: feature to declare train delays #}
+                                    <button class="delay btn">{{clockUnset|raw}} Retard</button>
+                                    {# ------------------------------------------------------ #}
+                                </div>
+                            </article>
+                    {% else %}
+                        <li>Aucun train disponible</li>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endblock %}
     {% endblock %}
-{% endblock %}

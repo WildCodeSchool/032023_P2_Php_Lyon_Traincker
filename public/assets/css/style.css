@@ -10,13 +10,13 @@
   --dark-color: #1E1E1E;
 }
 
-.bg-image{
-    background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: multiply;
-} 
+.bg-image {
+  background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+}
 
 
 /* Timesheet -----------------------*/
@@ -69,6 +69,7 @@
   backdrop-filter: blur(10px);
   margin: auto;
 }
+
 .timesheet-header .glass-m {
   width: clamp(500px, 80vw, 700px);
   height: 60%;
@@ -130,61 +131,65 @@ article.card {
 }
 
 .containerTrainStation {
-    margin : 1.5rem;
-    height: 50%;   
+  margin: 1.5rem;
+  height: 50%;
 }
-.changeMarginMobile{
+
+.changeMarginMobile {
   margin: -2.5rem;
 }
-.bg-Button{
-    background-color: rgba(223, 215, 215, 0.2);
-    padding-top: 3em;
-    padding-bottom: 3em;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3em;  
+
+.bg-Button {
+  background-color: rgba(223, 215, 215, 0.2);
+  padding-top: 3em;
+  padding-bottom: 3em;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3em;
 }
 
-.pad{
-    padding-bottom: 4em;
-    padding-top: 1em;
-}
-.bg-color{
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
-    
-}
-.circle{
-    width: 10%; 
-    height: 63%; 
-    background-color: #fff; 
-    border-radius: 50%;
+.pad {
+  padding-bottom: 4em;
+  padding-top: 1em;
 }
 
-.btn-hover-image{
-    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    color: var(--light-color);
-    border: none;
-    padding: 7px 20px;
-    border-radius: 25px;
-    box-shadow: 10px 9px 4px 1px var(--secondary-color);
-    outline: 2px solid var(--light-color);
-    font-weight: 700;
-    text-align: left;  
+.bg-color {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgb(255, 224, 115, 0.9), rgba(57, 80, 85, 0.5));
+
+}
+
+.circle {
+  width: 10%;
+  height: 63%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.btn-hover-image {
+  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  color: var(--light-color);
+  border: none;
+  padding: 7px 20px;
+  border-radius: 25px;
+  box-shadow: 10px 9px 4px 1px var(--secondary-color);
+  outline: 2px solid var(--light-color);
+  font-weight: 700;
+  text-align: left;
 }
 
 .btn-hover-image:hover {
-    background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color) );
+  background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color));
 }
 
 .rightClass {
-    float: right;
+  float: right;
 }
 
-.divButton{
-    padding-bottom: 10px;
-    margin-bottom: -25px;    
+.divButton {
+  padding-bottom: 10px;
+  margin-bottom: -25px;
 }
 
 /* navbar -------------- */
