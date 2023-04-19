@@ -8,6 +8,19 @@
     --secondary-color: #395055;
     --light-color: white;
     --dark-color: #1E1E1E;
+
+    /* Animation --------*/
+
+    --main-transition: .5s cubic-bezier(0.2,0,0,1); 
+}
+
+@keyframes push-up {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .bg-image{
@@ -95,11 +108,24 @@
   height: 80vh;
 }
 
-article.card {
+.timesheet-trains article.card {
   width: fit-content;
   background-color: rgba(255, 255, 255, 0.5);
   position: unset;
   color: var(--light-color);
+}
+
+.timesheet-trains article.train-card {
+  transform: scale(100%);
+  transform-origin: center;
+  transition: var(--main-transition);
+
+  animation: var(--main-transition) 0s 1 push-up;
+}
+
+.timesheet-trains article.train-card:hover {
+  transform: scale(105%);
+  border-color: red;
 }
 
 .train-number::after,
@@ -183,7 +209,7 @@ article.card {
 
 .divButton{
     padding-bottom: 10px;
-    margin-bottom: -25px;    
+    margin-bottom: -25px;
 }
 
 /* navbar -------------- */
