@@ -26,13 +26,6 @@
     </section>
 
     {% block trains %}
-
-    {% set downarrow = "<i class='bi bi-arrow-90deg-down'></i>" %}
-    {% set bookmarkUnset = "<i class='bi bi-bookmark'></i>" %}
-    {% set bookmarkSet = "<i class='bi bi-bookmark-check-fill'></i>" %}
-    {% set clockUnset = "<i class='bi bi-clock'></i>" %}
-    {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
-
         <section class="timesheet-trains m-0">
             <div class="container d-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-center flex-wrap">
                 {% for cardData in cardDatas %}
@@ -40,33 +33,20 @@
 
                             <div class="train-number m-1"># {{cardData.train_number}}</div>
 
-                            <div class="train-from m-2">
-                                <div class="m-1">{{downarrow|raw}}Arrivée</div>
-                                <div>
-
-                                    <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
-
-                                    <span>en provenance de</span>
-
-                                    {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{random(['Lyon', 'Marseille', 'Dijon', 'Paris', 'Toulouse','Rennes','Nantes','Pau','Bayonne','Bordeaux','Annecy','Montpellier'])}}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
-                                </div>
-                            </div>
+                            
 
                             <div class="train-to m-2">
-                                <div class="m-1">{{downarrow|raw}}Départ</div>
-                                <div>
+                                <div class="blockquote-footer m-1">Départ</div>
+                                <div class="">
                                 
                                     {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ cardData.depart_time }}</strong></span>
+                                    <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
                                     {# ----------------------------------------------------------------- #}
 
                                     <span>à destination de</span>
 
                                     {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ random(['Lyon', 'Marseille', 'Dijon', 'Paris', 'Toulouse','Rennes','Nantes','Pau','Bayonne','Bordeaux','Annecy','Montpellier']) }}</strong></span>
+                                    <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
                                     {# ----------------------------------------------------------------- #}
 
                                 </div>
@@ -75,11 +55,11 @@
                             <div class="option-buttons m-2 d-flex justify-content-between">
 
                                 {# To do: feature to add selected train to user.bookmarks #}
-                                <button class="bookmark btn btn-primary">{{bookmarkUnset|raw}}</button>
+                                <button class="btn btn-primary">Favoris</button>
                                 {# ------------------------------------------------------ #}
 
                                 {# To do: feature to declare train delays #}
-                                <button class="delay btn">{{clockUnset|raw}} Retard</button>
+                                <button class="btn">Signaler un retard</button>
                                 {# ------------------------------------------------------ #}
                             </div>
 
