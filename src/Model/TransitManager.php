@@ -8,7 +8,8 @@ class TransitManager extends AbstractManager
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
 
-    public function selectAllByStationId(int $id){
+    public function selectAllByStationId(int $id)
+    {
 
             // prepared request
         $statement = $this->pdo->prepare("
