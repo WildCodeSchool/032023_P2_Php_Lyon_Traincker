@@ -5,7 +5,7 @@
     
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
-{# ----------------------------------------------------------------------------------------------- #}
+{# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
             <div class="glass-d p-5 d-none d-md-flex justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-{# ----------------------------------------------------------------------------------------------- #}
+{# Mobile dropdown menu ------------------------------------------------------------------------------------------------ #}
             <div class="glass-m p-5 d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-{# ----------------------------------------------------------------------------------------------- #}
+{# --------------------------------------------------------------------------------------------------------------------- #}
         </div>
     </section>
 
@@ -59,21 +59,6 @@
                         <article class="card p-3 m-3 border border-3 rounded-5">
 
                             <div class="train-number m-1"># {{cardData.train_number}}</div>
-
-                            <div class="train-from m-2">
-                                <div class="m-1">{{downarrow|raw}}Arrivée</div>
-                                <div>
-
-                                    <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
-
-                                    <span>en provenance de</span>
-
-                                    {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ cardData.station_name }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
-                                </div>
-                            </div>
 
                             <div class="train-to m-2">
                                 <div class="m-1">{{downarrow|raw}}Départ</div>
