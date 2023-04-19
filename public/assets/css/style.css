@@ -1,13 +1,13 @@
 :root {
-    /* fonts ------------*/
-    --logo-font: 'Monoton', cursive;
+  /* fonts ------------*/
+  --logo-font: 'Monoton', cursive;
 
-    /* colors -----------*/
+  /* colors -----------*/
 
-    --primary-color: #FFE073;
-    --secondary-color: #395055;
-    --light-color: white;
-    --dark-color: #1E1E1E;
+  --primary-color: #FFE073;
+  --secondary-color: #395055;
+  --light-color: white;
+  --dark-color: #1E1E1E;
 }
 
 .bg-image{
@@ -36,6 +36,7 @@
 .timesheet-header .dropdown-item {
   color: var(--primary-color);
 }
+
 .timesheet-header .dropdown-item:hover {
   color: var(--secondary-color);
   background-color: var(--primary-color);
@@ -185,15 +186,47 @@ article.card {
 /* navbar -------------- */
 
 nav.navbar {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
+
 nav form a.logo {
-    font-family: var(--logo-font);
+  font-family: var(--logo-font);
 }
+
 nav form a.logo:hover {
-    color: var(--light-color);
+  color: var(--light-color);
 }
+
 nav form a.fav:hover {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+/*footer*/
+.footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.footer p {
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-bottom: 0;
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
+}
+
+.letters {
+  margin-bottom: 0;
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
+  margin-right: 50px;
+}
+
+a.logo.btn {
+  --font-family: var(--logo-font);
 }
