@@ -92,6 +92,7 @@
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 0%, var(--primary-color) 100%);
+  height: 80vh;
 }
 
 article.card {
@@ -102,7 +103,6 @@ article.card {
 }
 
 .train-number::after,
-.train-from::after,
 .train-to::after {
   display: block;
   content: "";
