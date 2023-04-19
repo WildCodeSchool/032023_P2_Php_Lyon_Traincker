@@ -1,0 +1,19 @@
+
+<div class = 'container changeMarginMobile col-md-10 mx-auto d-block d-md-none p-2'>
+    <div class = "row" >
+        
+        {% for station in stations %}
+
+                    <div class="d-grid gap-1 col-md-6 cd-6 divButton ">
+                
+
+                        <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image p-2 " role="button" > {{ station.name }}</a><br>
+                
+                    </div>
+           
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </div>
+ </div>  
+         
