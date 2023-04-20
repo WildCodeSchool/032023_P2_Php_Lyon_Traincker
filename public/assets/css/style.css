@@ -239,29 +239,23 @@ nav form a.fav:hover {
 
 /*footer*/
 .footer {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  width: 100%; 
   background-color: var(--primary-color);
-  color: var(--light-color);
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
 }
 
-.footer p {
-  justify-content: space-between;
-  margin-left: 60px;
-  margin-bottom: 0;
+p {
   color: var(--secondary-color);
   font-family: var(--logo-font);
 }
 
 .letters {
-  margin-bottom: 0;
   color: var(--secondary-color);
   font-family: var(--logo-font);
-  margin-right: 50px;
 }
 
-a.logo.btn {
-  --font-family: var(--logo-font);
+a.logo:hover {
+  font-family: var(--logo-font);
+  color: var(--light-color);
 }
