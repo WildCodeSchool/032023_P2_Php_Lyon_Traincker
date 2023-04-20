@@ -124,41 +124,29 @@ article.card {
   color: var(--primary-color);
 }
 
+/* Home ------------------------------------------------------------------------------------------------------*/
 .containerTrainStation {
     margin : 1.5rem;
     height: 50%;   
 }
-.changeMarginMobile{
-  margin: -2.5rem;
-}
+
 .bg-Button{
     background-color: rgba(223, 215, 215, 0.2);
-    padding-top: 3em;
-    padding-bottom: 3em;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 3em;  
 }
 
-.pad{
-    padding-bottom: 4em;
-    padding-top: 1em;
-}
 .bg-color{
     min-height: 100vh;
     background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
     
 }
 
-.bgColorMobile{
-  min-height: 108vh;
-  background-image: linear-gradient(to bottom, rgba(57,80,85,1),  rgb(255,224,115,1));
-}
-
 .circle{
-    width: 10%; 
-    height: 63%; 
+    width: 25px; 
+    height: 25px; 
     background-color: #fff; 
     border-radius: 50%;
 }
@@ -167,7 +155,6 @@ article.card {
     background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     color: var(--light-color);
     border: none;
-    padding: 7px 20px;
     border-radius: 25px;
     box-shadow: 10px 9px 4px 1px var(--secondary-color);
     outline: 2px solid var(--light-color);
@@ -176,27 +163,11 @@ article.card {
 }
 
 .btn-hover-image:hover {
-    background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color) );
+    background-image: linear-gradient(to left, var(--light-color), var(--primary-color) );
 }
 
 .rightClass {
     float: right;
-}
-
-.divButton{
-    padding-bottom: 10px;
-    margin-bottom: -25px;    
-}
-.btnImage{
-  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    color: var(--light-color);
-    /*border: none;*/
-    padding: 7px 20px;
-    border-radius: 25px;
-    box-shadow: 10px 9px 4px 1px var(--secondary-color);
-    outline: 2px solid var(--light-color);
-    font-weight: 700;
-    text-align: left;  
 }
 
 /* navbar -------------- */
