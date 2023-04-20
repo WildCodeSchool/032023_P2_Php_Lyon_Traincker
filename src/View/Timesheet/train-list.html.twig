@@ -1,16 +1,15 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Résultat de votre recherche{% endblock %}
-
 {% block content %}
-    
     <section class="timesheet-header p-0 m-0">
         <div class="page-header-image h-100 w-100 d-flex">
-            <div class="glass p-5 d-flex justify-content-center align-items-center flex-column rounded-5">
+{# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
+            <div class="glass-d p-5 d-none d-md-flex justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
                     <div class="dropdown-center">
                         <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-                        {{stationByID.name}} <div class="line"> </div>
+                        {{stationById.name}} <div class="line"> </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {% for station in stations %}
@@ -22,6 +21,25 @@
                     </div>
                 </div>
             </div>
+{# Mobile dropdown menu ------------------------------------------------------------------------------------------------ #}
+            <div class="glass-m p-5 d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
+                <div>
+                    <h3>Quelle gare ?</h3>
+                    <div class="dropdown-center">
+                        <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {{stationById.name}} <div class="line"> </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for station in stations %}
+                            <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
+                        {% else %}
+                            <li>Aucune gare disponible</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+{# --------------------------------------------------------------------------------------------------------------------- #}
         </div>
     </section>
 
@@ -34,53 +52,26 @@
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
 
         <section class="timesheet-trains m-0">
-            <div class="container d-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-center flex-wrap">
+            <div class="container d-flex justify-content-center align-items-center flex-wrap">
                 {% for cardData in cardDatas %}
-                        <article class="card p-3 m-3 border border-3 rounded-5">
+                        <article class="train-card card p-3 m-3 border border-3 rounded-5">
 
                             <div class="train-number m-1"># {{cardData.train_number}}</div>
-
-                            <div class="train-from m-2">
-                                <div class="m-1">{{downarrow|raw}}Arrivée</div>
-                                <div>
-
-                                    <span class="lead fs-3"><strong>{{ cardData.arrival_time }}</strong></span>
-
-                                    <span>en provenance de</span>
-
-                                    {# To do: replace with join table variable ------------------------- #}
-                                    <span class="lead fs-3"><strong>{{ cardData.station_name }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
-                                </div>
-                            </div>
 
                             <div class="train-to m-2">
                                 <div class="m-1">{{downarrow|raw}}Départ</div>
                                 <div>
-                                
-                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>{{ cardData.depart_time }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
                                     <span>à destination de</span>
-
-                                    {# To do: replace with join table variable ------------------------- #}
                                     <span class="lead fs-3"><strong>{{ cardData.station_name }}</strong></span>
-                                    {# ----------------------------------------------------------------- #}
-
                                 </div>
                             </div>
 
-                            <div class="option-buttons m-2 d-flex justify-content-between">
+                            <div class="option-buttons m-2 d-flex justify-content-end">
 
-                                {# To do: feature to add selected train to user.bookmarks #}
-                                <button class="bookmark btn btn-primary">{{bookmarkUnset|raw}}</button>
-                                {# ------------------------------------------------------ #}
-
-                                {# To do: feature to declare train delays #}
+                                <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
                                 <button class="delay btn">{{clockUnset|raw}} Retard</button>
-                                {# ------------------------------------------------------ #}
+
                             </div>
 
                         </article>
