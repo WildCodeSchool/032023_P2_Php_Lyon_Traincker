@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Résultat de votre recherche{% endblock %}
 {% block content %}
-    <section class="timesheet-header p-0 m-0">
+    <section class="timesheet-header p-0 m-0 z-2 position-relative">
         <div class="page-header-image h-100 w-100 d-flex">
 {# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
             <div class="glass-d p-5 d-none d-md-flex justify-content-center align-items-center flex-column rounded-5">
@@ -51,7 +51,7 @@
     {% set clockUnset = "<i class='bi bi-clock'></i>" %}
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
 
-        <section class="timesheet-trains m-0 z-n1 position-relative">
+        <section class="timesheet-trains m-0">
             <div class="container d-flex justify-content-center align-items-center flex-wrap">
                 {% for cardData in cardDatas %}
                         <article class="train-card card p-3 m-3 border border-3 rounded-5">
@@ -70,7 +70,7 @@
                             <div class="option-buttons m-2 d-flex justify-content-end">
 
                                 <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
-                                <button class="delay btn">{{clockUnset|raw}} Retard</button>
+                                <button class="delay btn btn-outline-danger">{{clockUnset|raw}} Retard</button>
 
                             </div>
 
