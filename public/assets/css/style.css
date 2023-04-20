@@ -156,66 +156,39 @@
   color: var(--primary-color);
 }
 
-.containerTrainStation {
-  margin: 1.5rem;
-  height: 50%;
+/* Home ------------------------------------------------------------------------------------------------------*/
+
+.homepage .bg-color{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
 }
 
-.changeMarginMobile {
-  margin: -2.5rem;
+.homepage .train-menu-title {
+  height: 20vh;
 }
 
-.bg-Button {
-  background-color: rgba(223, 215, 215, 0.2);
-  padding-top: 3em;
-  padding-bottom: 3em;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 3em;
-}
-
-.pad {
-  padding-bottom: 4em;
-  padding-top: 1em;
-}
-
-.bg-color {
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgb(255, 224, 115, 0.9), rgba(57, 80, 85, 0.5));
-
-}
-
-.circle {
-  width: 10%;
-  height: 63%;
-  background-color: #fff;
+.homepage .train-menu-title::before,
+.homepage .train-menu-title::after {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: var(--light-color);
   border-radius: 50%;
 }
 
-.btn-hover-image {
-  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-  color: var(--light-color);
-  border: none;
-  padding: 7px 20px;
-  border-radius: 25px;
-  box-shadow: 10px 9px 4px 1px var(--secondary-color);
-  outline: 2px solid var(--light-color);
-  font-weight: 700;
-  text-align: left;
+.train-list-menu {
+  width: 300px;
+}
+
+.btn-hover-image{
+    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    color: var(--light-color);
+    box-shadow: 10px 9px 0px 1px var(--secondary-color);
 }
 
 .btn-hover-image:hover {
-  background-image: linear-gradient(to left, rgb(255, 255, 254), var(--primary-color));
-}
-
-.rightClass {
-  float: right;
-}
-
-.divButton{
-    padding-bottom: 10px;
-    margin-bottom: -25px;
+    background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
 }
 
 /* navbar -------------- */
