@@ -2,28 +2,22 @@
 
 
 {% block content %}
-<div class="bg-image"  >
-    <div class="p-3 bg-color"  >  
-
-    
-
-        <div class="row pad">
-            <div class = "text-center col-md-3"><div class="rightClass circle"></div></div>
-            <div class="col-md-6"><h1 class="text-center text-light-emphasis text-md-danger">Choisissez votre gare</h1></div>
-            <div class ="text-center col-md-3 "><div class="circle"></div></div>
+<div class="homepage bg-image">
+    <div class="p-3 bg-color">  
+        <div class="train-menu-title d-flex justify-content-around align-items-center">
+            <h1 class="text-center text-light-emphasis text-md-danger">
+                Choisissez votre gare
+            </h1>
         </div>
 
-        <div class = "bg-Button py-3 d-none d-md-block">
-            <div class = "container col-md-10 mx-auto containerTrainStation">
-                <div class = "row" >
+        <div class = "bg-Button py-3 d-none d-md-flex">
+            <div class = "container col-md-10 mx-auto">
+                <div class = "row">
         
         {% for station in stations %}
 
-                    <div class="d-grid gap-1 col-md-6 cd-6 py-2" >
-                
-
-                        <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image px-1 py-3 " role="button" > {{ station.name }}</a><br>
-                
+                    <div class="desktop-train-menu d-grid gap-1 col-md-6 cd-6 py-2">
+                        <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image px-3 py-3 rounded-pill border-light border-2 fw-bold text-start" role="button" > {{ station.name }}</a><br>
                     </div>
            
         {% else %}

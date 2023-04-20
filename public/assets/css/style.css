@@ -125,49 +125,38 @@ article.card {
 }
 
 /* Home ------------------------------------------------------------------------------------------------------*/
-.containerTrainStation {
-    margin : 1.5rem;
-    height: 50%;   
-}
 
-.bg-Button{
-    background-color: rgba(223, 215, 215, 0.2);
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3em;  
-}
-
-.bg-color{
+.homepage .bg-color{
     min-height: 100vh;
     background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
-    
 }
 
-.circle{
-    width: 25px; 
-    height: 25px; 
-    background-color: #fff; 
-    border-radius: 50%;
+.homepage .train-menu-title {
+  height: 20vh;
+}
+
+.homepage .train-menu-title::before,
+.homepage .train-menu-title::after {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+}
+
+.train-list-menu {
+  width: 300px;
 }
 
 .btn-hover-image{
     background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     color: var(--light-color);
-    border: none;
-    border-radius: 25px;
-    box-shadow: 10px 9px 4px 1px var(--secondary-color);
-    outline: 2px solid var(--light-color);
-    font-weight: 700;
-    text-align: left;  
+    box-shadow: 10px 9px 0px 1px var(--secondary-color);
 }
 
 .btn-hover-image:hover {
-    background-image: linear-gradient(to left, var(--light-color), var(--primary-color) );
-}
-
-.rightClass {
-    float: right;
+    background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
 }
 
 /* navbar -------------- */
