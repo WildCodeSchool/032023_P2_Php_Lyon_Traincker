@@ -105,6 +105,31 @@
   width: 100%;
 }
 
+/*-- train-list --*/
+
+.train-card-title {
+  width: 100vw;
+}
+
+.train-card-header .train-card-title::before, 
+.train-card-header .train-card-title::after {
+  display: inline-block;
+  content: "";
+  width: clamp(20px, 10%, 200px);
+  height: 1px;
+  background-color: var(--light-color);
+  vertical-align: middle;
+  margin: 0px 10px;
+}
+
+.train-card-header-section::after {
+  display: block;
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: var(--primary-color);
+}
+
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 30%, var(--primary-color) 100%);
   min-height: 80vh;

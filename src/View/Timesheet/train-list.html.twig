@@ -52,6 +52,11 @@
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
 
         <section class="timesheet-trains m-0">
+            <div class="train-card-header-section d-flex flex-column align-items-center py-4">
+                <div class="train-card-header p-3 d-flex justify-content-center align-items-center text-light">
+                    <h1 class="train-card-title text-center">Résultat de votre recherche</h1>
+                </div>
+            </div>
             <div class="container d-flex justify-content-center align-items-center flex-wrap">
                 {% for cardData in cardDatas %}
                         <article class="train-card card p-3 m-3 border border-3 rounded-5">
