@@ -22,7 +22,7 @@ class TransitManager extends AbstractManager
                 DATE_FORMAT(
                     transit.transit_time, 
                     '%H:%i') 
-                    as arrival_time
+                    as departure_time
 
             FROM " . static::TABLE_TRANSIT . "
 
