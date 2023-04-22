@@ -129,7 +129,7 @@
 }
 
 .timesheet-trains {
-  background: linear-gradient(var(--secondary-color) 30%, var(--primary-color) 100%);
+  background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
   min-height: 80vh;
 }
 
