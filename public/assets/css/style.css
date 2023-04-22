@@ -70,9 +70,7 @@
 
 .timesheet-header .page-header-image {
   background-image: url('/assets/images/woman-on-rails.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
-  background-origin: content-box;
 }
 
 .timesheet-header .glass-d {
