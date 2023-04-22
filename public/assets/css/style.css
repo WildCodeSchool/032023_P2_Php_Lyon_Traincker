@@ -106,27 +106,40 @@
 /*-- train-list --*/
 
 .train-card-title {
-  width: 100vw;
+  /* background-color: var(--secondary-color); */
+  background-color: red;
+  translate: -50% 0;
+  left: 50%;
+  top: -10px;
 }
 
-.train-card-header .train-card-title::before, 
-.train-card-header .train-card-title::after {
+.timesheet-trains .result-stroke {
+  width: clamp(500px, 80%, 1000px);
+  translate: -50% 0;
+  left: 50%;
+  top: 80px;
+}
+
+.train-card-title::before, 
+.train-card-title::after {
   display: inline-block;
   content: "";
-  width: clamp(20px, 10%, 200px);
-  height: 1px;
+  width: 10px;
+  aspect-ratio: 1 / 1;
   background-color: var(--light-color);
+  border-radius: 50%;
   vertical-align: middle;
-  margin: 0px 10px;
+  margin: 0px 20px;
+  padding: 0px;
 }
 
-.train-card-header-section::after {
+/* .train-card-header-section::after {
   display: block;
   content: "";
   width: 90%;
   height: 1px;
   background-color: var(--primary-color);
-}
+} */
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
