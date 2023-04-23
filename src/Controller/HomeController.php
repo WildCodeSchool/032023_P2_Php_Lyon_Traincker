@@ -9,7 +9,7 @@ class HomeController extends AbstractController
     public function index(): string
     {
         $stationManager = new StationManager();
-        $station = $stationManager->selectAll();
+        $station = $stationManager->selectAll('name');
 
         return $this->twig->render('Home/index.html.twig', ['stations' => $station]);
     }
