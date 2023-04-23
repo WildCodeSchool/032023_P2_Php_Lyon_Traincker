@@ -106,11 +106,11 @@
 /*-- train-list --*/
 
 .train-card-title {
-  /* background-color: var(--secondary-color); */
-  background-color: red;
+  background-color: var(--secondary-color);
   translate: -50% 0;
   left: 50%;
-  top: -10px;
+  top: -20px;
+  vertical-align: middle;
 }
 
 .timesheet-trains .result-stroke {
@@ -118,6 +118,7 @@
   translate: -50% 0;
   left: 50%;
   top: 80px;
+  border-color: var(--primary-color)!important;
 }
 
 .train-card-title::before, 
@@ -126,20 +127,17 @@
   content: "";
   width: 10px;
   aspect-ratio: 1 / 1;
-  background-color: var(--light-color);
+  background-color: var(--primary-color);
   border-radius: 50%;
   vertical-align: middle;
-  margin: 0px 20px;
-  padding: 0px;
 }
 
-/* .train-card-header-section::after {
-  display: block;
-  content: "";
-  width: 90%;
-  height: 1px;
-  background-color: var(--primary-color);
-} */
+.train-card-title::before {
+  margin: 0 20px 0 0;
+}
+.train-card-title::after {
+  margin: 0 0 0 20px;
+}
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
@@ -162,7 +160,7 @@
 
 .timesheet-trains article.train-card:hover {
   transform: scale(105%);
-  border-color: red;
+  border-color: var(--primary-color)!important;
 }
 
 .train-number::after,
