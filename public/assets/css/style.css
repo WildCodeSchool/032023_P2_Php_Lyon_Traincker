@@ -201,6 +201,27 @@
   border-radius: 50%;
 }
 
+
+.homepage .btn-hover-image:hover:before{
+  display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+.homepage .btn-custom.btn-hover-image:hover::before{
+  display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  visibility: visible;
+}
+
 .train-list-menu {
   width: 300px;
 }
