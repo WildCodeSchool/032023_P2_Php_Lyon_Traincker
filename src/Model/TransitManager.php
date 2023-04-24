@@ -8,7 +8,7 @@ class TransitManager extends AbstractManager
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
 
-    public function selectAllByStationId(int $id)
+    public function selectAllByStationId(int $id, string $orderBy)
     {
 
         // prepared request
@@ -32,7 +32,8 @@ class TransitManager extends AbstractManager
                     JOIN " . static::TABLE_STATION . " 
                         ON transit.station_id=station.id
 
-            WHERE transit.station_id=:id    
+            WHERE transit.station_id=:id
+            ORDER BY " . $orderBy . " ASC
         ");
 
         $statement->bindValue('id', $id, \PDO::PARAM_INT);

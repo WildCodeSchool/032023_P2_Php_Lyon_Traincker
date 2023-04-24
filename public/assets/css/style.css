@@ -70,9 +70,7 @@
 
 .timesheet-header .page-header-image {
   background-image: url('/assets/images/woman-on-rails.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
-  background-origin: content-box;
 }
 
 .timesheet-header .glass-d {
@@ -108,30 +106,41 @@
 /*-- train-list --*/
 
 .train-card-title {
-  width: 100vw;
+  background-color: var(--secondary-color);
+  translate: -50% 0;
+  left: 50%;
+  top: -20px;
+  vertical-align: middle;
 }
 
-.train-card-header .train-card-title::before, 
-.train-card-header .train-card-title::after {
+.timesheet-trains .result-stroke {
+  width: clamp(500px, 80%, 1000px);
+  translate: -50% 0;
+  left: 50%;
+  top: 80px;
+  border-color: var(--primary-color)!important;
+}
+
+.train-card-title::before, 
+.train-card-title::after {
   display: inline-block;
   content: "";
-  width: clamp(20px, 10%, 200px);
-  height: 1px;
-  background-color: var(--light-color);
+  width: 10px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary-color);
+  border-radius: 50%;
   vertical-align: middle;
-  margin: 0px 10px;
 }
 
-.train-card-header-section::after {
-  display: block;
-  content: "";
-  width: 90%;
-  height: 1px;
-  background-color: var(--primary-color);
+.train-card-title::before {
+  margin: 0 20px 0 0;
+}
+.train-card-title::after {
+  margin: 0 0 0 20px;
 }
 
 .timesheet-trains {
-  background: linear-gradient(var(--secondary-color) 30%, var(--primary-color) 100%);
+  background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
   min-height: 80vh;
 }
 
@@ -151,7 +160,7 @@
 
 .timesheet-trains article.train-card:hover {
   transform: scale(105%);
-  border-color: red;
+  border-color: var(--primary-color)!important;
 }
 
 .train-number::after,
@@ -188,7 +197,7 @@
 }
 
 .homepage .train-menu-title {
-  height: 20vh;
+  height: 10vh;
 }
 
 .homepage .train-menu-title::before,
@@ -223,7 +232,7 @@
 }
 
 .train-list-menu {
-  width: 300px;
+  width: 240px;
 }
 
 .btn-hover-image{
