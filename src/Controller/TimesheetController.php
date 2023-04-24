@@ -18,10 +18,7 @@ class TimesheetController extends AbstractController
         $trains = $trainManager->selectAll('number');
 
         $transitManager = new TransitManager();
-        $cardDatas = $transitManager->selectAllByStationId($id);
-
-
-
+        $cardDatas = $transitManager->selectAllByStationId($id, 'train_number');
 
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
