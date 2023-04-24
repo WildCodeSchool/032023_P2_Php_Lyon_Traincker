@@ -212,7 +212,9 @@
 
 .train-list-menu {
   width: 240px;
+  font-size: x-large;
 }
+
 
 .btn-hover-image{
     background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
