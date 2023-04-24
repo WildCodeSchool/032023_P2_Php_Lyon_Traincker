@@ -183,6 +183,48 @@
   color: var(--primary-color);
 }
 
+/* Train-map ------------------------------------------------------------------------------------------------------*/
+
+.train-map {
+  background-color: var(--secondary-color);
+}
+
+.train-map .frame {
+  height: 140px;
+}
+
+.train-map .item::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: rotate(-35deg);
+  transform-origin: center;
+  translate: -85px;
+}
+
+.train-map .item {
+  transform: rotate(35deg);
+  transform-origin: left;
+  translate: 20px 30px
+}
+
+.train-map .dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+}
+
+.train-map .station {
+  color: var(--primary-color);
+}
+
+.train-map .item:hover .station {
+  color: var(--light-color);
+}
+
 /* Home ------------------------------------------------------------------------------------------------------*/
 
 .homepage .bg-color{

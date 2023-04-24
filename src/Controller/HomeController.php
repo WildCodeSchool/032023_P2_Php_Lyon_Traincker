@@ -11,6 +11,8 @@ class HomeController extends AbstractController
         $stationManager = new StationManager();
         $station = $stationManager->selectAll('name');
 
-        return $this->twig->render('Home/index.html.twig', ['stations' => $station]);
+        return $this->twig->render('Home/index.html.twig', [
+            'stations' => $station
+        ]);
     }
 }

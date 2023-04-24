@@ -1,0 +1,23 @@
+<section class="train-map">
+
+    <div class="container frame d-flex justify-content-around align-items-start">
+
+{% for station in stations %}
+{% set xRandCoord = random(10,90) %}
+{% set yRandCoord = random(30,280) %}
+
+        <div class="item d-flex justify-content-start flex-nowrap">
+            
+            <div class="dot rounded-pill mx-1"></div>
+            <a href="/timesheet/train-list?id={{ station.id }}"
+                class="link-offset-2 link-underline link-underline-opacity-0
+                        ">
+                <h5 class="station fs-6">{{station.name}}</h5>
+            </a>
+        </div>
+    
+{% endfor %}
+
+    </div>
+
+</section>
