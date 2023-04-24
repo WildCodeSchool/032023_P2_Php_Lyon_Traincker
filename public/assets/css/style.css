@@ -245,6 +245,12 @@
     background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
 }
 
+.btn-hover-mobile{
+  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  color: var(--light-color);
+  box-shadow: 10px 9px 0px 1px var(--secondary-color);
+}
+
 /* navbar -------------- */
 
 nav.navbar {
