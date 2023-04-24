@@ -108,10 +108,6 @@
 
 .train-card-title {
   background-color: var(--secondary-color);
-  translate: -50% 0;
-  left: 50%;
-  top: -20px;
-  vertical-align: middle;
 }
 
 .timesheet-trains .result-stroke {
@@ -131,6 +127,7 @@
   background-color: var(--primary-color);
   border-radius: 50%;
   vertical-align: middle;
+  translate: 0 -3px;
 }
 
 .train-card-title::before {
@@ -143,7 +140,7 @@
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
-  min-height: 80vh;
+  min-height: fit-content;
 }
 
 .timesheet-trains article.card {
@@ -191,6 +188,48 @@
   color: var(--primary-color);
 }
 
+/* Train-map ------------------------------------------------------------------------------------------------------*/
+
+.train-map {
+  background-color: var(--secondary-color);
+}
+
+.train-map .frame {
+  height: 140px;
+}
+
+.train-map .item::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: rotate(-35deg);
+  transform-origin: center;
+  translate: -85px;
+}
+
+.train-map .item {
+  transform: rotate(35deg);
+  transform-origin: left;
+  translate: 20px 30px
+}
+
+.train-map .dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+}
+
+.train-map .station {
+  color: var(--primary-color);
+}
+
+.train-map .item:hover .station {
+  color: var(--light-color);
+}
+
 /* Home ------------------------------------------------------------------------------------------------------*/
 
 .homepage .bg-color {
@@ -211,7 +250,6 @@
   background-color: var(--light-color);
   border-radius: 50%;
 }
-
 
 .homepage .btn-hover-image:hover:before {
   display: inline-block;
@@ -243,6 +281,17 @@
   color: var(--light-color);
   box-shadow: 10px 9px 0px 1px var(--secondary-color);
   font-size: x-large;
+}
+
+.train-list-menu {
+  width: 240px;
+  font-size: x-large;
+}
+
+.btn-hover-image{
+    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    color: var(--light-color);
+    box-shadow: 10px 9px 0px 1px var(--secondary-color);
 }
 
 .btn-hover-image:hover {
