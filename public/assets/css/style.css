@@ -197,7 +197,7 @@
 }
 
 .homepage .train-menu-title {
-  height: 20vh;
+  height: 10vh;
 }
 
 .homepage .train-menu-title::before,
@@ -211,7 +211,7 @@
 }
 
 .train-list-menu {
-  width: 300px;
+  width: 240px;
 }
 
 .btn-hover-image{
