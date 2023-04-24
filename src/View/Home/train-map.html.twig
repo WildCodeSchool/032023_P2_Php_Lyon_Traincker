@@ -1,1 +1,25 @@
-hello
+<section class="train-map position-relative w-100 h-100">
+
+    <div class="frame position-relative">
+
+{% for station in stations %}
+{% set xRandCoord = random(10,90) %}
+{% set yRandCoord = random(30,280) %}
+
+        <div class="item position-absolute d-flex"
+            style="
+                    translate: -50% -50%;
+                    left: {{xRandCoord}}%;
+                    top: {{yRandCoord}}px;
+                ">
+            
+            <div class="dot rounded-pill mx-1" id="{{station.name}}"></div>
+            <h5 class="station">{{station.name}}</h5>
+        </div>
+    
+
+{% endfor %}
+
+    </div>
+
+</section>

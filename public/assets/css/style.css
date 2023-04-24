@@ -183,6 +183,24 @@
   color: var(--primary-color);
 }
 
+/* Train-map ------------------------------------------------------------------------------------------------------*/
+
+.train-map .frame {
+  height: 300px;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.train-map .dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+}
+
+.train-map .station {
+  color: var(--primary-color);
+}
+
 /* Home ------------------------------------------------------------------------------------------------------*/
 
 .homepage .bg-color{
