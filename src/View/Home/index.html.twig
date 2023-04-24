@@ -10,14 +10,14 @@
             </h1>
         </div>
 
-        <div class = "bg-Button py-3 d-none d-md-flex">
-            <div class = "container col-md-10 mx-auto">
+        <div class = "bg-Button py-3 mx-5 d-none d-md-flex">
+            <div class = "container col-md-10 mx-auto w-75">
                 <div class = "row">
         
         {% for station in stations %}
 
                     <div class="desktop-train-menu d-grid gap-1 col-md-6 cd-6 py-2">
-                        <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image px-3 py-3 rounded-pill border-light border-2 fw-bold text-start" role="button" > {{ station.name }}</a><br>
+                        <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image px-3 py-3 rounded-pill border-light border-2 fw-bold text-start" role="button" > {{ station.name }}<em></em></a><br>
                     </div>
            
         {% else %}

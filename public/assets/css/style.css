@@ -4,20 +4,21 @@
 
   /* colors -----------*/
 
-    --primary-color: #FFE073;
-    --secondary-color: #395055;
-    --light-color: white;
-    --dark-color: #1E1E1E;
+  --primary-color: #FFE073;
+  --secondary-color: #395055;
+  --light-color: white;
+  --dark-color: #1E1E1E;
 
-    /* Animation --------*/
+  /* Animation --------*/
 
-    --main-transition: .5s cubic-bezier(0.2,0,0,1); 
+  --main-transition: .5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 @keyframes push-up {
   0% {
     transform: translateY(100px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -118,10 +119,10 @@
   translate: -50% 0;
   left: 50%;
   top: 80px;
-  border-color: var(--primary-color)!important;
+  border-color: var(--primary-color) !important;
 }
 
-.train-card-title::before, 
+.train-card-title::before,
 .train-card-title::after {
   display: inline-block;
   content: "";
@@ -135,6 +136,7 @@
 .train-card-title::before {
   margin: 0 20px 0 0;
 }
+
 .train-card-title::after {
   margin: 0 0 0 20px;
 }
@@ -160,7 +162,7 @@
 
 .timesheet-trains article.train-card:hover {
   transform: scale(105%);
-  border-color: var(--primary-color)!important;
+  border-color: var(--primary-color) !important;
 }
 
 .train-number::after,
@@ -191,9 +193,9 @@
 
 /* Home ------------------------------------------------------------------------------------------------------*/
 
-.homepage .bg-color{
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom,  rgb(255,224,115,0.9), rgba(57,80,85,0.5));
+.homepage .bg-color {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgb(255, 224, 115, 0.9), rgba(57, 80, 85, 0.5));
 }
 
 .homepage .train-menu-title {
@@ -211,7 +213,7 @@
 }
 
 
-.homepage .btn-hover-image:hover:before{
+.homepage .btn-hover-image:hover:before {
   display: inline-block;
   content: "";
   width: 12px;
@@ -221,7 +223,7 @@
   visibility: hidden;
 }
 
-.homepage .btn-custom.btn-hover-image:hover::before{
+.homepage .btn-custom.btn-hover-image:hover::before {
   display: inline-block;
   content: "";
   width: 12px;
@@ -233,19 +235,21 @@
 
 .train-list-menu {
   width: 240px;
+  font-size: x-large;
 }
 
-.btn-hover-image{
-    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    color: var(--light-color);
-    box-shadow: 10px 9px 0px 1px var(--secondary-color);
+.btn-hover-image {
+  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  color: var(--light-color);
+  box-shadow: 10px 9px 0px 1px var(--secondary-color);
+  font-size: x-large;
 }
 
 .btn-hover-image:hover {
-    background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
+  background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
 }
 
-.btn-hover-mobile{
+.btn-hover-mobile {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   color: var(--light-color);
   box-shadow: 10px 9px 0px 1px var(--secondary-color);
@@ -272,7 +276,7 @@ nav form a.fav:hover {
 
 /*footer*/
 .footer {
-  width: 100%; 
+  width: 100%;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   font-family: var(--logo-font);
