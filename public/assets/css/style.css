@@ -107,17 +107,10 @@
 
 .train-card-title {
   background-color: var(--secondary-color);
-  translate: -50% 0;
-  left: 50%;
-  top: -20px;
-  vertical-align: middle;
 }
 
 .timesheet-trains .result-stroke {
   width: clamp(500px, 80%, 1000px);
-  translate: -50% 0;
-  left: 50%;
-  top: 80px;
   border-color: var(--primary-color)!important;
 }
 
@@ -130,6 +123,7 @@
   background-color: var(--primary-color);
   border-radius: 50%;
   vertical-align: middle;
+  translate: 0 -3px;
 }
 
 .train-card-title::before {
@@ -141,7 +135,7 @@
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
-  min-height: 80vh;
+  min-height: fit-content;
 }
 
 .timesheet-trains article.card {

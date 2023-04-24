@@ -51,11 +51,11 @@
     {% set clockUnset = "<i class='bi bi-clock'></i>" %}
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
 
-        <section class="timesheet-trains m-0 overflow-x-hidden position-relative p-0">
-            <div class="result-stroke
+        <section class="timesheet-trains m-0 p-5 w-100">
+            <div class="result-stroke position-relative
                         border rounded-5 border-primary
-                        me-auto ms-auto p-4 position-absolute">
-                    <h1 class="train-card-title fs-3 text-nowrap z-2 position-absolute text-center text-light">Résultats de votre recherche</h1>
+                        me-auto ms-auto p-4">
+                    <h1 class="train-card-title fs-3 text-nowrap z-1 position-absolute top-0 start-50 translate-middle text-center text-light">Résultats de votre recherche</h1>
             
             <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
                 {% for cardData in cardDatas %}
