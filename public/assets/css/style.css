@@ -188,6 +188,7 @@
 /* Train-map ------------------------------------------------------------------------------------------------------*/
 
 .train-map {
+  display: none;
   background-color: var(--secondary-color);
 }
 
@@ -225,6 +226,10 @@
 
 .train-map .item:hover .station {
   color: var(--light-color);
+}
+
+.railroad-map {
+  width: clamp(350px, 60%, 600px);
 }
 
 /* Home ------------------------------------------------------------------------------------------------------*/
