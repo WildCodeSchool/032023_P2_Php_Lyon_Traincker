@@ -16,6 +16,7 @@ class TransitManager extends AbstractManager
 
             SELECT 
                 train.number as train_number,
+                train.id as train_id,
                 station.name as station_name,
                 destination,
 
