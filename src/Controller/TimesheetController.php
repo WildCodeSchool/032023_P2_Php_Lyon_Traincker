@@ -6,7 +6,6 @@ use App\Model\TrainManager;
 use App\Model\StationManager;
 use App\Model\TransitManager;
 use App\Model\DelayManager;
-use Seld\JsonLint\Undefined;
 
 class TimesheetController extends AbstractController
 {
@@ -42,9 +41,9 @@ class TimesheetController extends AbstractController
             $delay = array_map('trim', $_POST);
 
             $delayManager = new DelayManager();
-             $delayManager->insert($delay);
+            $delayManager->insert($delay);
 //---------convert string to int --------------//
-            $stringId = $delay['station_Id'];
+            $stringId = $delay['station_id'];
             $intValue = (int) $stringId;
 //---------------------------------------------//
             return $this->show($intValue);

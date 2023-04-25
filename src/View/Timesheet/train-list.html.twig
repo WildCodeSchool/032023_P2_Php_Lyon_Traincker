@@ -74,10 +74,10 @@
 
                             <div class="option-buttons m-2 d-flex justify-content-end">
 
-                                <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
+                                    <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
                                 <form action="/timesheet/train-delay" method="post">
                                     <input type="hidden" name="train_id" value="{{cardData.train_id}}">
-                                    <input type="hidden" name="station_Id" value="{{stationById.id}}">
+                                    <input type="hidden" name="station_id" value="{{stationById.id}}">
                                     <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
                                 </form>
 
