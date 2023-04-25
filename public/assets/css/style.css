@@ -112,9 +112,6 @@
 
 .timesheet-trains .result-stroke {
   width: clamp(500px, 80%, 1000px);
-  translate: -50% 0;
-  left: 50%;
-  top: 80px;
   border-color: var(--primary-color) !important;
 }
 
@@ -140,7 +137,7 @@
 
 .timesheet-trains {
   background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
-  min-height: fit-content;
+  min-height: 100vh;
 }
 
 .timesheet-trains article.card {
