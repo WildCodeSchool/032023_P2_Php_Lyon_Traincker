@@ -21,8 +21,7 @@ class TimesheetController extends AbstractController
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
-        $delayManager = new DelayManager();
-        $late = $delayManager->selectDelayId($id);
+
 
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
@@ -32,7 +31,7 @@ class TimesheetController extends AbstractController
 
             'cardDatas' => $cardDatas,
 
-            'late' => $late,
+
         ]);
     }
 }
