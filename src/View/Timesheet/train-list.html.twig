@@ -57,33 +57,20 @@
                         me-auto ms-auto p-4">
                     <h1 class="train-card-title fs-3 text-nowrap z-1 position-absolute top-0 start-50 translate-middle text-center text-light">Résultats de votre recherche</h1>
             
-            <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
-                {% for cardData in cardDatas %}
-                        <article class="train-card card p-3 m-3 border border-3 rounded-5">
+                    <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
 
-                            <div class="train-number m-1"># {{cardData.train_number}}</div>
+                        {% for cardData in cardDatas %} 
+                            
+                            {% if late.late_exists == true %}
+                                {% include 'Shared/cardDataLate.html.twig' %}
+                            {% else %}
+                                {% include 'Shared/cardData.html.twig' %}
+                            {% endif %}
+                            {% else %}
+                                <li>Aucun train disponible</li>
+                        {% endfor %} 
 
-                            <div class="train-to m-2">
-                                <div class="m-1">{{downarrow|raw}}Départ</div>
-                                <div>
-                                    <span class="lead fs-3"><strong>{{ cardData.departure_time }}</strong></span>
-                                    <span>à destination de</span>
-                                    <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
-                                </div>
-                            </div>
-
-                            <div class="option-buttons m-2 d-flex justify-content-end">
-
-                                <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
-                                <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
-
-                            </div>
-
-                        </article>
-                {% else %}
-                    <li>Aucun train disponible</li>
-                {% endfor %}
-                </div>
+                    </div>
             </div>
         </section>
     {% endblock %}

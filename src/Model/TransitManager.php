@@ -18,6 +18,7 @@ class TransitManager extends AbstractManager
                 train.number as train_number,
                 station.name as station_name,
                 destination,
+                train.is_late as is_late,
 
                 DATE_FORMAT(
                     transit.transit_time, 

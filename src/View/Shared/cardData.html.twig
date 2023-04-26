@@ -1,0 +1,21 @@
+<article class="train-card card p-3 m-3 border border-3 rounded-5">
+
+<div class="train-number m-1"># {{cardData.train_number}}</div>
+
+<div class="train-to m-2">
+    <div class="m-1">{{downarrow|raw}}Départ</div>
+    <div>
+        <span class="lead fs-3"><strong>{{ cardData.departure_time }}</strong></span>
+        <span>à destination de</span>
+        <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
+    </div>
+</div>
+
+<div class="option-buttons m-2 d-flex justify-content-end">
+
+    <button class="bookmark d-none btn btn-primary">{{bookmarkUnset|raw}}</button>
+    <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
+
+</div>
+
+</article>
