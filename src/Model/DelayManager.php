@@ -6,9 +6,7 @@ class DelayManager extends AbstractManager
 {
     public const TABLE = 'delay';
 
-     /*
-      Insert new delay in database
-     */
+     /* Insert new delay in database */
 
     public function insert(array $delay): int
     {
