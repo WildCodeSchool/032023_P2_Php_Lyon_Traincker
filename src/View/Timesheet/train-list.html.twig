@@ -61,7 +61,7 @@
 
                         {% for cardData in cardDatas %} 
                                                
-                            {% if cardData.date != NULL and cardData.date == "now"|date('Y-m-d') %}
+                            {% if cardData.date != NULL %}
                                 {% include 'Shared/cardDataLate.html.twig' %}
                             {% else  %}
                                 {% include 'Shared/cardData.html.twig' %}
