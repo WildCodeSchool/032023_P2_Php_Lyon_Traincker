@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `delay`
+--
+
+DROP TABLE IF EXISTS `delay`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `delay` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `train_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delay`
+--
+
+LOCK TABLES `delay` WRITE;
+/*!40000 ALTER TABLE `delay` DISABLE KEYS */;
+INSERT INTO `delay` VALUES (166,'2023-04-27',2);
+/*!40000 ALTER TABLE `delay` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `station`
 --
 
@@ -99,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-19 13:55:00
+-- Dump completed on 2023-04-27 15:15:25

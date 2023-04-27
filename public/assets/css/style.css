@@ -19,6 +19,7 @@
   0% {
     transform: translateY(100px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -28,6 +29,7 @@
   0% {
     transform: translateY(-100px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -37,32 +39,41 @@
   0% {
     transform: scale(100%);
   }
+
   10% {
     transform: scale(10%);
   }
+
   20% {
     transform: scale(100%);
   }
+
   30% {
     transform: scale(100%);
     transform: translate(0px);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(10px);
   }
+
   70% {
     transform: translateY(0px);
     transform: scale(100%);
   }
+
   80% {
     transform: scale(120%);
   }
+
   90% {
     transform: scale(90%);
   }
+
   100% {
     transform: scale(100%);
   }
@@ -201,6 +212,19 @@
 .timesheet-trains article.train-card:hover {
   transform: scale(105%);
   border-color: var(--primary-color) !important;
+}
+
+.timesheet-trains article.card-late {
+  transform: scale(100%);
+  transform-origin: center;
+  transition: var(--main-transition);
+
+  animation: var(--main-transition) 0s 1 push-up;
+}
+
+.timesheet-trains article.card-late:hover {
+  transform: scale(105%);
+  border-color: red !important;
 }
 
 .train-number::after,

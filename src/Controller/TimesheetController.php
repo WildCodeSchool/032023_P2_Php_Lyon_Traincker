@@ -22,6 +22,8 @@ class TimesheetController extends AbstractController
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
 
+
+
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
 
@@ -42,10 +44,10 @@ class TimesheetController extends AbstractController
 
             $delayManager = new DelayManager();
             $delayManager->insert($delay);
-//---------convert string to int --------------//
+            //---------convert string to int --------------//
             $stringId = $delay['station_id'];
             $intValue = (int) $stringId;
-//---------------------------------------------//
+            //---------------------------------------------//
             return $this->show($intValue);
         }
     }
