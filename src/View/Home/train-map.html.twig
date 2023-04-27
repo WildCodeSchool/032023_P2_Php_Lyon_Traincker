@@ -1,26 +1,14 @@
-<section class="train-map">
+{% set ballCount = 6 %}
+{% set ballClass = "ball mx-1 d-none d-md-block rounded-pill" %}
 
-    <div class="container frame d-flex justify-content-around align-items-start">
-
-{% for station in stations %}
-{% set xRandCoord = random(10,90) %}
-{% set yRandCoord = random(30,280) %}
-
-        <div class="item d-flex justify-content-start flex-nowrap">
-            
-            <div class="dot rounded-pill mx-1"></div>
-            <a href="/timesheet/train-list?id={{ station.id }}"
-                class="link-offset-2 link-underline link-underline-opacity-0
-                        ">
-                <h5 class="station fs-6">{{station.name}}</h5>
-            </a>
-        </div>
-    
-{% endfor %}
-
+<section class="home-header text-light p-5 d-flex align-items-center justify-content-center">
+    <div class="container rounded-pill text-center d-flex align-items-center justify-content-center">
+        {% for i in ballCount .. 1 %}
+            <div class="ball-{{i}} {{ballClass|raw}}"></div>
+        {% endfor %}
+                <h1 class="header-title mx-4 text-nowrap">Choisissez une gare</h1>
+        {% for i in 1 .. ballCount %}
+            <div class="ball-{{i}} {{ballClass|raw}}"></div>
+        {% endfor %}
     </div>
-
-</section>
-<section class="train-map2 d-md-flex d-none justify-content-center align-items-center w-100">
-    <img class="railroad-map" src="../assets/images/memory-subway-map.png" alt="">
 </section>

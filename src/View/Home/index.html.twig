@@ -5,19 +5,14 @@
 {% include "Home/train-map.html.twig" %}
 <div class="homepage bg-image">
     <div class="p-3 bg-color">  
-        <div class="train-menu-title d-flex justify-content-around align-items-center">
-            <h1 class="text-center text-light-emphasis text-md-danger">
-                Choisissez votre gare
-            </h1>
-        </div>
 
         <div class = "bg-Button py-3 mx-5 d-none d-md-flex">
-            <div class = "container col-md-10 mx-auto w-75">
+            <div class = "container col-md-10 mx-auto w-50">
                 <div class = "row">
         
         {% for station in stations %}
 
-                    <div class="desktop-train-menu d-grid gap-2 col-md-6 cd-6 py-2">
+                    <div class="btn-desktop-train-menu d-grid gap-2 col-md-6 cd-6 py-2 pe-0">
                         <a href="/timesheet/train-list?id={{ station.id }}" class="btn btn-custom btn-hover-image px-3 py-3 rounded-pill border-light border-2 fw-bold text-start" role="button" > {{ station.name }}</a><br>
                     </div>
            
