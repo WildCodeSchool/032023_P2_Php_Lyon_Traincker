@@ -27,21 +27,24 @@ class TransitManager extends AbstractManager
                     '%H:%i') 
                     as departure_time
 
-            FROM " . static::TABLE_TRAIN . "
+            FROM " . static::TABLE_DELAY . "
+
+            RIGHT JOIN " . static::TABLE_TRAIN . "
+            ON (train.id = delay.train_id AND date = current_date())
 
                 JOIN " . static::TABLE_TRANSIT . "
-                    ON train.id=transit.train_id
+                    ON transit.train_id = train.id
 
                     JOIN " . static::TABLE_STATION . " 
-                        ON transit.station_id=station.id
-
-                        LEFT JOIN " . static::TABLE_DELAY . "
-                             ON train.id = delay.train_id
+                        ON station.id = transit.station_id
 
                        
-            WHERE transit.station_id=:id 
-            
+
+                       
+            WHERE station.id=:id 
             ORDER BY " . $orderBy . " ASC
+            
+            
         ");
 
         $statement->bindValue('id', $id, \PDO::PARAM_INT);

@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `delay`
+--
+
+DROP TABLE IF EXISTS `delay`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `delay` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `train_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delay`
+--
+
+LOCK TABLES `delay` WRITE;
+/*!40000 ALTER TABLE `delay` DISABLE KEYS */;
+/*!40000 ALTER TABLE `delay` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `station`
 --
 
@@ -49,6 +73,7 @@ DROP TABLE IF EXISTS `train`;
 CREATE TABLE `train` (
   `id` int NOT NULL AUTO_INCREMENT,
   `number` int NOT NULL,
+  `is_late` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -59,7 +84,7 @@ CREATE TABLE `train` (
 
 LOCK TABLES `train` WRITE;
 /*!40000 ALTER TABLE `train` DISABLE KEYS */;
-INSERT INTO `train` VALUES (1,68549),(2,78961),(3,86122),(4,78952),(5,31586),(6,45965),(7,98126),(8,65899),(9,12995),(10,98132),(11,28552),(12,33446);
+INSERT INTO `train` VALUES (1,68549,1),(2,78961,0),(3,86122,1),(4,78952,0),(5,31586,0),(6,45965,0),(7,98126,0),(8,65899,0),(9,12995,0),(10,98132,0),(11,28552,0),(12,33446,0);
 /*!40000 ALTER TABLE `train` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-19 13:55:00
+-- Dump completed on 2023-04-27 13:33:22

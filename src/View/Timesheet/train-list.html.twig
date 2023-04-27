@@ -60,7 +60,7 @@
                     <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
 
                         {% for cardData in cardDatas %} 
-                            
+                                               
                             {% if cardData.date != NULL and cardData.date == "now"|date('Y-m-d') %}
                                 {% include 'Shared/cardDataLate.html.twig' %}
                             {% else  %}
