@@ -61,16 +61,15 @@
 
                         {% for cardData in cardDatas %} 
                             
-                            {% if late.late_exists == true %}
+                            {% if cardData.date != NULL and cardData.date == "now"|date('Y-m-d') %}
                                 {% include 'Shared/cardDataLate.html.twig' %}
-                            {% else %}
+                            {% else  %}
                                 {% include 'Shared/cardData.html.twig' %}
                             {% endif %}
                             {% else %}
                                 <li>Aucun train disponible</li>
-                        {% endfor %} 
-
-                    </div>
+                            {% endfor %} 
+                </div>
             </div>
         </section>
     {% endblock %}
