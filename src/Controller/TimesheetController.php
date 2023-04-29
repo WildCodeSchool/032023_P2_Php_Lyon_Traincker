@@ -6,6 +6,7 @@ use App\Model\TrainManager;
 use App\Model\StationManager;
 use App\Model\TransitManager;
 use App\Model\DelayManager;
+use App\Model\BookmarkManager;
 
 class TimesheetController extends AbstractController
 {
@@ -48,6 +49,16 @@ class TimesheetController extends AbstractController
             $intValue = (int) $stringId;
             //---------------------------------------------//
             return $this->show($intValue);
+        }
+    }
+
+    public function addBookmark()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $bookmark = array_map('trim', $_POST);
+
+            $bookmarkManager = new BookmarkManager();
+            $bookmarkManager->insert($bookmark);
         }
     }
 }
