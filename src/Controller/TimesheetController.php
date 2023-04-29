@@ -32,7 +32,6 @@ class TimesheetController extends AbstractController
             'trains' => $trains,
 
             'cardDatas' => $cardDatas,
-
         ]);
     }
 

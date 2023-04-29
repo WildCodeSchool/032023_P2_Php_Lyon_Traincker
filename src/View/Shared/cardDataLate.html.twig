@@ -1,25 +1,20 @@
-    <article class="card-late card p-3 m-3 border-danger border-3 rounded-5 position-relative">
+<article class="card-late card p-3 m-3 border-danger border-3 rounded-5 position-relative">
 
-    <div class='is-late btn btn-danger border-0 rounded-pill position-absolute top-0 end-0 d-flex justify-content-between align-items-center'>
-        <div class='is-late-icon'><i class='bi bi-clock-fill'></i></div> 
-        <div class='is-late-text'>EN RETARD</div> 
-        </div>
+<div class='is-late btn btn-danger border-0 rounded-pill position-absolute top-0 end-0 d-flex justify-content-between align-items-center'>
+    <div class='is-late-icon'><i class='bi bi-clock-fill'></i></div> 
+    <div class='is-late-text'>EN RETARD</div> 
+    </div>
 
-        <div class="train-number m-1">{{cardData.train_number}}</div>
-        <div class="train-to m-2">
-            <div class="m-1">{{downarrow|raw}}Depart</div>
-            <div>
-                <span class="lead fs-3 text-danger"><strong>{{ cardData.departure_time }}</strong></span>
-                <span> à destination de </span>
-                <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
-            </div>
+    <div class="train-number m-1">{{cardData.train_number}}</div>
+    <div class="train-to m-2">
+        <div class="m-1">{{downarrow|raw}}Depart</div>
+        <div>
+            <span class="lead fs-3 text-danger"><strong>{{ cardData.departure_time }}</strong></span>
+            <span> à destination de </span>
+            <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
         </div>
-        <div class="option-buttons m-2 d-flex justify-content-end">
-            <button class=" d-none btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
-            <form action="/timesheet/train-delay" method="post">
-                <input type="hidden" name="train_id" value="{{cardData.train_id}}">
-                <input type="hidden" name="station_id" value="{{stationById.id}}">
-                <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
-            </form>
-        </div>
-    </article>
+    </div>
+
+{% include 'Shared/cardDataButtons.html.twig' %}
+
+</article>

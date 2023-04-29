@@ -1,0 +1,11 @@
+<div class="option-buttons m-2 d-flex justify-content-between">
+    
+    <button class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
+    
+    <form action="/timesheet/train-delay" method="post">
+        <input type="hidden" name="train_id" value="{{cardData.train_id}}">
+        <input type="hidden" name="station_id" value="{{stationById.id}}">
+        <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
+    </form>
+
+</div>
