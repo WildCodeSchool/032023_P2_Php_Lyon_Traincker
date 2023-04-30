@@ -1,8 +1,10 @@
 <div class="option-buttons m-2 d-flex justify-content-between">
     
     <form action="/timesheet/add-bookmark" method="post">
-        <input type="hidden" name="train_id" value="{{cardData.train_id}}">
+
+        <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
         <input type="hidden" name="station_id" value="{{stationById.id}}">
+
         <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
     </form>
     
