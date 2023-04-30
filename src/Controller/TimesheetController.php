@@ -22,9 +22,6 @@ class TimesheetController extends AbstractController
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
-
-
-
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
 
@@ -59,6 +56,14 @@ class TimesheetController extends AbstractController
 
             $bookmarkManager = new BookmarkManager();
             $bookmarkManager->insert($bookmark);
+
+            //---------convert string to int --------------//
+            $stringId = $bookmark['station_id'];
+            $intValue = (int) $stringId;
+            //---------------------------------------------//
+            $this->show($intValue);
+            return header("location: /timesheet/train-list?id=$intValue");
         }
     }
+
 }

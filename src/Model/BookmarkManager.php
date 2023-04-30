@@ -6,10 +6,11 @@ class BookmarkManager extends AbstractManager
 {
     public const TABLE = 'bookmark';
 
-    /* Insert new delay in database */
+    /* Insert bookmark in database */
 
     public function insert(array $bookmark): int
     {
+
         $statement = $this->pdo->prepare("
             INSERT INTO 
             " . self::TABLE . " 
@@ -21,7 +22,6 @@ class BookmarkManager extends AbstractManager
         $statement->bindValue(':train_id', $bookmark['train_id'], \PDO::PARAM_INT);
 
         $statement->execute();
-
         return (int)$this->pdo->lastInsertId();
     }
 }
