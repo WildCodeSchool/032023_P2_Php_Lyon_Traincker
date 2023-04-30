@@ -13,7 +13,6 @@ class BookmarkManager extends AbstractManager
 
     public function insert(array $bookmark): int
     {
-
         $statement = $this->pdo->prepare("
             INSERT INTO 
             " . self::TABLE_BOOKMARK . " 
@@ -21,7 +20,7 @@ class BookmarkManager extends AbstractManager
             VALUES 
             (:transit_id)
         ");
-        
+
         $statement->bindValue(':transit_id', $bookmark['transit_id'], \PDO::PARAM_INT);
 
         $statement->execute();

@@ -66,5 +66,4 @@ class TimesheetController extends AbstractController
             return header("location: /timesheet/train-list?id=$intValue");
         }
     }
-
 }
