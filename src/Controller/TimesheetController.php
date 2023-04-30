@@ -46,7 +46,7 @@ class TimesheetController extends AbstractController
             $intValue = (int) $stringId;
             //---------------------------------------------//
             $this->show($intValue);
-            return header("location: /timesheet/train-list?id=$intValue");
+            header("location: /timesheet/train-list?id=$intValue");
         }
     }
 
@@ -63,7 +63,7 @@ class TimesheetController extends AbstractController
             $intValue = (int) $stringId;
             //---------------------------------------------//
             $this->show($intValue);
-            return header("location: /timesheet/train-list?id=$intValue");
+            header("location: /timesheet/train-list?id=$intValue");
         }
     }
 }
