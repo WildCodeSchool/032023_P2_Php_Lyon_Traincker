@@ -42,9 +42,9 @@ class TimesheetController extends AbstractController
             $delayManager = new DelayManager();
             $delayManager->insert($delay);
             //---------convert string to int --------------//
-            $stringId = $delay['station_id'];
-            $intValue = (int) $stringId;
-            header("location: /timesheet/train-list?id=$intValue");
+            $stationStringId = $delay['station_id'];
+            $stationId = (int) $stationStringId;
+            header("location: /timesheet/train-list?id=$stationId");
         }
     }
 
@@ -57,9 +57,9 @@ class TimesheetController extends AbstractController
             $bookmarkManager->insert($bookmark);
 
             //---------convert string to int --------------//
-            $stringId = $bookmark['station_id'];
-            $intValue = (int) $stringId;
-            header("location: /timesheet/train-list?id=$intValue");
+            $stationStringId = $bookmark['station_id'];
+            $stationId = (int) $stationStringId;
+            header("location: /timesheet/train-list?id=$stationId");
         }
     }
 }
