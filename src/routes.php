@@ -10,6 +10,6 @@ return [
     '' => ['HomeController', 'index',],
     'timesheet/train-list' => ['TimesheetController', 'show', ['id']],
     'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
-    'bookmarks' => ['BookmarksController', 'bookmarks',],
+    'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
     'login' => ['UserController', 'login'],
 ];
