@@ -1,9 +1,12 @@
 <div class="sidebar bg-dark text-white">
-	<h3 class="mt-0 text-uppercase">Mes trains favoris</h3>
-	<ul class="list-unstyled">
-		<li><a href="#" class="text-white">TGV 123</a></li>
-		<li><a href="#" class="text-white">TER 456</a></li>
-		<li><a href="#" class="text-white">Eurostar 789</a></li>
-		<li><a href="#" class="text-white">ICE 012</a></li>
+	<h3 class="mt-0 text-uppercase p-2">Mes trains favoris</h3>
+	<ul class="list-unstyled p-4">
+        {% for station in stations %}
+
+		<li><a href="/timesheet/train-list?id={{ station.id }}" role="button" > {{ station.name }}</a></li><br>
+        {% else %}
+            <li>Pas de trains favoris</li>
+        {% endfor %}
+		
 	</ul>
 </div>

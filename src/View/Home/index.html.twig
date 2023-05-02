@@ -2,13 +2,16 @@
 
 
 {% block content %}
+
 {% include "Home/train-map.html.twig" %}
 <div class="homepage bg-image">
     <div class="p-3 bg-color">  
 
     
         <div class = "bg-Button py-3 mx-5 d-none d-md-flex">
+            {# {% if cardData.date != NULL %} #}
             {% include "Bookmarks/bookmarks.html.twig" %}
+            {# {% endif %} #}
             <div class = "container col-md-10 mx-auto w-50">
                 <div class = "row">
                 
