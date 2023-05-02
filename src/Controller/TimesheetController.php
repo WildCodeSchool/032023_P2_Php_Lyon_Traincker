@@ -44,8 +44,6 @@ class TimesheetController extends AbstractController
             //---------convert string to int --------------//
             $stringId = $delay['station_id'];
             $intValue = (int) $stringId;
-            //---------------------------------------------//
-            $this->show($intValue);
             header("location: /timesheet/train-list?id=$intValue");
         }
     }
@@ -61,8 +59,6 @@ class TimesheetController extends AbstractController
             //---------convert string to int --------------//
             $stringId = $bookmark['station_id'];
             $intValue = (int) $stringId;
-            //---------------------------------------------//
-            $this->show($intValue);
             header("location: /timesheet/train-list?id=$intValue");
         }
     }
