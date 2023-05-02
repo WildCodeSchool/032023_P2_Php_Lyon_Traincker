@@ -11,7 +11,7 @@ class TimesheetController extends AbstractController
 {
     public function show(int $id): string
     {
-        $stationManager = new stationManager();
+        $stationManager = new StationManager();
         $stationById = $stationManager->selectOneById($id);
         $stations = $stationManager->selectAll('name');
 
@@ -38,16 +38,15 @@ class TimesheetController extends AbstractController
 
     public function reportDelay()
     {
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $delay = array_map('trim', $_POST);
 
             $delayManager = new DelayManager();
             $delayManager->insert($delay);
-            //---------convert string to int --------------//
+
             $stringId = $delay['station_id'];
             $intValue = (int) $stringId;
-            //---------------------------------------------//
+
             return $this->show($intValue);
         }
     }
