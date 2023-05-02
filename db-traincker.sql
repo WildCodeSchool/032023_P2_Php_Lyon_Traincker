@@ -26,7 +26,10 @@ CREATE TABLE `delay` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `train_id` int NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`train_id`)
+  REFERENCES `train`(`id`)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,7 +103,13 @@ CREATE TABLE `transit` (
   `station_id` int NOT NULL,
   `transit_time` time NOT NULL,
   `destination` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`train_id`)
+  REFERENCES `train`(`id`)
+  ON DELETE CASCADE,
+  FOREIGN KEY (`station_id`)
+  REFERENCES `station`(`id`)
+  ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
