@@ -29,7 +29,6 @@ class UserController extends AbstractController
         session_destroy();
         unset($_SESSION['user_id']);
         header('Location: /');
-        echo " Vous êtes déconnecté";
     }
 
     public function register()

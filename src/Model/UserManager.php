@@ -5,7 +5,6 @@ namespace App\Model;
 class UserManager extends AbstractManager
 {
     public const TABLE = 'user';
-
     public function selectOneByEmail(string $email): array|false
     {
         // prepared request
