@@ -322,3 +322,11 @@ a.logo:hover {
   color: var(--light-color);
 }
 /* ----------------------------------sidebar ---------------------------------- */
+
+.offcanvas-body{
+  background-color: var(--primary-color);
+}
+.sidebarList{
+  font-size: large;
+  color: var(--light-color);
+}

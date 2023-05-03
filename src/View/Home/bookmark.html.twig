@@ -1,1 +1,13 @@
-{# @Mouhamed -> Replace with Bookmarks front-end #}
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Mes trains favoris</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    {% for bookmark in bookmarks %}
+		<li><a href="/timesheet/train-list?id=#" role="button" class="sidebarList"> Train n° {{ bookmark.train_number }} à destination de {{ bookmark.destination }}, passage a {{ bookmark.departure_time }}</a></li><br>
+        {% else %}
+            <li>Pas de trains favoris</li>
+        {% endfor %}
+  </div>
+</div>
