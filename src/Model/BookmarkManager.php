@@ -8,6 +8,7 @@ class BookmarkManager extends AbstractManager
     public const TABLE_TRANSIT = 'transit';
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
+    public const TABLE_DELAY = 'delay';
 
     /* Insert bookmark in database */
 
@@ -36,7 +37,10 @@ class BookmarkManager extends AbstractManager
                 DATE_FORMAT(
                     transit.transit_time, 
                     '%H:%i') as depart_time,
-                station.id as station_id    
+                station.id as station_id,
+                transit.train_id as train_id,
+
+                delay.train_id as delayed_train_id
 
             FROM " . self::TABLE_TRANSIT . "
 
@@ -48,6 +52,9 @@ class BookmarkManager extends AbstractManager
 
             JOIN " . self::TABLE_STATION . "
                 ON station.id = transit.station_id
+
+            LEFT JOIN " . self::TABLE_DELAY . "
+                ON (delay.train_id = transit.train_id AND delay.date = current_date())
 
             WHERE bookmark.transit_id = transit.id
 
