@@ -12,7 +12,7 @@ class TimesheetController extends AbstractController
 {
     public function show(int $id): string
     {
-        $stationManager = new stationManager();
+        $stationManager = new StationManager();
         $stationById = $stationManager->selectOneById($id);
         $stations = $stationManager->selectAll('name');
 
@@ -22,20 +22,20 @@ class TimesheetController extends AbstractController
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
+        $bookmarkManager = new BookmarkManager();
+        $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
+
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
-
             'stations' => $stations,
-
             'trains' => $trains,
-
             'cardDatas' => $cardDatas,
+            'bookmarks' => $bookmarks
         ]);
     }
 
     public function reportDelay()
     {
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $delay = array_map('trim', $_POST);
 

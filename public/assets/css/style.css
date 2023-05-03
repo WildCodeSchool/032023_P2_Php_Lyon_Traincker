@@ -12,7 +12,7 @@
   /* Animation --------*/
 
   --main-transition: .5s cubic-bezier(0.2, 0, 0, 1);
-  --home-load-balls: 2s cubic-bezier(0.2, 0, 0, 1);
+  --on-air: 3s linear;
 }
 
 @keyframes push-up {
@@ -32,6 +32,24 @@
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+
+  49% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 0%;
   }
 }
 
@@ -307,7 +325,7 @@ nav form a.fav:hover {
   font-family: var(--logo-font);
 }
 
-p {
+.footer p {
   color: var(--secondary-color);
   font-family: var(--logo-font);
 }
@@ -323,10 +341,57 @@ a.logo:hover {
 }
 /* ----------------------------------sidebar ---------------------------------- */
 
-.offcanvas-body{
+.bookmarks .offcanvas-header {
   background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
-.sidebarList{
-  font-size: large;
+
+.bookmarks .offcanvas-body {
+  background-color: var(--secondary-color);
+}
+
+.bookmarks a,
+.bookmarks a:hover,
+.bookmarks a:visited,
+.bookmarks a:active,
+.bookmarks a:focus {
+  text-decoration: none;
+  color: unset;
+}
+
+.bookmarks .on-air {
+  animation: 2s linear 0s infinite blink;
+}
+
+.bm-card {
+  border-color: var(--secondary-color)!important;
+  background: var(--primary-color);
+  transition: var(--main-transition);
+}
+
+.bm-card:hover {
+  border-color: var(--light-color)!important;
+  background: var(--secondary-color);
   color: var(--light-color);
+}
+
+.bm-card .bm-train-number::after {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--light-color);
+  vertical-align: middle;
+  border-radius: 100px;
+  margin: 0 0 0 10px;
+
+  transform: translate(100px);
+  transform-origin: center;
+  opacity: 0%;
+  transition: var(--main-transition);
+}
+
+.bm-card:hover .bm-train-number::after {
+  transform: translate(0px);
+  opacity: 100%;
 }

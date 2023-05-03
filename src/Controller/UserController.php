@@ -10,7 +10,6 @@ class UserController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
-
             $userManager = new UserManager();
             $user = $userManager->selectOneByEmail($credentials['login']);
             if ($user && password_verify($credentials['password'], $user['password'])) {

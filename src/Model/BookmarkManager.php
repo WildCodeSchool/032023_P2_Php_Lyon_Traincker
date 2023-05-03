@@ -31,12 +31,12 @@ class BookmarkManager extends AbstractManager
         $statement = $this->pdo->prepare("
             SELECT
                 train.number as train_number,
-                station.name as station_name,
-                destination,
+                station.name as depart_station,
+                destination as arrival_station,
                 DATE_FORMAT(
                     transit.transit_time, 
-                    '%H:%i') 
-                    as departure_time
+                    '%H:%i') as depart_time,
+                station.id as station_id    
 
             FROM " . self::TABLE_TRANSIT . "
 

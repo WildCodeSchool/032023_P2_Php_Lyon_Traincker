@@ -1,0 +1,24 @@
+{% set downarrow = "<i class='bi bi-arrow-90deg-down'></i>" %}
+{% set rightarrow = "<i class='bi bi-arrow-right'></i>" %}
+{% set record = "<i class='bi bi-record-fill on-air text-danger'></i>" %}
+
+<section class="bookmarks offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Mes trains favoris</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    {% for bookmark in bookmarks %}
+
+      <a href="/timesheet/train-list?id={{ bookmark.station_id }}">
+      <article class="bm-card border border-light border-2 rounded-pill my-2 py-2 ps-5 w-90">
+        <div class="bm-train-number m-1">{{downarrow|raw}} # {{bookmark.train_number}}</div>
+        <div>{{bookmark.depart_station}} {{record|raw}} {{bookmark.depart_time}} {{rightarrow|raw}} {{bookmark.arrival_station}}</div>
+      </article>
+      </a>
+
+    {% else %}
+      <div>Aucun train en favoris</div>
+    {% endfor %}
+  </div>
+</section>
