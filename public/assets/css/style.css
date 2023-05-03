@@ -229,41 +229,6 @@
   animation: var(--main-transition) 0s 1 push-down;
 }
 
-.home-header .ball {
-  aspect-ratio: 1 / 1;
-  background-color: var(--light-color);
-}
-
-.home-header .ball-1 {
-  animation: var(--home-load-balls) 0s 4 balls;
-  width: 20px;
-}
-
-.home-header .ball-2 {
-  animation: var(--home-load-balls) .1s 4 balls;
-  width: 17px;
-}
-
-.home-header .ball-3 {
-  animation: var(--home-load-balls) .2s 4 balls;
-  width: 14px;
-}
-
-.home-header .ball-4 {
-  animation: var(--home-load-balls) .3s 4 balls;
-  width: 11px;
-}
-
-.home-header .ball-5 {
-  animation: var(--home-load-balls) .4s 4 balls;
-  width: 8px;
-}
-
-.home-header .ball-6 {
-  animation: var(--home-load-balls) .5s 4 balls;
-  width: 5px;
-}
-
 /* Home ------------------------------------------------------------------------------------------------------*/
 
 .homepage .bg-color {
