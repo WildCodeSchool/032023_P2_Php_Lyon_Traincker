@@ -6,6 +6,7 @@ use App\Model\TrainManager;
 use App\Model\StationManager;
 use App\Model\TransitManager;
 use App\Model\DelayManager;
+use App\Model\BookmarkManager;
 
 class TimesheetController extends AbstractController
 {
@@ -21,9 +22,6 @@ class TimesheetController extends AbstractController
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
-
-
-
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
 
@@ -32,7 +30,6 @@ class TimesheetController extends AbstractController
             'trains' => $trains,
 
             'cardDatas' => $cardDatas,
-
         ]);
     }
 
@@ -43,11 +40,25 @@ class TimesheetController extends AbstractController
 
             $delayManager = new DelayManager();
             $delayManager->insert($delay);
+            //---------convert string to int --------------//
+            $stationStringId = $delay['station_id'];
+            $stationId = (int) $stationStringId;
+            header("location: /timesheet/train-list?id=$stationId");
+        }
+    }
 
-            $stringId = $delay['station_id'];
-            $intValue = (int) $stringId;
+    public function addBookmark()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $bookmark = array_map('trim', $_POST);
 
-            return $this->show($intValue);
+            $bookmarkManager = new BookmarkManager();
+            $bookmarkManager->insert($bookmark);
+
+            //---------convert string to int --------------//
+            $stationStringId = $bookmark['station_id'];
+            $stationId = (int) $stationStringId;
+            header("location: /timesheet/train-list?id=$stationId");
         }
     }
 }

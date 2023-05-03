@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `traincker` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `traincker`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: traincker
@@ -14,6 +16,30 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `bookmark`
+--
+
+DROP TABLE IF EXISTS `bookmark`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bookmark` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `transit_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookmark`
+--
+
+LOCK TABLES `bookmark` WRITE;
+/*!40000 ALTER TABLE `bookmark` DISABLE KEYS */;
+INSERT INTO `bookmark` VALUES (19,0),(20,11),(21,12),(22,14),(23,27),(24,9),(25,18),(26,22),(27,12),(28,12),(29,22),(30,36),(31,13);
+/*!40000 ALTER TABLE `bookmark` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `delay`
@@ -39,6 +65,7 @@ CREATE TABLE `delay` (
 
 LOCK TABLES `delay` WRITE;
 /*!40000 ALTER TABLE `delay` DISABLE KEYS */;
+INSERT INTO `delay` VALUES (173,'2023-04-29',2),(174,'2023-04-29',2),(175,'2023-04-29',4),(176,'2023-04-29',10),(177,'2023-04-29',10),(178,'2023-04-29',1),(179,'2023-04-30',3);
 /*!40000 ALTER TABLE `delay` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-28 10:36:06
+-- Dump completed on 2023-04-30 15:49:14

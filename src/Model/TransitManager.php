@@ -16,6 +16,7 @@ class TransitManager extends AbstractManager
         $statement = $this->pdo->prepare("
 
             SELECT DISTINCT
+                transit.id as transit_id,
                 train.number as train_number,
                 train.id as train_id,
                 station.name as station_name,
@@ -38,12 +39,8 @@ class TransitManager extends AbstractManager
                     JOIN " . static::TABLE_STATION . " 
                         ON station.id = transit.station_id
 
-                       
-
-                       
             WHERE station.id=:id 
             ORDER BY " . $orderBy . " ASC
-            
             
         ");
 
