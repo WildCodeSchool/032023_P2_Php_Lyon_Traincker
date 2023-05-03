@@ -9,7 +9,6 @@
   </div>
   <div class="offcanvas-body">
     {% for bookmark in bookmarks %}
-
       <a href="/timesheet/train-list?id={{ bookmark.station_id }}">
 
       {% if bookmark.delayed_train_id == bookmark.train_id %}
@@ -21,17 +20,14 @@
         <div class="bm-train-number m-1">{{downarrow|raw}} # {{bookmark.train_number}}</div>
         <div>{{bookmark.depart_station}} {{record|raw}} {{bookmark.depart_time}} {{rightarrow|raw}} {{bookmark.arrival_station}}</div>
      
-     
       {% if bookmark.delayed_train_id == bookmark.train_id %}
       <div class="text-danger"><strong>En retard</strong></div>
       {% else %}
       <div>A l'heure</div>
       {% endif %}
 
-
       </article>
       </a>
-
     {% else %}
       <div>Aucun train en favoris</div>
     {% endfor %}
