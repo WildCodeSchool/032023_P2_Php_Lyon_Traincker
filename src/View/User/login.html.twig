@@ -1,13 +1,15 @@
 {% extends 'layout.html.twig' %}
     {% block content %}
     
-    {% if errors %}
-      {% for error in errors %}
+      {% if errors %}
         <div class="alert alert-danger" role="alert">
-          {{ "il y a une erreur !" }}
+          <ul>
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
         </div>
-      {% endfor %}
-    {% endif %}
+      {% endif %}
 
     <div class="display-login row">
     <div id="wrapper" class= "wrapper mx-auto">
