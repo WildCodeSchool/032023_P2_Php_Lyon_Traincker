@@ -22,7 +22,7 @@ class AdminController extends AbstractController
             $adminManager = new AdminManager();
             $adminManager->delete((int)$id);
 
-            header('Location:/Admin/admin.html.twig');
+            header('Location:/admin');
         }
     }
 }

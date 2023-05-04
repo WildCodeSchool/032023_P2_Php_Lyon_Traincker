@@ -13,5 +13,7 @@ return [
     'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
     'login' => ['UserController', 'login'],
     'admin' => ['AdminController', 'admin'],
+    'admin/delete' => ['AdminController', 'delete',],
+
 
 ];
