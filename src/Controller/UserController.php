@@ -20,7 +20,6 @@ class UserController extends AbstractController
             }
 
             if (empty($errors)) {
-
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($credentials['login']);
 
