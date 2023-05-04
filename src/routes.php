@@ -12,4 +12,6 @@ return [
     'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
     'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
     'login' => ['UserController', 'login'],
+    'logout' => ['UserController', 'logout'],
+    'register' => ['UserController', 'login'],
 ];
