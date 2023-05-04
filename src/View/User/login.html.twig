@@ -10,7 +10,7 @@
     {% endif %}
 
     <div class="display-login row">
-    <div class= "wrapper mx-auto">
+    <div id="wrapper" class= "wrapper mx-auto">
       <div class="form-box login">
         <h2>Connectez-vous</h2>
         <form action="/login" method="post">
@@ -23,7 +23,7 @@
             <label for="password">Mot de passe</label>
           </div>
           <button type="submit" id="submit" class="btn-popup">Se connecter</button>
-          <div class="login-register"><p>Vous n'avez pas de compte ?</br><a href="#" class="register-link">S'enregistrer</a></p>
+          <div class="login-register"><p>Vous n'avez pas de compte ?</br><a href="#" class="register-link"  id="register-link">S'enregistrer</a></p>
           </div>
         </form>
       </div>
@@ -44,7 +44,7 @@
             <label for="password">Mot de passe</label>
           </div>
           <button type="submit" class="btn-popup" id="submit">S'inscrire</button>
-          <div class="login-register"><p>Vous avez déjà un compte ?</br><a href="#" class="login-link">Se connecter</a></p>
+          <div class="login-register"><p>Vous avez déjà un compte ?</br><a href="#" class="login-link"  id="login-link">Se connecter</a></p>
           </div>
         </form>
       </div>
