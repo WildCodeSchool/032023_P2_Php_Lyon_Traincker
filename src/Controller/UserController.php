@@ -46,6 +46,7 @@ class UserController extends AbstractController
 
     public function register()
     {
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
             $userManager = new UserManager();
