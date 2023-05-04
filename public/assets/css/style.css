@@ -359,8 +359,13 @@ a.logo:hover {
   color: unset;
 }
 
-.bookmarks .on-air {
+.bookmarks .bm-card .on-air {
+  color: green;
+}
+
+.bookmarks .bm-card-late .on-air {
   animation: 2s linear 0s infinite blink;
+  color: red;
 }
 
 .bm-card {
@@ -369,13 +374,24 @@ a.logo:hover {
   transition: var(--main-transition);
 }
 
+.bm-card-late {
+  background: var(--primary-color);
+  transition: var(--main-transition);
+}
+
+.bm-card-late:hover {
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
+
 .bm-card:hover {
   border-color: var(--light-color)!important;
   background: var(--secondary-color);
   color: var(--light-color);
 }
 
-.bm-card .bm-train-number::after {
+.bm-card .bm-train-number::after,
+.bm-card-late .bm-train-number::after {
   display: inline-block;
   content: "";
   width: 10px;
@@ -391,7 +407,8 @@ a.logo:hover {
   transition: var(--main-transition);
 }
 
-.bm-card:hover .bm-train-number::after {
+.bm-card:hover .bm-train-number::after,
+.bm-card-late:hover .bm-train-number::after {
   transform: translate(0px);
   opacity: 100%;
 }
