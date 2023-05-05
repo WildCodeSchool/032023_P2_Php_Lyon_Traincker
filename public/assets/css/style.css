@@ -321,7 +321,7 @@ nav form a.fav:hover {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   transition: var(--main-transition);
   border-radius: 10px;
-  color: var(--dark-color);
+  color: var(--light-color);
   font-weight: bold;
   border-color: var(--light-color);
 }
