@@ -50,6 +50,7 @@
     {% set bookmarkSet = "<i class='bi bi-bookmark-check-fill'></i>" %}
     {% set clockUnset = "<i class='bi bi-clock'></i>" %}
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
+    {% set trainStopsArrow = "<i class='bi bi-caret-down' id='caret-down'></i>" %}
 
         <section class="timesheet-trains m-0 p-5 w-100">
             <div class="result-stroke position-relative
@@ -75,4 +76,7 @@
         
 {% include "Home/bookmark.html.twig" %}
     {% endblock %}
+{% endblock %}
+{% block javascript %}
+<script src="/assets/js/train-stops.js"></script>
 {% endblock %}

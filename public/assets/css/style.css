@@ -227,7 +227,30 @@
   color: var(--primary-color);
 }
 
-/* Train-map ------------------------------------------------------------------------------------------------------*/
+/* Train stops ------------------------------------------------------------------------------------------------------*/
+
+.train-card #train-stops-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--main-transition);
+}
+
+.train-card #train-stops-menu > ul {
+  overflow: hidden;
+}
+
+/* .train-card #train-stops-menu:hover {
+  grid-template-rows: 1fr;
+} */
+
+#caret-down {
+  display: inline-block;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: var(--main-transition);
+}
+
+/* Home header ------------------------------------------------------------------------------------------------------*/
 
 .home-header {
   background-image: url('/assets/images/women-in-train.jpg');

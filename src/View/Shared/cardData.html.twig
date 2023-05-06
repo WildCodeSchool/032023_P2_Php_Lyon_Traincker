@@ -1,4 +1,4 @@
-<article class="train-card card p-3 m-3 border border-3 rounded-5">
+<article class="train-card card p-3 m-3 border border-3 rounded-5" id="train-card">
 
 <div class="train-number m-1"># {{cardData.train_number}}</div>
 
@@ -8,8 +8,21 @@
         <span class="lead fs-3"><strong>{{ cardData.departure_time }}</strong></span>
         <span>à destination de</span>
         <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
+        <span class="mx-2 fs-2 align-middle" id="train-stops-menu-btn">{{trainStopsArrow|raw}}</span>
     </div>
+    <div id="train-stops-menu">
+        <ul>
+            <li>Correspondance</li>
+            <li>Correspondance</li>
+            <li>Correspondance</li>
+            <li>Correspondance</li>
+            <li>Correspondance</li>
+            <li>Correspondance</li>
+        </ul>
+    </div>
+
 </div>
+
 
 {% include 'Shared/cardDataButtons.html.twig' %}
 
