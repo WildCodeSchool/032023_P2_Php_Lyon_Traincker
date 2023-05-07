@@ -227,7 +227,7 @@
   color: var(--primary-color);
 }
 
-/* Train-map ------------------------------------------------------------------------------------------------------*/
+/* home header ------------------------------------------------------------------------------------------------------*/
 
 .home-header {
   background-image: url('/assets/images/women-in-train.jpg');
@@ -284,18 +284,22 @@
   font-size: x-large;
 }
 
-.btn-hover-image,
-.btn-hover-mobile {
+.btn-hover-image {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   color: var(--light-color);
   box-shadow: 10px 9px 0px 1px var(--secondary-color);
   transition: var(--main-transition);
-  font-size: x-large;
+  border-color: var(--secondary-color)!important;
 }
 
 .btn-hover-image:hover {
   background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
   color: var(--secondary-color);
+  border-color: var(--light-color)!important;
+}
+
+.homepage .station-list {
+  width: clamp(350px, 80vw, 600px);
 }
 
 /* navbar -------------- */
