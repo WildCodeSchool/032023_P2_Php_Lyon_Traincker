@@ -3,6 +3,7 @@
     <form action="/timesheet/add-bookmark" method="post">
 
         <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
+        <input type="hidden" name="user_id" value="{{userId}}">
         <input type="hidden" name="station_id" value="{{stationById.id}}">
 
         <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>

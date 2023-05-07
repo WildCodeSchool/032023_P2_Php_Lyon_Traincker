@@ -10,7 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'timesheet/train-list' => ['TimesheetController', 'show', ['id']],
     'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
-    'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
+    'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark', ['userId']],
     'login' => ['UserController', 'login'],
     'logout' => ['UserController', 'logout'],
     'register' => ['UserController', 'register'],

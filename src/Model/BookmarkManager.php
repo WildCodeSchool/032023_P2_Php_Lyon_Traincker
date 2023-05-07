@@ -17,11 +17,12 @@ class BookmarkManager extends AbstractManager
         $statement = $this->pdo->prepare("
             INSERT INTO 
             " . self::TABLE_BOOKMARK . " 
-            (transit_id) 
+            (transit_id, user_id) 
             VALUES 
-            (:transit_id)
+            (:transit_id, :user_id)
         ");
         $statement->bindValue(':transit_id', $bookmark['transit_id'], \PDO::PARAM_INT);
+        $statement->bindValue(':user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
@@ -29,6 +30,7 @@ class BookmarkManager extends AbstractManager
 
     public function selectBookmarks($orderBy)
     {
+        $userId = $_SESSION['user_id'];
         $statement = $this->pdo->prepare("
             SELECT
                 train.number as train_number,
@@ -56,7 +58,7 @@ class BookmarkManager extends AbstractManager
             LEFT JOIN " . self::TABLE_DELAY . "
                 ON (delay.train_id = transit.train_id AND delay.date = current_date())
 
-            WHERE bookmark.transit_id = transit.id
+            WHERE bookmark.transit_id = transit.id AND bookmark.user_id = $userId
 
             GROUP BY bookmark.transit_id
             ORDER BY " . $orderBy . " ASC

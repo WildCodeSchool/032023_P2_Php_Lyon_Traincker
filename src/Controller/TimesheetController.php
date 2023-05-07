@@ -22,16 +22,27 @@ class TimesheetController extends AbstractController
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
 
-        $bookmarkManager = new BookmarkManager();
-        $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
+        if (isset($_SESSION['user_id'])) {
+            $bookmarkManager = new BookmarkManager();
+            $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
+        }
 
-        return $this->twig->render('Timesheet/train-list.html.twig', [
+        return isset($_SESSION['user_id']) ?
+
+        $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
             'stations' => $stations,
             'trains' => $trains,
             'cardDatas' => $cardDatas,
             'bookmarks' => $bookmarks
-        ]);
+        ]) :
+        $this->twig->render('Timesheet/train-list.html.twig', [
+            'stationById' => $stationById,
+            'stations' => $stations,
+            'trains' => $trains,
+            'cardDatas' => $cardDatas
+        ])
+        ;
     }
 
     public function reportDelay()
