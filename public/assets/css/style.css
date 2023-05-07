@@ -202,7 +202,8 @@
 }
 
 .train-number::after,
-.train-to::after {
+.train-to::after,
+.train-stops-title::before {
   display: block;
   content: "";
   width: 100%;

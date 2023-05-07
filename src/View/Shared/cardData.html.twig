@@ -11,10 +11,10 @@
         <i class='bi bi-caret-down mx-2 fs-2 align-middle d-inline-block'></i>
     </div>
     <div class="train-stops-menu d-grid">
-        <ul>
+        <ul class="position-relative">
             {% for stopData in stopDatas %}
                 {% if cardData.train_id == stopData.train_id and cardData.departure_time < stopData.transit_time %}
-                    <li>{{stopData.transit_time}} - {{stopData.station_name}}</li>
+                    <li class="train-stop-item">{{stopData.transit_time}} - {{stopData.station_name}}</li>
                 {% endif %}
             {% endfor %}
         </ul>
