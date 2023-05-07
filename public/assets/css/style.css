@@ -229,24 +229,15 @@
 
 /* Train stops ------------------------------------------------------------------------------------------------------*/
 
-.train-card #train-stops-menu {
-  display: grid;
-  grid-template-rows: 0fr;
+.train-card .train-stops-menu {
   transition: grid-template-rows var(--main-transition);
 }
 
-.train-card #train-stops-menu > ul {
+.train-card .train-stops-menu > ul {
   overflow: hidden;
 }
 
-/* .train-card #train-stops-menu:hover {
-  grid-template-rows: 1fr;
-} */
-
-#caret-down {
-  display: inline-block;
-  transform: rotate(0deg);
-  transform-origin: center;
+.bi-caret-down {
   transition: var(--main-transition);
 }
 

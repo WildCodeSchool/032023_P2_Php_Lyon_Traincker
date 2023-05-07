@@ -8,10 +8,15 @@
         <span class="lead fs-3"><strong>{{ cardData.departure_time }}</strong></span>
         <span>à destination de</span>
         <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
-        <span class="mx-2 fs-2 align-middle" id="train-stops-menu-btn">{{trainStopsArrow|raw}}</span>
+        <i class='bi bi-caret-down mx-2 fs-2 align-middle d-inline-block'></i>
     </div>
-    <div id="train-stops-menu">
+    <div class="train-stops-menu d-grid">
         <ul>
+
+            {% for stopData in stopDatas %}
+                <li>{{stopData.transit_time}} - {{stopData.station_name}}</li>
+            {% endfor %}
+
             <li>Correspondance</li>
             <li>Correspondance</li>
             <li>Correspondance</li>
