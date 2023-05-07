@@ -21,7 +21,7 @@ class TimesheetController extends AbstractController
 
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
-        $stopDatas = $transitManager->selectStopsByTrainId(7);
+        $stopDatas = $transitManager->selectStopsByTrainId();
 
         $bookmarkManager = new BookmarkManager();
         $bookmarks = $bookmarkManager->selectBookmarks('depart_station');

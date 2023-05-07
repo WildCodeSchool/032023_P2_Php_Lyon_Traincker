@@ -12,17 +12,11 @@
     </div>
     <div class="train-stops-menu d-grid">
         <ul>
-
             {% for stopData in stopDatas %}
-                <li>{{stopData.transit_time}} - {{stopData.station_name}}</li>
+                {% if cardData.train_id == stopData.train_id and cardData.departure_time < stopData.transit_time %}
+                    <li>{{stopData.transit_time}} - {{stopData.station_name}}</li>
+                {% endif %}
             {% endfor %}
-
-            <li>Correspondance</li>
-            <li>Correspondance</li>
-            <li>Correspondance</li>
-            <li>Correspondance</li>
-            <li>Correspondance</li>
-            <li>Correspondance</li>
         </ul>
     </div>
 
