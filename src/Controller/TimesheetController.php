@@ -65,7 +65,22 @@ class TimesheetController extends AbstractController
             $bookmark = array_map('trim', $_POST);
 
             $bookmarkManager = new BookmarkManager();
-            $bookmarkManager->insert($bookmark);
+            $bookmarkManager->insertBookmark($bookmark);
+
+            //---------convert string to int --------------//
+            $stationStringId = $bookmark['station_id'];
+            $stationId = (int) $stationStringId;
+            header("location: /timesheet/train-list?id=$stationId");
+        }
+    }
+
+    public function removeBookmark()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $bookmark = array_map('trim', $_POST);
+
+            $bookmarkManager = new BookmarkManager();
+            $bookmarkManager->removeBookmark($bookmark);
 
             //---------convert string to int --------------//
             $stationStringId = $bookmark['station_id'];

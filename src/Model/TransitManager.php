@@ -8,6 +8,7 @@ class TransitManager extends AbstractManager
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
     public const TABLE_DELAY = 'delay';
+    public const TABLE_BOOKMARK = 'bookmark';
 
     public function selectAllByStationId(int $id, string $orderBy)
     {
@@ -23,6 +24,7 @@ class TransitManager extends AbstractManager
                 transit.transit_time as transit_time,
                 destination,
                 date,
+                bookmark.transit_id as bookmarked,
                 
                 DATE_FORMAT(
                     transit.transit_time, 
@@ -39,6 +41,9 @@ class TransitManager extends AbstractManager
 
                     JOIN " . static::TABLE_STATION . " 
                         ON station.id = transit.station_id
+
+                        LEFT JOIN " . static::TABLE_BOOKMARK . "
+                            ON bookmark.transit_id = transit.id
 
             WHERE station.id=:id 
             AND

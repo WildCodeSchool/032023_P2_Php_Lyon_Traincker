@@ -12,7 +12,7 @@ class BookmarkManager extends AbstractManager
 
     /* Insert bookmark in database */
 
-    public function insert(array $bookmark): int
+    public function insertBookmark(array $bookmark): int
     {
         $statement = $this->pdo->prepare("
             INSERT INTO 
@@ -67,5 +67,19 @@ class BookmarkManager extends AbstractManager
         $statement->execute();
 
         return $statement->fetchAll();
+    }
+
+    public function removeBookmark($bookmark)
+    {
+        $statement = $this->pdo->prepare("
+            DELETE FROM 
+            " . self::TABLE_BOOKMARK . " 
+            WHERE
+            transit_id = :transit_id
+        ");
+        $statement->bindValue(':transit_id', $bookmark['transit_id'], \PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
     }
 }
