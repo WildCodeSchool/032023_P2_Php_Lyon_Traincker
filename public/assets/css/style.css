@@ -321,7 +321,7 @@ nav form a.fav:hover {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   transition: var(--main-transition);
   border-radius: 10px;
-  color: var(--dark-color);
+  color: var(--light-color);
   font-weight: bold;
   border-color: var(--light-color);
 }
@@ -336,16 +336,17 @@ nav form a.fav:hover {
 .display-login {
   background-image: url('/assets/images/flou1.jpg');
   background-size: cover;
+  height: 100vh;
 }
 
 .wrapper {
-  margin: 5rem;
+  margin: auto;
   width: 400px;
   height: 537px;
   background: transparent;
   border: 2px solid var(--light-color);
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(170px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
@@ -402,7 +403,7 @@ nav form a.fav:hover {
   left: 5px;
   transform: translateY(-50%);
   font-size: 1em;
-  color: var(--dark-color);
+  color: var(--light-color);
   font-weight: bold;
   pointer-events: none;
   transition: .5s;
@@ -420,7 +421,7 @@ nav form a.fav:hover {
   border: none;
   outline: none;
   font-size: 1em;
-  color: var(--dark-color);
+  color: var(--light-color);
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
