@@ -336,10 +336,11 @@ nav form a.fav:hover {
 .display-login {
   background-image: url('/assets/images/flou1.jpg');
   background-size: cover;
+  height: 100vh;
 }
 
 .wrapper {
-  margin: 5rem;
+  margin: auto;
   width: 400px;
   height: 537px;
   background: transparent;
