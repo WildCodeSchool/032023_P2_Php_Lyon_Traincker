@@ -202,7 +202,8 @@
 }
 
 .train-number::after,
-.train-to::after {
+.train-to::after,
+.train-stops-title::before {
   display: block;
   content: "";
   width: 100%;
@@ -227,6 +228,21 @@
   color: var(--primary-color);
 }
 
+/* Train stops ------------------------------------------------------------------------------------------------------*/
+
+.train-card .train-stops-menu {
+  transition: grid-template-rows var(--main-transition);
+}
+
+.train-card .train-stops-menu > ul {
+  overflow: hidden;
+}
+
+.bi-caret-down {
+  transition: var(--main-transition);
+}
+
+/* Home header ------------------------------------------------------------------------------------------------------*/
 .no-train {
   color: var(--light-color);
   font-size: 1.2em;

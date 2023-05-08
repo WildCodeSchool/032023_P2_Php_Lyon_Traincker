@@ -21,16 +21,20 @@ class TimesheetController extends AbstractController
 
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
+        $stopDatas = $transitManager->selectStopsByTrainId();
 
         $bookmarkManager = new BookmarkManager();
         $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
+
+
 
         return $this->twig->render('Timesheet/train-list.html.twig', [
             'stationById' => $stationById,
             'stations' => $stations,
             'trains' => $trains,
             'cardDatas' => $cardDatas,
-            'bookmarks' => $bookmarks
+            'bookmarks' => $bookmarks,
+            'stopDatas' => $stopDatas
         ]);
     }
 
