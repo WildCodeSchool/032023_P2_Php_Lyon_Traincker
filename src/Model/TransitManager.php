@@ -59,8 +59,7 @@ class TransitManager extends AbstractManager
 
     public function selectStopsByTrainId()
     {
-        // prepared request
-        $statement = $this->pdo->prepare("
+        $query = "
             SELECT
                 DATE_FORMAT(transit.transit_time, '%H:%i') as transit_time,
                 station.name as station_name,
@@ -72,9 +71,8 @@ class TransitManager extends AbstractManager
                 ON transit.station_id = station.id
 
             ORDER BY transit_time
-        ");
-        $statement->execute();
+        ";
 
-        return $statement->fetchAll();
+        return $this->pdo->query($query)->fetchAll();
     }
 }
