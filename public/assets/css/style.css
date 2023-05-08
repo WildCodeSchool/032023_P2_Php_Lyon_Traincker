@@ -227,6 +227,11 @@
   color: var(--primary-color);
 }
 
+.no-train {
+  color: var(--light-color);
+  font-size: 1.2em;
+}
+
 /* Train-map ------------------------------------------------------------------------------------------------------*/
 
 .home-header {
@@ -553,4 +558,9 @@ a.logo:hover {
 .bm-card-late:hover .bm-train-number::after {
   transform: translate(0px);
   opacity: 100%;
+}
+
+.no-favourite {
+  color: var(--light-color);
+  font-size: 1.2em;
 }
