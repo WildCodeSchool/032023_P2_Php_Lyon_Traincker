@@ -456,6 +456,10 @@ nav form a.fav:hover {
   text-decoration: underline;
 }
 
+.modal-backdrop.show {
+  opacity: 0;
+}
+
 
 /*footer*/
 .footer {
