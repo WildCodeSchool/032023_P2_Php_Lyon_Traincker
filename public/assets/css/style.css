@@ -352,7 +352,8 @@ nav form a.fav:hover {
   background-color: var(--secondary-color);
 }
 
-.navbar .btn-login {
+.navbar .btn-login,
+.btn-bookmark {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   transition: var(--main-transition);
   border-radius: 10px;
@@ -361,7 +362,8 @@ nav form a.fav:hover {
   border-color: var(--light-color);
 }
 
-.navbar .btn-login:hover {
+.navbar .btn-login:hover,
+.btn-bookmark:hover {
 
   border-color: var(--light-color);
 }
