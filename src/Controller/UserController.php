@@ -3,37 +3,18 @@
 namespace App\Controller;
 
 use App\Model\UserManager;
+use App\Service\UserService;
 
 class UserController extends AbstractController
 {
-    public function handleLoginErrors(array $credentials): array
-    {
-        $errors = [];
-
-        if (!isset($credentials['login']) || empty($credentials['login'])) {
-            $errors[] = 'Remplissez le champ email !';
-        }
-        if (!isset($credentials['password']) || empty($credentials['password'])) {
-            $errors[] = 'Remplissez le mot de passe !';
-        }
-
-        if (!empty($credentials['login']) && !filter_var($credentials['login'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'L\'adresse email n\'est pas valide';
-        }
-
-        return $errors;
-    }
-
-
     public function login(): string
     {
-        $errors = [];
+        $userService = new UserService();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
+            $userService->loginVerification($credentials);
 
-            $errors = $this->handleLoginErrors($_POST);
-
-            if (empty($errors)) {
+            if (empty($userService->errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($credentials['login']);
                 if (
@@ -48,13 +29,11 @@ class UserController extends AbstractController
                     header('Location: /');
                     exit();
                 }
-                $errors[] = 'Email ou mot de passe invalide !';
+                $userService->errors[] = 'Email ou mot de passe invalide !';
             }
         }
 
-        return $this->twig->render('User/login.html.twig', [
-            'errors' => $errors
-        ]);
+        return $this->twig->render('User/login.html.twig', ['errors' => $userService->errors]);
     }
 
     public function logout()
@@ -66,24 +45,17 @@ class UserController extends AbstractController
 
     public function register()
     {
-        $errors = [];
-
+        $userService = new UserService();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
+            $userService->registerVerification($credentials);
 
-            // Validation de l'adresse e-mail
-            if (!filter_var($credentials['login'], FILTER_VALIDATE_EMAIL)) {
-                $errors[] = 'Adresse e-mail invalide';
-            }
-
-            // Vérification de l'adresse e-mail
             $userManager = new UserManager();
             $existingUser = $userManager->selectOneByEmail($credentials['login']);
             if ($existingUser) {
-                $errors[] = 'Cette adresse e-mail est déjà utilisée';
+                $userService->errors[] = 'Cette adresse e-mail est déjà utilisée';
             }
-
-            if (empty($errors)) {
+            if (empty($userService->errors)) {
                 $userManager = new UserManager();
                 if ($userManager->insert($credentials)) {
                     return $this->login();
@@ -97,9 +69,7 @@ class UserController extends AbstractController
             }
         }
 
-        return $this->twig->render('User/login.html.twig', [
-            'errors' => $errors
-        ]);
+        return $this->twig->render('User/login.html.twig', ['errors' => $userService->errors]);
     }
 
     public function showUser(): string

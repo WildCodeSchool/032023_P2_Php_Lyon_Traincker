@@ -22,7 +22,7 @@
                 </div>
             </div>
 {# Mobile dropdown menu ------------------------------------------------------------------------------------------------ #}
-            <div class="glass-m p-5 d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
+            <div class="glass-m d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
                 <div>
                     <h3>Quelle gare ?</h3>
                     <div class="dropdown-center">
@@ -51,11 +51,11 @@
     {% set clockUnset = "<i class='bi bi-clock'></i>" %}
     {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
 
-        <section class="timesheet-trains m-0 p-5 w-100">
+        <section class="timesheet-trains m-0 p-4 p-md-5 w-100">
             <div class="result-stroke position-relative
                         border rounded-5 border-primary
                         me-auto ms-auto p-4">
-                    <h1 class="train-card-title fs-3 text-nowrap z-1 position-absolute top-0 start-50 translate-middle text-center text-light">Résultats de votre recherche</h1>
+                    <h1 class="train-card-title fs-6 text-nowrap z-1 position-absolute top-0 start-50 translate-middle text-center text-light">Résultats de votre recherche</h1>
             
                     <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
 
@@ -68,7 +68,7 @@
                             {% endif %}
                             {% else %}
                                 <div class="no-train">Aucun train disponible</div>
-                            {% endfor %} 
+                        {% endfor %} 
                 </div>
             </div>
         </section>

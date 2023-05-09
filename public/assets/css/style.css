@@ -95,7 +95,6 @@
 
 .timesheet-header {
   height: 300px;
-  width: 100vw;
 }
 
 .timesheet-header .page-header-image {
@@ -140,7 +139,7 @@
 }
 
 .timesheet-trains .result-stroke {
-  width: clamp(500px, 80%, 1000px);
+  width: fit-content;
   border-color: var(--primary-color) !important;
 }
 
@@ -170,7 +169,7 @@
 }
 
 .timesheet-trains article.card {
-  min-width: 400px;
+  min-width: 150px;
   background-color: rgba(255, 255, 255, 0.5);
   color: var(--light-color);
 }
@@ -339,20 +338,32 @@ nav.navbar {
   background-color: var(--primary-color);
 }
 
-nav form a.logo {
+nav form a.logo,
+footer a .logo {
   font-family: var(--logo-font);
 }
 
-nav form a.logo:hover {
+nav form a.logo:hover,
+footer a .logo:hover {
   color: var(--light-color);
 }
+
+nav form a.logo:active,
+footer a .logo:active,
+nav form a.logo:focus,
+footer a .logo:focus {
+  color: var(--secondary-color);
+  border: none;
+}
+
 
 nav form a.fav:hover {
   color: var(--primary-color);
   background-color: var(--secondary-color);
 }
 
-.navbar .btn-login {
+.navbar .btn-login,
+.btn-bookmark {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   transition: var(--main-transition);
   border-radius: 10px;
@@ -361,7 +372,8 @@ nav form a.fav:hover {
   border-color: var(--light-color);
 }
 
-.navbar .btn-login:hover {
+.navbar .btn-login:hover,
+.btn-bookmark:hover {
 
   border-color: var(--light-color);
 }
@@ -513,14 +525,9 @@ nav form a.fav:hover {
   font-family: var(--logo-font);
 }
 
-.letters {
+footer .letters {
   color: var(--secondary-color);
   font-family: var(--logo-font);
-}
-
-a.logo:hover {
-  font-family: var(--logo-font);
-  color: var(--light-color);
 }
 
 /* ----------------------------------sidebar ---------------------------------- */
@@ -610,6 +617,7 @@ a.logo:hover {
   overflow-x: hidden;
   padding-top: 20px;
 }
+
 .sidebar a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -617,65 +625,79 @@ a.logo:hover {
   color: #818181;
   display: block;
 }
+
 .sidebar a:hover {
   color: #f1f1f1;
 }
+
 .main {
   margin-left: 200px;
   padding: 0px 10px;
 }
+
 /* styles pour la table CRUD */
 table {
   border-collapse: collapse;
   width: 100%;
 }
-th, td {
+
+th,
+td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #ddd;
 }
+
 tr:hover {
   background-color: #f5f5f5;
 }
+
 th {
   background-color: #4CAF50;
   color: white;
 }
+
 .form-popup {
-    display: none;
-  }
+  display: none;
+}
 
-  .numberTransit, .numberTrain, .numberStation, .numberUser{
-    font-size: 4rem;
-    line-height: 62px;
-    color: whitesmoke;
-    margin-top: 2rem;
-    }
+.numberTransit,
+.numberTrain,
+.numberStation,
+.numberUser {
+  font-size: 4rem;
+  line-height: 62px;
+  color: whitesmoke;
+  margin-top: 2rem;
+}
 
-    .dashboardContainer{
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      background-color: var(--primary-color);
-      padding: 5rem;
-    }
+.dashboardContainer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 5rem;
+}
 
-    .subject{
-      letter-spacing: 0.5px;
-      font-weight: 300;
-      font-size: 16px!important;
-      line-height: 25px;
-      color: #676767;
-  }
-  .items{
-    border-radius: 50%;
-    padding: 23px;
-    background-color: #111;
-  }
+.subject {
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-size: 16px !important;
+  line-height: 25px;
+  color: #676767;
+}
+
+.items {
+  border-radius: 50%;
+  padding: 23px;
+  background-color: #111;
+}
+
 .no-favourite {
   color: var(--light-color);
   font-size: 1.2em;
 }
-.formpopup{
-  display : none;
+
+.formpopup {
+  display: none;
 }

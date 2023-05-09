@@ -20,7 +20,10 @@
     <form action="/timesheet/train-delay" method="post">
         <input type="hidden" name="train_id" value="{{cardData.train_id}}">
         <input type="hidden" name="station_id" value="{{stationById.id}}">
-        <button class="delay btn btn-outline-danger rounded-pill">{{clockUnset|raw}} Retard</button>
+        <div class="delay btn btn-outline-danger rounded-pill">
+            <button class="border-0 bg-transparent text-danger">{{clockUnset|raw}}</button>
+            <button class="border-0 bg-transparent text-danger d-none d-md-inline">Retard</button>
+        </div>
     </form>
 
 </div>
