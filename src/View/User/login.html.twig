@@ -1,15 +1,7 @@
 {% extends 'layout.html.twig' %}
     {% block content %}
     
-      {% if errors %}
-        <div class="alert alert-danger" role="alert">
-          <ul>
-            {% for error in errors %}
-              <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
+      
 
     <div class="display-login row">
     <div id="wrapper" class= "wrapper mx-auto">
@@ -27,6 +19,15 @@
           <button type="submit" id="submit" class="btn-popup">Se connecter</button>
           <div class="login-register"><p>Vous n'avez pas de compte ?</br><a href="#" class="register-link"  id="register-link">S'enregistrer</a></p>
           </div>
+          {% if errors %}
+            <div class="alert alert-danger" role="alert">
+            <ul>
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+           </div>
+          {% endif %}
         </form>
       </div>
     
@@ -48,6 +49,15 @@
           <button type="submit" class="btn-popup" id="submit">S'inscrire</button>
           <div class="login-register"><p>Vous avez déjà un compte ?</br><a href="#" class="login-link"  id="login-link">Se connecter</a></p>
           </div>
+          {% if errors %}
+            <div class="alert alert-danger" role="alert">
+            <ul>
+              {% for error in errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+            </div>
+          {% endif %}
         </form>
       </div>
     </div>

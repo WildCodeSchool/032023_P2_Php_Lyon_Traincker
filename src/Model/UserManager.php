@@ -22,7 +22,7 @@ class UserManager extends AbstractManager
         " . static::TABLE . "
         (`login`, `password`, `username` )
         VALUES
-        (:login, :password,:username)
+        (:login, :password, :username)
         ");
         $statement->bindValue(':login', $credentials['login']);
         $statement->bindValue(':password', password_hash($credentials['password'], PASSWORD_DEFAULT));
