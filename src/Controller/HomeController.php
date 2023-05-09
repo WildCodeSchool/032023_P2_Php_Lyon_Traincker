@@ -13,20 +13,14 @@ class HomeController extends AbstractController
         $station = $stationManager->selectAll('name');
 
         $bookmarks = null;
-
         if (isset($_SESSION['user_id'])) {
             $bookmarkManager = new BookmarkManager();
             $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
         }
 
-        return isset($_SESSION['user_id']) ?
-
-        $this->twig->render('Home/index.html.twig', [
+        return $this->twig->render('Home/index.html.twig', [
             'stations' => $station,
             'bookmarks' => $bookmarks
-        ]) :
-        $this->twig->render('Home/index.html.twig', [
-            'stations' => $station
         ]);
     }
 }
