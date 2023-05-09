@@ -17,7 +17,7 @@ class UserService
             $this->errors[] = 'Remplissez le champ email !';
         }
         if (!filter_var($credentials['login'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Adresse e-mail invalide';
+            $this->errors[] = 'Adresse e-mail invalide';
         }
         if (!isset($credentials['password']) || empty($credentials['password'])) {
             $this->errors[] = 'Remplissez le mot de passe !';
