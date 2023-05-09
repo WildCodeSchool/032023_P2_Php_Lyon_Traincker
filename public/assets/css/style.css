@@ -234,7 +234,7 @@
   transition: grid-template-rows var(--main-transition);
 }
 
-.train-card .train-stops-menu > ul {
+.train-card .train-stops-menu>ul {
   overflow: hidden;
 }
 
@@ -310,13 +310,13 @@
   color: var(--light-color);
   box-shadow: 10px 9px 0px 1px var(--secondary-color);
   transition: var(--main-transition);
-  border-color: var(--secondary-color)!important;
+  border-color: var(--secondary-color) !important;
 }
 
 .btn-hover-image:hover {
   background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
   color: var(--secondary-color);
-  border-color: var(--light-color)!important;
+  border-color: var(--light-color) !important;
 }
 
 .homepage .station-list {
@@ -362,6 +362,9 @@ nav form a.fav:hover {
   background-image: url('/assets/images/flou1.jpg');
   background-size: cover;
   height: 100vh;
+  width: 100%;
+  margin: 0;
+  background-position: center;
 }
 
 .wrapper {
