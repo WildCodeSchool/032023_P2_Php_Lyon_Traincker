@@ -6,23 +6,44 @@ use App\Model\UserManager;
 
 class UserController extends AbstractController
 {
+    public function handleLoginErrors(array $credentials): array
+    {
+        $errors = [];
+
+        if (!isset($credentials['login']) || empty($credentials['login'])) {
+            $errors[] = 'Remplissez le champ email !';
+        }
+        if (!isset($credentials['password']) || empty($credentials['password'])) {
+            $errors[] = 'Remplissez le mot de passe !';
+        }
+
+        if (!empty($credentials['login']) && !filter_var($credentials['login'], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = 'L\'adresse email n\'est pas valide';
+        }
+
+        return $errors;
+    }
+
+
     public function login(): string
     {
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
 
-            if (!isset($credentials['login']) || empty($credentials['login'])) {
-                $errors[] = 'Remplissez le champ email !';
-            }
-            if (!isset($credentials['password']) || empty($credentials['password'])) {
-                $errors[] = 'Remplissez le mot de passe !';
-            }
+            $errors = $this->handleLoginErrors($_POST);
 
             if (empty($errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($credentials['login']);
-                if ($user && password_verify($credentials['password'], $user['password'])) {
+                if (
+                    $user && $credentials['login'] === 'traincker@traincker.com'
+                    && $credentials['password'] === 'traincker'
+                ) {
+                    // Redirect user to admin page if email and password match
+                    header('Location: /admin/dashboard');
+                    exit;
+                } elseif ($user && password_verify($credentials['password'], $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     header('Location: /');
                     exit();
