@@ -40,7 +40,8 @@ class TimesheetController extends AbstractController
             'stationById' => $stationById,
             'stations' => $stations,
             'trains' => $trains,
-            'cardDatas' => $cardDatas
+            'cardDatas' => $cardDatas,
+            'bookmarks' => $bookmarks
         ]);
     }
 

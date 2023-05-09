@@ -46,19 +46,39 @@ class UserController extends AbstractController
 
     public function register()
     {
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $credentials = array_map('trim', $_POST);
+
+            // Validation de l'adresse e-mail
+            if (!filter_var($credentials['login'], FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'Adresse e-mail invalide';
+            }
+
+            // Vérification de l'adresse e-mail
             $userManager = new UserManager();
-            if ($userManager->insert($credentials)) {
-                return $this->login();
+            $existingUser = $userManager->selectOneByEmail($credentials['login']);
+            if ($existingUser) {
+                $errors[] = 'Cette adresse e-mail est déjà utilisée';
             }
-            $user = $userManager->selectOneByEmail($credentials['login']);
-            if ($user && password_verify($credentials['password'], $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
-                header('Location: /');
+
+            if (empty($errors)) {
+                $userManager = new UserManager();
+                if ($userManager->insert($credentials)) {
+                    return $this->login();
+                }
+                $user = $userManager->selectOneByEmail($credentials['login']);
+                if ($user && password_verify($credentials['password'], $user['password'])) {
+                    $_SESSION['user_id'] = $user['id'];
+                    header('Location: /');
+                }
+                return $this->twig->render('User/login.html.twig');
             }
-            return $this->twig->render('User/login.html.twig');
         }
+
+        return $this->twig->render('User/login.html.twig', [
+            'errors' => $errors
+        ]);
     }
 }
