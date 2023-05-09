@@ -212,7 +212,8 @@
   margin: 5px 0px;
 }
 
-.option-buttons .btn-primary {
+.option-buttons .btn-primary,
+.offcanvas-body .btn-primary {
   color: var(--secondary-color);
   background-color: var(--primary-color);
   border-color: var(--light-color);
@@ -223,7 +224,8 @@
   color: var(--light-color);
 }
 
-.option-buttons .bookmark:hover {
+.option-buttons .bookmark:hover,
+.offcanvas-body .btn-primary:hover {
   background-color: var(--light-color);
   color: var(--primary-color);
 }
@@ -246,6 +248,14 @@
 .no-train {
   color: var(--light-color);
   font-size: 1.2em;
+}
+
+.option-buttons .bookmark:focus,
+.offcanvas-body .btn-primary:focus,
+.option-buttons .bookmark:active,
+.offcanvas-body .btn-primary:active {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
 }
 
 /* Train-map ------------------------------------------------------------------------------------------------------*/
