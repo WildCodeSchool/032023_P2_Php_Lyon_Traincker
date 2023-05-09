@@ -17,7 +17,14 @@ class UserController extends AbstractController
             if (empty($userService->errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($credentials['login']);
-                if ($user && password_verify($credentials['password'], $user['password'])) {
+                if (
+                    $user && $credentials['login'] === 'traincker@traincker.com'
+                    && $credentials['password'] === 'traincker'
+                ) {
+                    // Redirect user to admin page if email and password match
+                    header('Location: /admin/dashboard');
+                    exit;
+                } elseif ($user && password_verify($credentials['password'], $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     header('Location: /');
                     exit();
