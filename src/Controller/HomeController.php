@@ -12,6 +12,8 @@ class HomeController extends AbstractController
         $stationManager = new StationManager();
         $station = $stationManager->selectAll('name');
 
+        $bookmarks = null;
+
         if (isset($_SESSION['user_id'])) {
             $bookmarkManager = new BookmarkManager();
             $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
