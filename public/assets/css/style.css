@@ -202,7 +202,8 @@
 }
 
 .train-number::after,
-.train-to::after {
+.train-to::after,
+.train-stops-title::before {
   display: block;
   content: "";
   width: 100%;
@@ -225,6 +226,26 @@
 .option-buttons .bookmark:hover {
   background-color: var(--light-color);
   color: var(--primary-color);
+}
+
+/* Train stops ------------------------------------------------------------------------------------------------------*/
+
+.train-card .train-stops-menu {
+  transition: grid-template-rows var(--main-transition);
+}
+
+.train-card .train-stops-menu > ul {
+  overflow: hidden;
+}
+
+.bi-caret-down {
+  transition: var(--main-transition);
+}
+
+/* Home header ------------------------------------------------------------------------------------------------------*/
+.no-train {
+  color: var(--light-color);
+  font-size: 1.2em;
 }
 
 /* Train-map ------------------------------------------------------------------------------------------------------*/
@@ -284,18 +305,22 @@
   font-size: x-large;
 }
 
-.btn-hover-image,
-.btn-hover-mobile {
+.btn-hover-image {
   background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
   color: var(--light-color);
   box-shadow: 10px 9px 0px 1px var(--secondary-color);
   transition: var(--main-transition);
-  font-size: x-large;
+  border-color: var(--secondary-color)!important;
 }
 
 .btn-hover-image:hover {
   background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
   color: var(--secondary-color);
+  border-color: var(--light-color)!important;
+}
+
+.homepage .station-list {
+  width: clamp(350px, 80vw, 600px);
 }
 
 /* navbar -------------- */
@@ -457,6 +482,10 @@ nav form a.fav:hover {
   text-decoration: underline;
 }
 
+.modal-backdrop.show {
+  opacity: 0;
+}
+
 
 /*footer*/
 .footer {
@@ -553,4 +582,9 @@ a.logo:hover {
 .bm-card-late:hover .bm-train-number::after {
   transform: translate(0px);
   opacity: 100%;
+}
+
+.no-favourite {
+  color: var(--light-color);
+  font-size: 1.2em;
 }

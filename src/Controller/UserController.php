@@ -56,6 +56,13 @@ class UserController extends AbstractController
                 $errors[] = 'Adresse e-mail invalide';
             }
 
+            // Vérification de l'adresse e-mail
+            $userManager = new UserManager();
+            $existingUser = $userManager->selectOneByEmail($credentials['login']);
+            if ($existingUser) {
+                $errors[] = 'Cette adresse e-mail est déjà utilisée';
+            }
+
             if (empty($errors)) {
                 $userManager = new UserManager();
                 if ($userManager->insert($credentials)) {
