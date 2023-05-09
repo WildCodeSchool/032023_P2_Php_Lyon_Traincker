@@ -1,0 +1,69 @@
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main">
+		<h1>Transit</h1>
+		<!-- bouton Ajouter -->
+		<button class="btn btn-primary" onclick="openForm()">Ajouter</button>
+		<!-- Form -->
+			<div class="form-popup" id="popup-Form">
+				<form action="/admintransit/add" class="form-container" method="POST">
+					    <label for="train_id">
+						<input type="number" placeholder="train_id" name="train_id" required />
+                        <label for="station_id">
+						<input type="number" placeholder="station_id" name="station_id" required />
+                        <label for="transit_time">
+						<input type="time" placeholder="transit_time" name="transit_time" required />
+                        <label for="destination">
+						<input type="text" placeholder="destination" name="destination" required />
+					<button type="submit" class="btn">Ajouter</button>
+				</form>
+			</div>
+		<!-- table CRUD -->
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>train_id</th>
+					<th>station_id</th>
+					<th>transit_time</th>
+					<th>destination</th>
+					<th>Action</th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+			{% for transit in transits %}
+				<tr>
+					<td>
+						{{ transit.id }}
+					</td>
+					<td>
+                        {{ transit.train_id }}
+                    </td>
+                    <td>
+                        {{ transit.station_id }}
+                    </td>
+                    <td>
+                        {{ transit.transit_time }}
+                    </td>
+                    <td>
+                        {{ transit.destination }}
+                    </td>
+					<td>
+						<button class="btn btn-primary" onclick="editer(1)">Editer</button>
+						<form action="/admintransit/delete" method="POST">
+							<input type="hidden" name="id" value="{{ transit.id }}">
+							<button>Supprimer</button>
+						</form>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% block javascript %}<script src="/js/script.js"></script>{% endblock %}
+		{% endblock %}

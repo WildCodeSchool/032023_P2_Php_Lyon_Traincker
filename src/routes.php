@@ -12,8 +12,25 @@ return [
     'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
     'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
     'login' => ['UserController', 'login'],
-    'admin' => ['AdminController', 'admin'],
-    'admin/delete' => ['AdminController', 'delete',],
+
+    'admin/station' => ['AdminController', 'showStation'],
+    'adminstation/add' => ['AdminController', 'addStation',],
+    'adminstation/delete' => ['AdminController', 'deleteStation',],
+
+
+    'admin/train' => ['AdminController', 'showTrain'],
+    'admintrain/add' => ['AdminController', 'addTrain',],
+    'admintrain/delete' => ['AdminController', 'deleteTrain',],
+
+    'admin/transit' => ['AdminController', 'showTransit'],
+    'admintransit/add' => ['AdminController', 'addTransit',],
+    'admintransit/delete' => ['AdminController', 'deleteTransit',],
+
+
+    'admin/users' => ['UserController', 'showUser'],
+
+    'admin/dashboard' => ['AdminController', 'showDashboard'],
+
 
 
 ];

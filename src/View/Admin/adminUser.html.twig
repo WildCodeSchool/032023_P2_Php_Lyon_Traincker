@@ -1,0 +1,36 @@
+
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main">
+		<h1>Utilisateurs</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nom</th>
+					<th>Prenom</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+                    <td>
+						1
+					</td>
+					<td>
+						titi
+					</td>
+					<td>
+                        toto
+                    </td>
+					<td>
+                        toto@toto.com
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		{% endblock %}

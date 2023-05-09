@@ -1,0 +1,51 @@
+
+
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main">
+		<h1>Trains</h1>
+		<!-- bouton Ajouter -->
+		<button class="btn btn-primary" onclick="openForm()">Ajouter</button>
+		<!-- Form -->
+			<div class="form-popup" id="popup-Form">
+				<form action="/admintrain/add" class="form-container" method="POST">
+					<label for="number">
+						<input type="number" placeholder="number" name="number" required />
+					<button type="submit" class="btn">Ajouter</button>
+				</form>
+			</div>
+		<!-- table CRUD -->
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Numero de Trains</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for train in trains %}
+				<tr>
+					<td>
+						{{ train.id }}
+					</td>
+					<td>
+                        {{ train.number }}
+                    </td>
+					<td>
+						<button class="btn btn-primary" onclick="editer(1)">Editer</button>
+						<form action="/admintrain/delete" method="POST">
+							<input type="hidden" name="id" value="{{ train.id }}">
+							<button>Supprimer</button>
+						</form>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% block javascript %}<script src="/js/script.js"></script>{% endblock %}
+		{% endblock %}

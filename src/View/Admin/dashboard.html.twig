@@ -1,0 +1,33 @@
+
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main" onclick="setInterval (showStatFunction, 10);">
+		<h1>Dashboard</h1>
+            <div class="dashboardContainer" >
+                <div class="items">
+                    <div class="numberUser"><span id="showNumberUser" >{{ numberOfUser }}</span></div>
+                    <div class="subject">Nombre de User</div>
+                </div>
+    
+                <div class="items">
+                    <div class="numberStation"><span id="showNumberStation" >{{ numberOfStation }}</span></div>
+                    <div class="subject">Nombre de station</div>
+                </div>
+                <div class="items">
+                    <div class="numberTrain"><span id="showNumberTrain" >{{ numberOfTrain }}</span></div>
+                    <div class="subject">Nombre de trains</div>
+                </div>
+                <div class="items">
+                    <div class="numberTransit"><span id="showNumberTransit" >{{ numberOfTransit }}</span></div>
+                    <div class="subject">Nombre de transit</div>
+                </div>
+    </div>
+    </div>
+
+
+{% block javascript %}<script src="/js/script.js"></script>{% endblock %}
+{% endblock %}

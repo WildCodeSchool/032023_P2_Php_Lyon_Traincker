@@ -23,4 +23,9 @@ class UserController extends AbstractController
 
         return $this->twig->render('User/login.html.twig');
     }
+
+    public function showUser(): string
+    {
+        return $this->twig->render('Admin/adminUser.html.twig');
+    }
 }
