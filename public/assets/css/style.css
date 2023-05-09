@@ -140,7 +140,7 @@
 }
 
 .timesheet-trains .result-stroke {
-  width: clamp(500px, 80%, 1000px);
+  width: fit-content;
   border-color: var(--primary-color) !important;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .timesheet-trains article.card {
-  min-width: 400px;
+  min-width: 150px;
   background-color: rgba(255, 255, 255, 0.5);
   color: var(--light-color);
 }
