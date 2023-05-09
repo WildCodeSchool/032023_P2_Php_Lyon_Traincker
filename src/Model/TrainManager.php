@@ -17,8 +17,7 @@ class TrainManager extends AbstractManager
 
     public function getNumberOfTrain(): int
     {
-        $statement = $this->pdo->prepare("SELECT COUNT(*) as count FROM " . static::TABLE);
-        $statement->execute();
+        $statement = $this->pdo->query("SELECT COUNT(*) as count FROM " . static::TABLE);
         $data = $statement->fetch();
         $numberOfTrain = $data['count'];
         return $numberOfTrain;

@@ -12,25 +12,27 @@
 				<tr>
 					<th>ID</th>
 					<th>Nom</th>
-					<th>Prenom</th>
-					<th>Email</th>
+					<th>Username</th>
+					<th>Password</th>
 				</tr>
 			</thead>
 			<tbody>
+			{% for user in users %}
 				<tr>
                     <td>
-						1
+						{{ user.id }}
 					</td>
 					<td>
-						titi
+						{{ user.login }}
 					</td>
 					<td>
-                        toto
+                        {{ user.username }}
                     </td>
 					<td>
-                        toto@toto.com
+                        {{ user.password }}
 					</td>
 				</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 		{% endblock %}

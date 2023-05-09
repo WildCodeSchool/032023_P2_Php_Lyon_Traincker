@@ -17,8 +17,7 @@ class StationManager extends AbstractManager
 
     public function getNumberOfStation(): int
     {
-        $statement = $this->pdo->prepare("SELECT COUNT(*) as count FROM " . static::TABLE);
-        $statement->execute();
+        $statement = $this->pdo->query("SELECT COUNT(*) as count FROM " . static::TABLE);
         $data = $statement->fetch();
         $numberOfStation = $data['count'];
         return $numberOfStation;

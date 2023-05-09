@@ -79,8 +79,7 @@ class TransitManager extends AbstractManager
 
     public function getNumberOfTransit(): int
     {
-        $statement = $this->pdo->prepare("SELECT COUNT(*) as count FROM " . static::TABLE);
-        $statement->execute();
+        $statement = $this->pdo->query("SELECT COUNT(*) as count FROM " . static::TABLE);
         $data = $statement->fetch();
         $numberOfTransit = $data['count'];
         return $numberOfTransit;
