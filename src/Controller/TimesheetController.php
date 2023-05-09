@@ -21,7 +21,7 @@ class TimesheetController extends AbstractController
 
         $transitManager = new TransitManager();
         $cardDatas = $transitManager->selectAllByStationId($id, 'departure_time');
-
+        $bookmarks = null;
         if (isset($_SESSION['user_id'])) {
             $bookmarkManager = new BookmarkManager();
             $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
@@ -41,8 +41,7 @@ class TimesheetController extends AbstractController
             'stations' => $stations,
             'trains' => $trains,
             'cardDatas' => $cardDatas
-        ])
-        ;
+        ]);
     }
 
     public function reportDelay()

@@ -3,16 +3,16 @@
         {% if user %}
         {% if cardData.transit_id == cardData.bookmarked %}
             <form action="/timesheet/remove-bookmark" method="post">
-            <input type="hidden" name="station_id" value="{{stationById.id}}">
-            <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
-            <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkSet|raw}}</button>
+                <input type="hidden" name="station_id" value="{{stationById.id}}">
+                <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
+                <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkSet|raw}}</button>
         {% else %}
             <form action="/timesheet/add-bookmark" method="post">
 
-            <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
-            <input type="hidden" name="user_id" value="{{userId}}">
-            <input type="hidden" name="station_id" value="{{stationById.id}}">
-            <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
+                <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
+                <input type="hidden" name="user_id" value="{{userId}}">
+                <input type="hidden" name="station_id" value="{{stationById.id}}">
+                <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
         {% endif %}
         {% endif %}
     </form>
