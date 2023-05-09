@@ -339,13 +339,24 @@ nav.navbar {
   background-color: var(--primary-color);
 }
 
-nav form a.logo {
+nav form a.logo,
+footer a .logo {
   font-family: var(--logo-font);
 }
 
-nav form a.logo:hover {
+nav form a.logo:hover,
+footer a .logo:hover {
   color: var(--light-color);
 }
+
+nav form a.logo:active,
+footer a .logo:active,
+nav form a.logo:focus,
+footer a .logo:focus {
+  color: var(--secondary-color);
+  border: none;
+}
+
 
 nav form a.fav:hover {
   color: var(--primary-color);
@@ -515,14 +526,9 @@ nav form a.fav:hover {
   font-family: var(--logo-font);
 }
 
-.letters {
+footer .letters {
   color: var(--secondary-color);
   font-family: var(--logo-font);
-}
-
-a.logo:hover {
-  font-family: var(--logo-font);
-  color: var(--light-color);
 }
 
 /* ----------------------------------sidebar ---------------------------------- */
