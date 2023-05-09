@@ -8,19 +8,21 @@ class BookmarkManager extends AbstractManager
     public const TABLE_TRANSIT = 'transit';
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
+    public const TABLE_DELAY = 'delay';
 
     /* Insert bookmark in database */
 
-    public function insert(array $bookmark): int
+    public function insertBookmark(array $bookmark): int
     {
         $statement = $this->pdo->prepare("
             INSERT INTO 
             " . self::TABLE_BOOKMARK . " 
-            (transit_id) 
+            (transit_id, user_id) 
             VALUES 
-            (:transit_id)
+            (:transit_id, :user_id)
         ");
         $statement->bindValue(':transit_id', $bookmark['transit_id'], \PDO::PARAM_INT);
+        $statement->bindValue(':user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
@@ -28,6 +30,7 @@ class BookmarkManager extends AbstractManager
 
     public function selectBookmarks($orderBy)
     {
+        $userId = $_SESSION['user_id'];
         $statement = $this->pdo->prepare("
             SELECT
                 train.number as train_number,
@@ -36,7 +39,10 @@ class BookmarkManager extends AbstractManager
                 DATE_FORMAT(
                     transit.transit_time, 
                     '%H:%i') as depart_time,
-                station.id as station_id    
+                station.id as station_id,
+                transit.train_id as train_id,
+
+                delay.train_id as delayed_train_id
 
             FROM " . self::TABLE_TRANSIT . "
 
@@ -49,7 +55,10 @@ class BookmarkManager extends AbstractManager
             JOIN " . self::TABLE_STATION . "
                 ON station.id = transit.station_id
 
-            WHERE bookmark.transit_id = transit.id
+            LEFT JOIN " . self::TABLE_DELAY . "
+                ON (delay.train_id = transit.train_id AND delay.date = current_date())
+
+            WHERE bookmark.transit_id = transit.id AND bookmark.user_id = $userId
 
             GROUP BY bookmark.transit_id
             ORDER BY " . $orderBy . " ASC
@@ -58,5 +67,19 @@ class BookmarkManager extends AbstractManager
         $statement->execute();
 
         return $statement->fetchAll();
+    }
+
+    public function removeBookmark($bookmark)
+    {
+        $statement = $this->pdo->prepare("
+            DELETE FROM 
+            " . self::TABLE_BOOKMARK . " 
+            WHERE
+            transit_id = :transit_id
+        ");
+        $statement->bindValue(':transit_id', $bookmark['transit_id'], \PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
     }
 }

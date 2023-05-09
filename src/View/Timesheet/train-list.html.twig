@@ -67,7 +67,7 @@
                                 {% include 'Shared/cardData.html.twig' %}
                             {% endif %}
                             {% else %}
-                                <li>Aucun train disponible</li>
+                                <div class="no-train">Aucun train disponible</div>
                             {% endfor %} 
                 </div>
             </div>
@@ -75,4 +75,7 @@
         
 {% include "Home/bookmark.html.twig" %}
     {% endblock %}
+{% endblock %}
+{% block javascript %}
+<script src="/assets/js/train-stops.js"></script>
 {% endblock %}

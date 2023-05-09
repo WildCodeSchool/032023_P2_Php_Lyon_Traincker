@@ -11,6 +11,8 @@ return [
     'timesheet/train-list' => ['TimesheetController', 'show', ['id']],
     'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
     'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
+    'timesheet/remove-bookmark' => ['TimesheetController', 'removeBookmark'],
+    'remove-bookmark' => ['HomeController', 'removeBookmark'],
     'login' => ['UserController', 'login'],
 
     'admin/station' => ['AdminController', 'showStation'],
@@ -33,4 +35,6 @@ return [
 
 
 
+    'logout' => ['UserController', 'logout'],
+    'register' => ['UserController', 'register']
 ];
