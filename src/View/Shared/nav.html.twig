@@ -4,8 +4,10 @@
 
 		{% if user %}
 			{# Bookmark Button #}
-			<button class="btn btn-lg btn-light rounded-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Favoris</button>
-
+			<div class="ms-auto">
+				<button class="btn btn-lg btn-light rounded-pill me-2 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Favoris</button>
+			</div>
+			
 			{# LogOut Button #}
 			<a href="/logout" class="btn-login btn btn-primary" type="button">
 				<span class="d-none d-md-inline">Deconnexion</span>
