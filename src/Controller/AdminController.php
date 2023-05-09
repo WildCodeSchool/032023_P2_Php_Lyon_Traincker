@@ -50,9 +50,6 @@ class AdminController extends AbstractController
 
         return $this->twig->render('Admin/adminStation.html.twig');
     }
-
-
-
     //----------------------------------transit----------------------------------//
 
     public function showTransit(): string
