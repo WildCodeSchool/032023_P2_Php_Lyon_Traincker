@@ -16,7 +16,6 @@ class UserController extends AbstractController
             if (empty($userService->errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($credentials['login']);
-
                 if ($user && password_verify($credentials['password'], $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     header('Location: /');
@@ -72,5 +71,14 @@ class UserController extends AbstractController
         return $this->twig->render('User/login.html.twig', [
             'errors' => $errors
         ]);
+    }
+
+    public function showUser(): string
+    {
+        $userManager = new UserManager();
+        $user = $userManager->selectAll();
+
+        return $this->twig->render('Admin/adminUser.html.twig', [
+            'users' => $user,]);
     }
 }

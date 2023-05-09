@@ -1,0 +1,44 @@
+
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main">
+		<h1>Utilisateurs</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Email</th>
+					<th>Username</th>
+					<th>Password</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for user in users %}
+				<tr>
+                    <td>
+						{{ user.id }}
+					</td>
+					<td>
+						{{ user.login }}
+					</td>
+					<td>
+                        {{ user.username }}
+                    </td>
+					<td>
+                        {{ user.password }}
+					</td>
+					<td>
+						<form action="/adminuser/delete" method="POST">
+							<input type="hidden" name="id" value="{{ user.id }}">
+							<button>Supprimer</button>
+						</form>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% endblock %}

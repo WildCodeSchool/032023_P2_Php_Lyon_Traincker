@@ -14,6 +14,29 @@ return [
     'timesheet/remove-bookmark' => ['TimesheetController', 'removeBookmark'],
     'remove-bookmark' => ['HomeController', 'removeBookmark'],
     'login' => ['UserController', 'login'],
+
+    'admin/station' => ['AdminController', 'showStation'],
+    'adminstation/add' => ['AdminController', 'addStation',],
+    'adminstation/delete' => ['AdminController', 'deleteStation',],
+
+
+    'admin/train' => ['AdminTrainController', 'showTrain'],
+    'admintrain/add' => ['AdminTrainController', 'addTrain',],
+    'admintrain/delete' => ['AdminTrainController', 'deleteTrain',],
+
+    'admin/transit' => ['AdminController', 'showTransit'],
+    'admintransit/add' => ['AdminController', 'addTransit',],
+    'admintransit/delete' => ['AdminController', 'deleteTransit',],
+
+
+    'admin/users' => ['UserController', 'showUser'],
+    'adminuser/delete' => ['AdminController', 'deleteUser',],
+
+
+    'admin/dashboard' => ['AdminController', 'showDashboard'],
+
+
+
     'logout' => ['UserController', 'logout'],
     'register' => ['UserController', 'register']
 ];

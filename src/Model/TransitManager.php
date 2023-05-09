@@ -4,7 +4,7 @@ namespace App\Model;
 
 class TransitManager extends AbstractManager
 {
-    public const TABLE_TRANSIT = 'transit';
+    public const TABLE = 'transit';
     public const TABLE_TRAIN = 'train';
     public const TABLE_STATION = 'station';
     public const TABLE_DELAY = 'delay';
@@ -36,7 +36,7 @@ class TransitManager extends AbstractManager
             RIGHT JOIN " . static::TABLE_TRAIN . "
             ON (train.id = delay.train_id AND date = current_date())
 
-                JOIN " . static::TABLE_TRANSIT . "
+                JOIN " . static::TABLE . "
                     ON transit.train_id = train.id
 
                     JOIN " . static::TABLE_STATION . " 
@@ -62,6 +62,28 @@ class TransitManager extends AbstractManager
         return $statement->fetchAll();
     }
 
+    public function insert(array $transit): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+        " (`train_id`, `station_id`, `transit_time`, `destination`)
+         VALUES (:train_id, :station_id, :transit_time, :destination)");
+        $statement->bindValue('train_id', $transit['train_id'], \PDO::PARAM_INT);
+        $statement->bindValue('station_id', $transit['station_id'], \PDO::PARAM_INT);
+        $statement->bindValue('transit_time', $transit['transit_time'] . ':00', \PDO::PARAM_STR);
+        $statement->bindValue('destination', $transit['destination'], \PDO::PARAM_STR);
+
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
+
+    public function getNumberOfTransit(): int
+    {
+        $statement = $this->pdo->query("SELECT COUNT(*) as count FROM " . static::TABLE);
+        $data = $statement->fetch();
+        $numberOfTransit = $data['count'];
+        return $numberOfTransit;
+    }
     public function selectStopsByTrainId()
     {
         $query = "
@@ -70,7 +92,7 @@ class TransitManager extends AbstractManager
                 station.name as station_name,
                 transit.train_id as train_id
 
-            FROM " . static::TABLE_TRANSIT . "
+            FROM " . static::TABLE . "
 
             JOIN " . static::TABLE_STATION . "
                 ON transit.station_id = station.id

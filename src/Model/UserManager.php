@@ -15,6 +15,13 @@ class UserManager extends AbstractManager
         return $statement->fetch();
     }
 
+    public function getNumberOfUsers(): int
+    {
+        $statement = $this->pdo->query("SELECT COUNT(*) as count FROM " . static::TABLE);
+        $data = $statement->fetch();
+        $numberOfUser = $data['count'];
+        return $numberOfUser;
+    }
     public function insert(array $credentials): int
     {
         $statement = $this->pdo->prepare("
