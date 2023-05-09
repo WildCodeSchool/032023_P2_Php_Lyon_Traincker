@@ -9,9 +9,9 @@
 	<div class="main">
 		<h1>Trains</h1>
 		<!-- bouton Ajouter -->
-		<button class="btn btn-primary" onclick="openForm()">Ajouter</button>
+		<button class="btn btn-primary">Ajouter</button>
 		<!-- Form -->
-			<div class="form-popup" id="popup-Form">
+			<div class="formpopup">
 				<form action="/admintrain/add" class="form-container" method="POST">
 					<label for="number">
 						<input type="number" placeholder="number" name="number" required />
@@ -37,7 +37,7 @@
                         {{ train.number }}
                     </td>
 					<td>
-						<button class="btn btn-primary" onclick="editer(1)">Editer</button>
+						<button class="btn btn-primary">Editer</button>
 						<form action="/admintrain/delete" method="POST">
 							<input type="hidden" name="id" value="{{ train.id }}">
 							<button>Supprimer</button>

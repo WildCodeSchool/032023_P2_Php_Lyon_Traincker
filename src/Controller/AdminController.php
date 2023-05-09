@@ -12,7 +12,7 @@ class AdminController extends AbstractController
     public function showStation(): string
     {
         $stationManager = new StationManager();
-        $station = $stationManager->selectAll('name');
+        $station = $stationManager->selectAll();
 
         return $this->twig->render('Admin/adminStation.html.twig', [
             'stations' => $station,]);
@@ -25,7 +25,7 @@ class AdminController extends AbstractController
             $stationManager = new StationManager();
             $stationManager->delete((int)$id);
 
-            header('Location:/admin');
+            header('Location:/admin/station');
         }
     }
 
@@ -44,53 +44,14 @@ class AdminController extends AbstractController
             $stationManager = new StationManager();
             $stationManager->insert($station);
 
-            header('Location:/admin');
+            header('Location:/admin/station');
             return null;
         }
 
         return $this->twig->render('Admin/adminStation.html.twig');
     }
 
-    //-----------------------------------train-----------------------------------//
 
-    public function showTrain(): string
-    {
-        $trainManager = new TrainManager();
-        $number = $trainManager->selectAll('number');
-
-        return $this->twig->render('Admin/adminTrain.html.twig', [
-            'trains' => $number,]);
-    }
-
-    public function deleteTrain(): void
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = trim($_POST['id']);
-            $trainManager = new TrainManager();
-            $trainManager->delete((int)$id);
-
-            header('Location:/admin/train');
-        }
-    }
-
-    public function addTrain(): ?string
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $train = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-
-            // if validation is ok, insert and redirection
-            $trainManager = new TrainManager();
-            $trainManager->insert($train);
-
-            header('Location:/admin/train');
-            return null;
-        }
-
-        return $this->twig->render('Admin/adminTrain.html.twig');
-    }
 
     //----------------------------------transit----------------------------------//
 
@@ -99,8 +60,16 @@ class AdminController extends AbstractController
         $transitManager = new TransitManager();
         $transit = $transitManager->selectAll();
 
+        $trainManager = new TrainManager();
+        $train = $trainManager->selectAll();
+
+        $stationManager = new StationManager();
+        $station = $stationManager->selectAll();
+
         return $this->twig->render('Admin/adminTransit.html.twig', [
-            'transits' => $transit,]);
+            'transits' => $transit,
+            'trains' => $train,
+            'stations' => $station,]);
     }
 
     public function deleteTransit(): void
@@ -154,5 +123,16 @@ class AdminController extends AbstractController
         'numberOfStation' => $numberOfStation,
         'numberOfTrain' => $numberOfTrain,
         'numberOfTransit' => $numberOfTransit,]);
+    }
+    //--------------------------------User--------------------------//
+    public function deleteUser(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $userManager = new UserManager();
+            $userManager->delete((int)$id);
+
+            header('Location:/admin/users');
+        }
     }
 }

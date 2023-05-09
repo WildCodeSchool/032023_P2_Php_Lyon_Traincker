@@ -20,9 +20,9 @@ return [
     'adminstation/delete' => ['AdminController', 'deleteStation',],
 
 
-    'admin/train' => ['AdminController', 'showTrain'],
-    'admintrain/add' => ['AdminController', 'addTrain',],
-    'admintrain/delete' => ['AdminController', 'deleteTrain',],
+    'admin/train' => ['AdminTrainController', 'showTrain'],
+    'admintrain/add' => ['AdminTrainController', 'addTrain',],
+    'admintrain/delete' => ['AdminTrainController', 'deleteTrain',],
 
     'admin/transit' => ['AdminController', 'showTransit'],
     'admintransit/add' => ['AdminController', 'addTransit',],
@@ -30,6 +30,8 @@ return [
 
 
     'admin/users' => ['UserController', 'showUser'],
+    'adminuser/delete' => ['AdminController', 'deleteUser',],
+
 
     'admin/dashboard' => ['AdminController', 'showDashboard'],
 

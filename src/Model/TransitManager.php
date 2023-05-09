@@ -69,7 +69,7 @@ class TransitManager extends AbstractManager
          VALUES (:train_id, :station_id, :transit_time, :destination)");
         $statement->bindValue('train_id', $transit['train_id'], \PDO::PARAM_INT);
         $statement->bindValue('station_id', $transit['station_id'], \PDO::PARAM_INT);
-        $statement->bindValue('transit_time', $transit['transit_time'], \PDO::PARAM_INT);
+        $statement->bindValue('transit_time', $transit['transit_time'] . ':00', \PDO::PARAM_STR);
         $statement->bindValue('destination', $transit['destination'], \PDO::PARAM_STR);
 
 

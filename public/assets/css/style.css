@@ -676,3 +676,6 @@ th {
   color: var(--light-color);
   font-size: 1.2em;
 }
+.formpopup{
+  display : none;
+}

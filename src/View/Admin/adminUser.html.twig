@@ -31,6 +31,12 @@
 					<td>
                         {{ user.password }}
 					</td>
+					<td>
+						<form action="/adminuser/delete" method="POST">
+							<input type="hidden" name="id" value="{{ user.id }}">
+							<button>Supprimer</button>
+						</form>
+					</td>
 				</tr>
 				{% endfor %}
 			</tbody>
