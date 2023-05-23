@@ -1,3 +1,703 @@
-body {
-    color: #f76c6c;
+:root {
+  /* fonts ------------*/
+  --logo-font: 'Monoton', cursive;
+
+  /* colors -----------*/
+
+  --primary-color: #FFE073;
+  --secondary-color: rgb(57, 80, 85);
+  --light-color: white;
+  --dark-color: #1E1E1E;
+
+  /* Animation --------*/
+
+  --main-transition: .5s cubic-bezier(0.2, 0, 0, 1);
+  --on-air: 3s linear;
+}
+
+@keyframes push-up {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes push-down {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+
+  49% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+.bg-image {
+  background-image: url('../images/japan-train-railroad-railway-72594.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+
+/* Timesheet -----------------------*/
+
+.timesheet-header .dropdown-center:hover>.dropdown-menu {
+  display: block;
+}
+
+.timesheet-header .dropdown-center>.dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.timesheet-header .dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
+.timesheet-header .dropdown-item {
+  color: var(--primary-color);
+}
+
+.timesheet-header .dropdown-item:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.timesheet-header .dropdown-center .line::after {
+  display: block;
+  content: "";
+  width: 50%;
+  height: 1px;
+  background-color: var(--primary-color);
+}
+
+.timesheet-header {
+  height: 300px;
+}
+
+.timesheet-header .page-header-image {
+  background-image: url('/assets/images/woman-on-rails.jpg');
+  background-size: cover;
+}
+
+.timesheet-header .glass-d {
+  width: clamp(500px, 80vw, 700px);
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin: auto;
+}
+
+.timesheet-header .glass-m {
+  width: clamp(500px, 80vw, 700px);
+  height: 60%;
+  margin: auto;
+}
+
+.timesheet-header h3 {
+  color: var(--light-color);
+}
+
+.timesheet-header .dropdown-center,
+.timesheet-header .dropdown-menu {
+  width: clamp(300px, 50vw, 500px);
+}
+
+.timesheet-header .dropdown-center .btn-primary {
+  color: var(--secondary-color);
+  font-weight: 600;
+  background-color: var(--light-color);
+  width: 100%;
+}
+
+/*-- train-list --*/
+
+.train-card-title {
+  background-color: var(--secondary-color);
+}
+
+.timesheet-trains .result-stroke {
+  width: fit-content;
+  border-color: var(--primary-color) !important;
+}
+
+.train-card-title::before,
+.train-card-title::after {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  vertical-align: middle;
+  translate: 0 -3px;
+}
+
+.train-card-title::before {
+  margin: 0 20px 0 0;
+}
+
+.train-card-title::after {
+  margin: 0 0 0 20px;
+}
+
+.timesheet-trains {
+  background: linear-gradient(var(--secondary-color) 90%, var(--primary-color) 100%);
+  min-height: 100vh;
+}
+
+.timesheet-trains article.card {
+  min-width: 150px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--light-color);
+}
+
+.timesheet-trains article.train-card {
+  transform: scale(100%);
+  transform-origin: center;
+  transition: var(--main-transition);
+
+  animation: var(--main-transition) 0s 1 push-up;
+}
+
+.timesheet-trains article.train-card:hover {
+  transform: scale(105%);
+  border-color: var(--primary-color) !important;
+}
+
+.timesheet-trains article.card-late {
+  transform: scale(100%);
+  transform-origin: center;
+  transition: var(--main-transition);
+
+  animation: var(--main-transition) 0s 1 push-up;
+}
+
+.timesheet-trains article.card-late:hover {
+  transform: scale(105%);
+  border-color: red !important;
+}
+
+.train-number::after,
+.train-to::after,
+.train-stops-title::before {
+  display: block;
+  content: "";
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  margin: 5px 0px;
+}
+
+.option-buttons .btn-primary,
+.offcanvas-body .btn-primary {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-color: var(--light-color);
+}
+
+.option-buttons .delay:hover {
+  background-color: red;
+  color: var(--light-color);
+}
+
+.option-buttons .bookmark:hover,
+.offcanvas-body .btn-primary:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+/* Train stops ------------------------------------------------------------------------------------------------------*/
+
+.train-card .train-stops-menu {
+  transition: grid-template-rows var(--main-transition);
+}
+
+.train-card .train-stops-menu>ul {
+  overflow: hidden;
+}
+
+.bi-caret-down {
+  transition: var(--main-transition);
+}
+
+/* Home header ------------------------------------------------------------------------------------------------------*/
+.no-train {
+  color: var(--light-color);
+  font-size: 1.2em;
+}
+
+.option-buttons .bookmark:focus,
+.offcanvas-body .btn-primary:focus,
+.option-buttons .bookmark:active,
+.offcanvas-body .btn-primary:active {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+}
+
+/* Train-map ------------------------------------------------------------------------------------------------------*/
+
+.home-header {
+  background-image: url('/assets/images/women-in-train.jpg');
+  background-size: cover;
+  background-origin: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+
+.home-header .container {
+  background-color: rgba(57, 80, 85, 0.5);
+  backdrop-filter: blur(10px);
+  height: 10vh;
+}
+
+.home-header .header-title {
+  animation: var(--main-transition) 0s 1 push-down;
+}
+
+/* Home ------------------------------------------------------------------------------------------------------*/
+
+.homepage .bg-color {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgb(255, 224, 115, 0.9), rgba(57, 80, 85, 0.5));
+}
+
+.homepage .train-menu-title {
+  height: 10vh;
+}
+
+.homepage .btn-hover-image::before {
+  transition: all 0.2s linear 0s;
+}
+
+.homepage .btn-hover-image:after {
+  display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  translate: 0px;
+  margin: 0 10px;
+  transition: var(--main-transition);
+}
+
+.homepage .btn-hover-image:hover::after {
+  translate: 20px 0;
+  background-color: var(--secondary-color);
+}
+
+.train-list-menu {
+  width: 240px;
+  font-size: x-large;
+}
+
+.btn-hover-image {
+  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  color: var(--light-color);
+  box-shadow: 10px 9px 0px 1px var(--secondary-color);
+  transition: var(--main-transition);
+  border-color: var(--secondary-color) !important;
+}
+
+.btn-hover-image:hover {
+  background-image: linear-gradient(to left, var(--light-color), var(--primary-color));
+  color: var(--secondary-color);
+  border-color: var(--light-color) !important;
+}
+
+.homepage .station-list {
+  width: clamp(350px, 80vw, 600px);
+}
+
+/* navbar -------------- */
+
+nav.navbar {
+  background-color: var(--primary-color);
+}
+
+nav form a.logo,
+footer a .logo {
+  font-family: var(--logo-font);
+}
+
+nav form a.logo:hover,
+footer a .logo:hover {
+  color: var(--light-color);
+}
+
+nav form a.logo:active,
+footer a .logo:active,
+nav form a.logo:focus,
+footer a .logo:focus {
+  color: var(--secondary-color);
+  border: none;
+}
+
+
+nav form a.fav:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.navbar .btn-login,
+.btn-bookmark {
+  background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  transition: var(--main-transition);
+  border-radius: 10px;
+  color: var(--light-color);
+  font-weight: bold;
+  border-color: var(--light-color);
+}
+
+.navbar .btn-login:hover,
+.btn-bookmark:hover {
+
+  border-color: var(--light-color);
+}
+
+/* Login/Register */
+
+.display-login {
+  background-image: url('/assets/images/flou1.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  background-position: center;
+}
+
+.wrapper {
+  margin: auto;
+  width: 400px;
+  height: 537px;
+  background: transparent;
+  border: 2px solid var(--light-color);
+  border-radius: 20px;
+  backdrop-filter: blur(170px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper .form-box.login {
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+
+.form-box h2 {
+  font-size: 2em;
+  color: var(--light-color);
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid var(--primary-color);
+  margin: 30px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: var(--light-color);
+  font-weight: bold;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -5px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: var(--light-color);
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.btn-popup {
+  width: 100%;
+  height: 45px;
+  background: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--dark-color);
+  font-weight: bold;
+}
+
+.login-register {
+  font-size: .9em;
+  color: var(--light-color);
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  color: var(--light-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-register p a {
+  text-decoration: underline;
+}
+
+.modal-backdrop.show {
+  opacity: 0;
+}
+
+
+/*footer*/
+.footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
+}
+
+.footer p {
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
+}
+
+footer .letters {
+  color: var(--secondary-color);
+  font-family: var(--logo-font);
+}
+
+/* ----------------------------------sidebar ---------------------------------- */
+
+.bookmarks .offcanvas-header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.bookmarks .offcanvas-body {
+  background-color: var(--secondary-color);
+}
+
+.bookmarks a,
+.bookmarks a:hover,
+.bookmarks a:visited,
+.bookmarks a:active,
+.bookmarks a:focus {
+  text-decoration: none;
+  color: unset;
+}
+
+.bookmarks .bm-card .on-air {
+  color: green;
+}
+
+.bookmarks .bm-card-late .on-air {
+  animation: 2s linear 0s infinite blink;
+  color: red;
+}
+
+.bm-card {
+  border-color: var(--secondary-color) !important;
+  background: var(--primary-color);
+  transition: var(--main-transition);
+}
+
+.bm-card-late {
+  background: var(--primary-color);
+  transition: var(--main-transition);
+}
+
+.bm-card-late:hover {
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.bm-card:hover {
+  border-color: var(--light-color) !important;
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.bm-card .bm-train-number::after,
+.bm-card-late .bm-train-number::after {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--light-color);
+  vertical-align: middle;
+  border-radius: 100px;
+  margin: 0 0 0 10px;
+
+  transform: translate(100px);
+  transform-origin: center;
+  opacity: 0%;
+  transition: var(--main-transition);
+}
+
+.bm-card:hover .bm-train-number::after,
+.bm-card-late:hover .bm-train-number::after {
+  transform: translate(0px);
+  opacity: 100%;
+}
+
+/*------------------admin--------------------------*/
+/* styles pour la barre latérale */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px;
+  padding: 0px 10px;
+}
+
+/* styles pour la table CRUD */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form-popup {
+  display: none;
+}
+
+.numberTransit,
+.numberTrain,
+.numberStation,
+.numberUser {
+  font-size: 4rem;
+  line-height: 62px;
+  color: whitesmoke;
+  margin-top: 2rem;
+}
+
+.dashboardContainer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 5rem;
+}
+
+.subject {
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-size: 16px !important;
+  line-height: 25px;
+  color: #676767;
+}
+
+.items {
+  border-radius: 50%;
+  padding: 23px;
+  background-color: #111;
+}
+
+.no-favourite {
+  color: var(--light-color);
+  font-size: 1.2em;
+}
+
+.formpopup {
+  display: none;
 }

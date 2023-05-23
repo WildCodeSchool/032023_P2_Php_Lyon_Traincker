@@ -8,9 +8,35 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     '' => ['HomeController', 'index',],
-    'items' => ['ItemController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
+    'timesheet/train-list' => ['TimesheetController', 'show', ['id']],
+    'timesheet/train-delay' => ['TimesheetController', 'reportDelay'],
+    'timesheet/add-bookmark' => ['TimesheetController', 'addBookmark'],
+    'timesheet/remove-bookmark' => ['TimesheetController', 'removeBookmark'],
+    'remove-bookmark' => ['HomeController', 'removeBookmark'],
+    'login' => ['UserController', 'login'],
+
+    'admin/station' => ['AdminController', 'showStation'],
+    'adminstation/add' => ['AdminController', 'addStation',],
+    'adminstation/delete' => ['AdminController', 'deleteStation',],
+
+
+    'admin/train' => ['AdminTrainController', 'showTrain'],
+    'admintrain/add' => ['AdminTrainController', 'addTrain',],
+    'admintrain/delete' => ['AdminTrainController', 'deleteTrain',],
+
+    'admin/transit' => ['AdminController', 'showTransit'],
+    'admintransit/add' => ['AdminController', 'addTransit',],
+    'admintransit/delete' => ['AdminController', 'deleteTransit',],
+
+
+    'admin/users' => ['UserController', 'showUser'],
+    'adminuser/delete' => ['AdminController', 'deleteUser',],
+
+
+    'admin/dashboard' => ['AdminController', 'showDashboard'],
+
+
+
+    'logout' => ['UserController', 'logout'],
+    'register' => ['UserController', 'register']
 ];

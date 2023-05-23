@@ -2,13 +2,25 @@
 
 namespace App\Controller;
 
+use App\Model\BookmarkManager;
+use App\Model\StationManager;
+
 class HomeController extends AbstractController
 {
-    /**
-     * Display home page
-     */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $stationManager = new StationManager();
+        $station = $stationManager->selectAll('name');
+
+        $bookmarks = null;
+        if (isset($_SESSION['user_id'])) {
+            $bookmarkManager = new BookmarkManager();
+            $bookmarks = $bookmarkManager->selectBookmarks('depart_station');
+        }
+
+        return $this->twig->render('Home/index.html.twig', [
+            'stations' => $station,
+            'bookmarks' => $bookmarks
+        ]);
     }
 }

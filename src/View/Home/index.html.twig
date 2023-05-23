@@ -1,6 +1,40 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+
+{% include "Home/train-map.html.twig" %}
+<div class="homepage bg-image">
+    <div class="p-3 bg-color">  
+        {% include "Home/bookmark.html.twig" %}
+
+    
+        <div class = "bg-Button d-flex">
+            <div class = "station-list mt-lg-5 mt-md-5 mt-sm-5 container">
+                <div class = "row">
+                
+                    {% for station in stations %}
+
+                        <div class="btn-desktop-train-menu col-sm-6">
+                            <a href="/timesheet/train-list?id={{ station.id }}" 
+
+                                class=" 
+                                        btn btn-hover-image rounded-pill 
+                                        p-3 w-100 my-3
+                                        fw-bold text-start text-light fs-5
+                                    " 
+                                        
+                                role="button" > 
+
+                                    {{ station.name }}
+                                    
+                            </a>
+                        </div>
+                                
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
 {% endblock %}

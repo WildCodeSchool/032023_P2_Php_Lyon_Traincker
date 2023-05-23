@@ -1,0 +1,29 @@
+<div class="option-buttons m-2 d-flex justify-content-between">
+    
+        {% if user %}
+        {% if cardData.transit_id == cardData.bookmarked %}
+            <form action="/timesheet/remove-bookmark" method="post">
+                <input type="hidden" name="station_id" value="{{stationById.id}}">
+                <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
+                <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkSet|raw}}</button>
+        {% else %}
+            <form action="/timesheet/add-bookmark" method="post">
+
+                <input type="hidden" name="transit_id" value="{{cardData.transit_id}}">
+                <input type="hidden" name="user_id" value="{{userId}}">
+                <input type="hidden" name="station_id" value="{{stationById.id}}">
+                <button id="add-bookmark" class="btn btn-primary rounded-pill">{{bookmarkUnset|raw}}</button>
+        {% endif %}
+        {% endif %}
+    </form>
+    
+    <form action="/timesheet/train-delay" method="post">
+        <input type="hidden" name="train_id" value="{{cardData.train_id}}">
+        <input type="hidden" name="station_id" value="{{stationById.id}}">
+        <div class="delay btn btn-outline-danger rounded-pill">
+            <button class="border-0 bg-transparent text-danger">{{clockUnset|raw}}</button>
+            <button class="border-0 bg-transparent text-danger d-none d-md-inline">Retard</button>
+        </div>
+    </form>
+
+</div>

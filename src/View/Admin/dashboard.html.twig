@@ -1,0 +1,33 @@
+
+
+{% block content %}
+
+	{% include "Admin/sidebar.html.twig" %}
+
+	<!-- contenu principal -->
+	<div class="main">
+		<h1>Dashboard</h1>
+            <div class="dashboardContainer" >
+                <div class="items">
+                    <div class="numberUser"><span>{{ numberOfUser }}</span></div>
+                    <div class="subject">Nombre de User</div>
+                </div>
+    
+                <div class="items">
+                    <div class="numberStation"><span>{{ numberOfStation }}</span></div>
+                    <div class="subject">Nombre de station</div>
+                </div>
+                <div class="items">
+                    <div class="numberTrain"><span>{{ numberOfTrain }}</span></div>
+                    <div class="subject">Nombre de trains</div>
+                </div>
+                <div class="items">
+                    <div class="numberTransit"><span>{{ numberOfTransit }}</span></div>
+                    <div class="subject">Nombre de transit</div>
+                </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}

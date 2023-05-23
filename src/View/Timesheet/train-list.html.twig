@@ -1,0 +1,81 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Résultat de votre recherche{% endblock %}
+{% block content %}
+    <section class="timesheet-header p-0 m-0 z-2 position-relative">
+        <div class="page-header-image h-100 w-100 d-flex">
+{# Desktop dropdown menu ----------------------------------------------------------------------------------------------- #}
+            <div class="glass-d p-5 d-none d-md-flex justify-content-center align-items-center flex-column rounded-5">
+                <div>
+                    <h3>Quelle gare ?</h3>
+                    <div class="dropdown-center">
+                        <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {{stationById.name}} <div class="line"> </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for station in stations %}
+                            <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
+                        {% else %}
+                            <li>Aucune gare disponible</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+{# Mobile dropdown menu ------------------------------------------------------------------------------------------------ #}
+            <div class="glass-m d-flex d-md-none justify-content-center align-items-center flex-column rounded-5">
+                <div>
+                    <h3>Quelle gare ?</h3>
+                    <div class="dropdown-center">
+                        <button class="btn btn-primary border border-3 rounded-pill p-3 dropdown-toggle d-flex justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {{stationById.name}} <div class="line"> </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for station in stations %}
+                            <li><a class="dropdown-item" href="/timesheet/train-list?id={{ station.id }}">{{ station.name }}</a></li>
+                        {% else %}
+                            <li>Aucune gare disponible</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+{# --------------------------------------------------------------------------------------------------------------------- #}
+        </div>
+    </section>
+
+    {% block trains %}
+
+    {% set downarrow = "<i class='bi bi-arrow-90deg-down'></i>" %}
+    {% set bookmarkUnset = "<i class='bi bi-bookmark'></i>" %}
+    {% set bookmarkSet = "<i class='bi bi-bookmark-check-fill'></i>" %}
+    {% set clockUnset = "<i class='bi bi-clock'></i>" %}
+    {% set clockSet = "<i class='bi bi-clock-fill'></i>" %}
+
+        <section class="timesheet-trains m-0 p-4 p-md-5 w-100">
+            <div class="result-stroke position-relative
+                        border rounded-5 border-primary
+                        me-auto ms-auto p-4">
+                    <h1 class="train-card-title fs-6 text-nowrap z-1 position-absolute top-0 start-50 translate-middle text-center text-light">Résultats de votre recherche</h1>
+            
+                    <div class="container d-flex justify-content-center align-items-center flex-wrap my-5">
+
+                        {% for cardData in cardDatas %} 
+                                               
+                            {% if cardData.date != NULL %}
+                                {% include 'Shared/cardDataLate.html.twig' %}
+                            {% else  %}
+                                {% include 'Shared/cardData.html.twig' %}
+                            {% endif %}
+                            {% else %}
+                                <div class="no-train">Aucun train disponible</div>
+                        {% endfor %} 
+                </div>
+            </div>
+        </section>
+        
+{% include "Home/bookmark.html.twig" %}
+    {% endblock %}
+{% endblock %}
+{% block javascript %}
+<script src="/assets/js/train-stops.js"></script>
+{% endblock %}

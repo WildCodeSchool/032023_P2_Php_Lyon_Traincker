@@ -1,0 +1,27 @@
+<article class="train-card card p-3 m-3 border border-3 rounded-5" id="train-card">
+
+<div class="train-number m-1"># {{cardData.train_number}}</div>
+
+<div class="train-to m-2">
+    <div class="m-1">{{downarrow|raw}}Départ</div>
+    <div id="dest-info">
+        <span class="lead fs-3"><strong>{{ cardData.departure_time }}</strong></span>
+        <span>à destination de</span>
+        <span class="lead fs-3"><strong>{{ cardData.destination }}</strong></span>
+    </div>
+    <div class="train-stops-menu d-grid">
+        <ul class="train-list-container">
+            {% for stopData in stopDatas %}
+                {% if cardData.train_id == stopData.train_id and cardData.departure_time < stopData.transit_time %}
+                    <li class="train-stop-item">{{stopData.transit_time}} - {{stopData.station_name}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+
+{% include 'Shared/cardDataButtons.html.twig' %}
+
+</article>
